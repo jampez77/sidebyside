@@ -5,6 +5,7 @@ import android.app.TimePickerDialog;
 import android.content.Context;
 import android.content.res.Configuration;
 import android.content.res.TypedArray;
+import android.graphics.Color;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.util.AttributeSet;
@@ -432,6 +433,48 @@ public class SideBySideView extends LinearLayout implements DatePickerDialog.OnD
             else
                 rightET.setError(null);
         }
+    }
+
+    @SuppressWarnings("unused")
+    public void setLeftError(String error){
+        TextView errorText = (TextView) ((LinearLayout)lowerLeftTV.getParent()).getChildAt(0);
+        switch (leftInput) {
+            case EditText:
+                errorText = (TextView) ((LinearLayout)leftET.getParent()).getChildAt(0);
+                break;
+            case CheckBox:
+                errorText = (TextView) ((LinearLayout)leftCB.getParent()).getChildAt(0);
+                break;
+            case Spinner:
+                errorText = (TextView) ((LinearLayout)leftSP.getParent()).getChildAt(0);
+                break;
+            case Time:
+                errorText = (TextView) ((LinearLayout)lowerLeftTV.getParent()).getChildAt(0);
+                break;
+        }
+        errorText.setError("");
+        errorText.setText(error);
+    }
+
+    @SuppressWarnings("unused")
+    public void setRightError(String error){
+        TextView errorText = (TextView) ((LinearLayout)lowerRightTV.getParent()).getChildAt(0);
+        switch (rightInput) {
+            case EditText:
+                errorText = (TextView) ((LinearLayout)rightET.getParent()).getChildAt(0);
+                break;
+            case CheckBox:
+                errorText = (TextView) ((LinearLayout)rightCB.getParent()).getChildAt(0);
+                break;
+            case Spinner:
+                errorText = (TextView) ((LinearLayout)rightSP.getParent()).getChildAt(0);
+                break;
+            case Time:
+                errorText = (TextView) ((LinearLayout)lowerRightTV.getParent()).getChildAt(0);
+                break;
+        }
+        errorText.setError("");
+        errorText.setText(error);
     }
 
     @SuppressWarnings("unused")
