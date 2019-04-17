@@ -1,0 +1,4 @@
+#Tue Apr 16 16:11:57 BST 2019
+base.0=/Users/ontrac/Downloads/sidebyside-master/app/build/intermediates/dex/debug/mergeDexDebug/out
+path.0=classes.dex
+renamed.0=classes.dex

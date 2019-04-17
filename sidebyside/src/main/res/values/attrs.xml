@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="SideBySideView">
+        <attr name="leftText" format="string" localization="suggested" />
+        <attr name="rightText" format="string" localization="suggested" />
+        <attr name="textAppearance" format="reference" />
+        <attr name="editTextBackground" format="reference" />
+        <attr name="textViewTextColor" format="color" />
+        <attr name="editTextTextColor" format="color" />
+        <attr name="textViewTextStyle" format="string" />
+        <attr name="editTextTextStyle" format="string" />
+        <attr name="leftInput" format="string"/>
+        <attr name="rightInput" format="string"/>
+        <attr name="leftEditInputType" format="string"/>
+        <attr name="rightEditInputType" format="string"/>
+        <attr name="leftSpinnerEntries" format="reference"/>
+        <attr name="rightSpinnerEntries" format="reference"/>
+        <attr name="rightEditTextText" format="string"/>
+        <attr name="leftEditTextText" format="string"/>
+        <attr name="rightEditTextHint" format="string"/>
+        <attr name="leftEditTextHint" format="string"/>
+        <attr name="hideRightView" format="boolean"/>
+    </declare-styleable>
+</resources>

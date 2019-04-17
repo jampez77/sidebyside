@@ -1,0 +1,152 @@
+<merge xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="horizontal"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
+
+    <LinearLayout android:id="@+id/main_layout"
+        android:orientation="horizontal"
+        android:padding="10dp"
+        android:baselineAligned="true"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:id="@+id/left_layout"
+            android:layout_width="0dp"
+            android:layout_weight=".50"
+            android:layout_marginEnd="5dp"
+            android:layout_marginRight="5dp"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/left_tv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textStyle="bold"
+                android:textColor="@color/black"
+                android:text="@string/first_name" />
+
+            <EditText
+                android:id="@+id/left_et"
+                android:nextFocusDown="@id/right_et"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:padding="5dp"
+                android:singleLine="true"
+                android:hint="@string/first_name"
+                android:inputType="text"
+                android:background="@drawable/edit_text_selector" />
+
+            <CheckBox
+                android:id="@+id/left_cb"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:layout_gravity="center_vertical"
+                android:padding="5dp"
+                android:visibility="gone"
+                android:clickable="false"
+                android:focusable="false"
+                android:gravity="start"
+                android:button="@drawable/checkbox_selector_black"/>
+
+            <Spinner
+                android:id="@+id/left_sp"
+                android:visibility="gone"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:padding="0dp"
+                android:spinnerMode="dropdown"
+                android:focusable="true"
+                android:focusableInTouchMode="true"
+                android:textColor="@color/edit_text_border"
+                style="@android:style/Widget.Spinner.DropDown"
+                android:background="@drawable/shape_drop_down_normal" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:visibility="gone"
+                android:minWidth="200dp"
+                android:background="@drawable/edit_text_selector"
+                android:padding="5dp"
+                android:clickable="true"
+                android:focusable="true"
+                android:gravity="start|center_vertical"
+                android:textColor="@color/edit_text_border"
+                android:id="@+id/lower_left_tv"/>
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/right_layout"
+            android:layout_width="0dp"
+            android:layout_weight=".50"
+            android:layout_marginStart="5dp"
+            android:layout_marginLeft="5dp"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/right_tv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textStyle="bold"
+                android:textColor="@color/black"
+                android:text="@string/last_name" />
+
+            <EditText
+                android:id="@+id/right_et"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:padding="5dp"
+                android:singleLine="true"
+                android:hint="@string/last_name"
+                android:inputType="text"
+                android:background="@drawable/edit_text_selector"/>
+
+            <CheckBox
+                android:id="@+id/right_cb"
+                android:layout_width="wrap_content"
+                android:layout_height="48dp"
+                android:layout_gravity="center_vertical"
+                android:padding="5dp"
+                android:visibility="gone"
+                android:clickable="false"
+                android:focusable="false"
+                android:gravity="start"
+                android:button="@drawable/checkbox_selector_black"/>
+
+            <Spinner
+                android:id="@+id/right_sp"
+                android:visibility="gone"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:padding="0dp"
+                android:spinnerMode="dropdown"
+                android:focusable="true"
+                android:focusableInTouchMode="true"
+                android:textColor="@color/edit_text_border"
+                style="@android:style/Widget.Spinner.DropDown"
+                android:background="@drawable/shape_drop_down_normal" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:visibility="gone"
+                android:minWidth="200dp"
+                android:background="@drawable/edit_text_selector"
+                android:padding="5dp"
+                android:clickable="true"
+                android:focusable="true"
+                android:gravity="start|center_vertical"
+                android:textColor="@color/edit_text_border"
+                android:id="@+id/lower_right_tv"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
+</merge>
