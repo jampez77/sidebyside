@@ -478,13 +478,14 @@ public class SideBySideView extends LinearLayout implements DatePickerDialog.OnD
 
     private boolean validEditText(EditText editText, String input, String inputType){
 
+        validEditTextPasswords();
         if(input.length() > 0){
             boolean validEmail = isValidEmail(input);
 
             editText.setError((inputType.contains("EmailAddress") && !validEmail ? "Invalid Email Address" : null));
             return validEmail;
         }
-        return validEditTextPasswords();
+        return false;
     }
 
     @SuppressWarnings("unused")
