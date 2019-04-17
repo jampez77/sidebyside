@@ -20,5 +20,7 @@
         <attr name="rightEditTextHint" format="string"/>
         <attr name="leftEditTextHint" format="string"/>
         <attr name="hideRightView" format="boolean"/>
+        <attr name="leftRequired" format="boolean"/>
+        <attr name="rightRequired" format="boolean"/>
     </declare-styleable>
 </resources>

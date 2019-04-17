@@ -62,3 +62,4 @@ Each input used has a corresponding listener this would be either `OnItemSelecte
 * leftEditTextText/rightEditTextText - set left/right EditText Text
 * leftEditTextHint/rightEditTextHint - set left/right EditText hint
 * hideRightView - turn view into single input with label by hiding right side
+* leftRequired/rightRequired - force input to be required for validation

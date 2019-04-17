@@ -37,7 +37,7 @@ import static com.jampez.sidebyside.Statics.showTimePickerDialog;
 public class SideBySideView extends LinearLayout implements DatePickerDialog.OnDateSetListener, TimePickerDialog.OnTimeSetListener {
 
     private final int textAppearance;
-    private final boolean hideRightView;
+    private final boolean hideRightView, leftRequired, rightRequired;
     private final CharSequence[] rightSpinnerEntries, leftSpinnerEntries;
     //EditTexts
     private EditText leftET, rightET;
@@ -71,7 +71,7 @@ public class SideBySideView extends LinearLayout implements DatePickerDialog.OnD
 
     private String SET_DATE, leftTimeVal, rightTimeVal, rightDateTimeVal, leftDateTimeVal;
     private boolean rightCbVal, leftCbVal, rightTimeBool, leftTimeBool, rightDateTimeBool, leftDateTimeBool;
-    private int leftSpinnerVal, rightSpinnerVal;
+    private int leftSpinnerVal = 0, rightSpinnerVal = 0;
 
     public SideBySideView(Context context) {
         this(context,null);
@@ -101,6 +101,8 @@ public class SideBySideView extends LinearLayout implements DatePickerDialog.OnD
         leftEditTextHint = a.getString(R.styleable.SideBySideView_leftEditTextHint);
         rightEditTextHint = a.getString(R.styleable.SideBySideView_rightEditTextHint);
         hideRightView = a.getBoolean(R.styleable.SideBySideView_hideRightView, false);
+        leftRequired = a.getBoolean(R.styleable.SideBySideView_leftRequired, false);
+        rightRequired = a.getBoolean(R.styleable.SideBySideView_rightRequired, false);
 
         a.recycle();
         init();
@@ -199,8 +201,8 @@ public class SideBySideView extends LinearLayout implements DatePickerDialog.OnD
                     }
                     @Override public void onNothingSelected(AdapterView<?> parent) { }
                 });
-                if(leftSpinnerVal > 0)
-                    leftSP.setSelection(leftSpinnerVal);
+
+                leftSP.setSelection(leftSpinnerVal);
                 break;
             case Time:
                 leftET.setVisibility(GONE);
@@ -329,8 +331,8 @@ public class SideBySideView extends LinearLayout implements DatePickerDialog.OnD
                     }
                     @Override public void onNothingSelected(AdapterView<?> parent) { }
                 });
-                if(rightSpinnerVal > 0)
-                    rightSP.setSelection(rightSpinnerVal);
+
+                rightSP.setSelection(rightSpinnerVal);
                 break;
             case Time:
                 rightET.setVisibility(GONE);
@@ -416,6 +418,40 @@ public class SideBySideView extends LinearLayout implements DatePickerDialog.OnD
             rightET.setImeOptions(EditorInfo.IME_ACTION_DONE);
     }
 
+    @SuppressWarnings("unused")
+    public boolean isValid(){
+
+        boolean leftIsValid = (leftInput() != null && leftInput().length() > 0);
+        boolean rightIsValid = (rightInput() != null && rightInput().length() > 0);
+
+        boolean bothRequired = (leftRequired && rightRequired);
+
+        //set left validation
+        if(leftRequired && !leftIsValid)
+            setLeftError("Required");
+        else
+            setLeftError(null);
+
+
+        //set right validation
+        if(rightRequired && !rightIsValid)
+            setRightError("Required");
+        else
+            setRightError(null);
+
+        //left and right
+        if(bothRequired)
+            return (leftIsValid && rightIsValid);
+        else {
+            //left only
+            if (leftRequired)
+                return leftIsValid;
+            //right only
+            if (rightRequired)
+                return rightIsValid;
+        }
+        return true;
+    }
 
     private void validation(){
         validateEditText(leftET, leftET.getText().toString(), leftEditInputType);
@@ -437,44 +473,46 @@ public class SideBySideView extends LinearLayout implements DatePickerDialog.OnD
 
     @SuppressWarnings("unused")
     public void setLeftError(String error){
-        TextView errorText = (TextView) ((LinearLayout)lowerLeftTV.getParent()).getChildAt(0);
         switch (leftInput) {
             case EditText:
-                errorText = (TextView) ((LinearLayout)leftET.getParent()).getChildAt(0);
+                leftET.setError(error);
                 break;
             case CheckBox:
-                errorText = (TextView) ((LinearLayout)leftCB.getParent()).getChildAt(0);
+                leftCB.setError(error);
                 break;
             case Spinner:
-                errorText = (TextView) ((LinearLayout)leftSP.getParent()).getChildAt(0);
+                TextView errorText = (TextView) leftSP.getSelectedView();
+                errorText.setError(error);
                 break;
             case Time:
-                errorText = (TextView) ((LinearLayout)lowerLeftTV.getParent()).getChildAt(0);
+                lowerLeftTV.setError(error);
+                break;
+            case DateTime:
+                lowerLeftTV.setError(error);
                 break;
         }
-        errorText.setError("");
-        errorText.setText(error);
     }
 
     @SuppressWarnings("unused")
     public void setRightError(String error){
-        TextView errorText = (TextView) ((LinearLayout)lowerRightTV.getParent()).getChildAt(0);
         switch (rightInput) {
             case EditText:
-                errorText = (TextView) ((LinearLayout)rightET.getParent()).getChildAt(0);
+                rightET.setError(error);
                 break;
             case CheckBox:
-                errorText = (TextView) ((LinearLayout)rightCB.getParent()).getChildAt(0);
+                rightCB.setError(error);
                 break;
             case Spinner:
-                errorText = (TextView) ((LinearLayout)rightSP.getParent()).getChildAt(0);
+                TextView errorText = (TextView) rightSP.getSelectedView();
+                errorText.setError(error);
                 break;
             case Time:
-                errorText = (TextView) ((LinearLayout)lowerRightTV.getParent()).getChildAt(0);
+                lowerRightTV.setError(error);
+                break;
+            case DateTime:
+                lowerRightTV.setError(error);
                 break;
         }
-        errorText.setError("");
-        errorText.setText(error);
     }
 
     @SuppressWarnings("unused")
@@ -485,7 +523,7 @@ public class SideBySideView extends LinearLayout implements DatePickerDialog.OnD
             case CheckBox:
                 return String.valueOf(rightCB.isChecked());
             case Spinner:
-                return String.valueOf(rightSP.getSelectedItemPosition());
+                return (rightSP.getSelectedItemPosition() == 0) ? null : String.valueOf(rightSP.getSelectedItemPosition());
             case Time:
                 return lowerRightTV.getText().toString();
             case DateTime:
@@ -502,7 +540,7 @@ public class SideBySideView extends LinearLayout implements DatePickerDialog.OnD
             case CheckBox:
                 return String.valueOf(leftCB.isChecked());
             case Spinner:
-                return String.valueOf(leftSP.getSelectedItemPosition());
+                return (leftSP.getSelectedItemPosition() == 0) ? null : String.valueOf(leftSP.getSelectedItemPosition());
             case Time:
                 return lowerLeftTV.getText().toString();
             case DateTime:
