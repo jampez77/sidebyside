@@ -51,7 +51,7 @@ public class SideBySideView extends LinearLayout implements DatePickerDialog.OnD
     //TextViews
     private TextView lowerLeftTV, lowerRightTV;
 
-    private final String EditText = "EditText", CheckBox = "CheckBox", Spinner = "Spinner", Time = "Time", DateTime = "DateTime", INVALID_EMAIL_ADDRESS = "Invalid Email Address";
+    private final String EditText = "EditText", CheckBox = "CheckBox", Spinner = "Spinner", Time = "Time", DateTime = "DateTime";
 
     private final Context context;
 
@@ -109,6 +109,7 @@ public class SideBySideView extends LinearLayout implements DatePickerDialog.OnD
     protected void onConfigurationChanged(Configuration newConfig) {
         removeAllViews();
         init();
+        validation();
     }
 
     private void init(){
@@ -159,8 +160,7 @@ public class SideBySideView extends LinearLayout implements DatePickerDialog.OnD
                     @Override public void onTextChanged(CharSequence s, int start, int before, int count) { }
                     @Override public void afterTextChanged(Editable s) {
                         leftEditTextText = s.toString();
-
-                        leftET.setError((leftEditInputType.contains("EmailAddress") && !isValidEmail(s.toString())) ? INVALID_EMAIL_ADDRESS : null);
+                        validateEditText(leftET, s.toString(), leftEditInputType);
                     }
                 });
 
@@ -290,16 +290,7 @@ public class SideBySideView extends LinearLayout implements DatePickerDialog.OnD
                     @Override public void onTextChanged(CharSequence s, int start, int before, int count) { }
                     @Override public void afterTextChanged(Editable s) {
                         rightEditTextText = s.toString();
-
-                        rightET.setError((rightEditInputType.contains("EmailAddress") && !isValidEmail(s.toString())) ? INVALID_EMAIL_ADDRESS : null);
-
-                        //if both inputTypes are passwords then check if they match
-                        if(rightEditInputType.contains("Password") && leftEditInputType.contains("Password")){
-                            if(!rightEditTextText.equals(leftEditTextText))
-                                rightET.setError("'" + leftET.getHint().toString() + "' does not match '" + rightET.getHint().toString() + "'");
-                            else
-                                rightET.setError(null);
-                        }
+                        validateEditText(rightET, s.toString(), rightEditInputType);
                     }
                 });
 
@@ -422,6 +413,25 @@ public class SideBySideView extends LinearLayout implements DatePickerDialog.OnD
 
         if(leftET.getVisibility() == View.GONE || leftLayout.getVisibility() == View.GONE)
             rightET.setImeOptions(EditorInfo.IME_ACTION_DONE);
+    }
+
+
+    private void validation(){
+        validateEditText(leftET, leftET.getText().toString(), leftEditInputType);
+        validateEditText(rightET, rightET.getText().toString(), rightEditInputType);
+    }
+
+    private void validateEditText(EditText editText, String input, String inputType){
+        if(input.length() > 0)
+            editText.setError((inputType.contains("EmailAddress") && !isValidEmail(input) ? "Invalid Email Address" : null));
+
+        //if both inputTypes are passwords then check if they match
+        if(rightEditInputType.contains("Password") && leftEditInputType.contains("Password")){
+            if(((rightEditTextText != null && rightEditTextText.length() > 0) || (leftEditTextText != null && leftEditTextText.length() > 0)) && (rightEditTextText != null && !rightEditTextText.equals(leftEditTextText)))
+                rightET.setError("'" + leftET.getHint().toString() + "' does not match '" + rightET.getHint().toString() + "'");
+            else
+                rightET.setError(null);
+        }
     }
 
     @SuppressWarnings("unused")

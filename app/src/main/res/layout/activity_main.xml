@@ -20,9 +20,8 @@
         app:leftInput="EditText"
         app:rightSpinnerEntries="@array/planets_array"
         app:rightInput="EditText"
-        app:rightEditTextLines="2"
-        app:leftEditInputType="textPersonName"
-        app:rightEditInputType="textMultiLine"/>
+        app:leftEditInputType="textPassword"
+        app:rightEditInputType="textPassword"/>
 
     <TextView
         android:id="@+id/text"
