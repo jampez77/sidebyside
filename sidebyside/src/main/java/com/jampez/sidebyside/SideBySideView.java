@@ -283,7 +283,17 @@ public class SideBySideView extends LinearLayout implements DatePickerDialog.OnD
                 rightET.addTextChangedListener(new TextWatcher() {
                     @Override public void beforeTextChanged(CharSequence s, int start, int count, int after) { }
                     @Override public void onTextChanged(CharSequence s, int start, int before, int count) { }
-                    @Override public void afterTextChanged(Editable s) { rightEditTextText = s.toString(); }
+                    @Override public void afterTextChanged(Editable s) {
+                        rightEditTextText = s.toString();
+
+                        //if both inputTypes are passwords then check if they match
+                        if(rightEditInputType.contains("Password") && leftEditInputType.contains("Password")){
+                            if(!rightEditTextText.equals(leftEditTextText))
+                                rightET.setError("'" + leftET.getHint().toString() + "' does not match '" + rightET.getHint().toString() + "'");
+                            else
+                                rightET.setError(null);
+                        }
+                    }
                 });
 
                 break;
