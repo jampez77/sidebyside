@@ -13,7 +13,7 @@ This is a simple merged view to easily display two inputs with labels side  by s
 
 ```
 dependencies {
-    implementation 'com.github.jampez77:sidebyside:1.0.1'
+    implementation 'com.github.jampez77:sidebyside:1.0.3'
 }
 ```
 
@@ -26,21 +26,22 @@ Then in your activity's XML:
     android:layout_height="match_parent"
     android:orientation="vertical">
 
-	<com.jampez.sidebyside.SideBySideView
-                                android:id="@+id/names"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                app:leftText="@string/first_name"
-                                app:rightText="@string/last_name"
-                                app:textAppearance="?android:attr/textAppearanceMedium"
-                                android:padding="5dp"
-                                android:layout_marginBottom="10dp"
-                                app:textViewTextStyle="bold"
-                                app:leftInput="EditText"
-                                app:rightSpinnerEntries="@array/planets_array"
-                                app:rightInput="Spinner"
-                                app:leftEditInputType="textPersonName"
-                                app:rightEditInputType="textPersonName"/>
+    <com.jampez.sidebyside.SideBySideView
+        android:id="@+id/names"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:leftText="@string/first_name"
+        app:rightText="@string/last_name"
+        app:textAppearance="?android:attr/textAppearanceMedium"
+        android:padding="5dp"
+        android:layout_marginBottom="10dp"
+        app:textViewTextStyle="bold"
+        app:leftInput="EditText"
+        app:rightSpinnerEntries="@array/planets_array"
+        app:rightInput="Spinner"
+        app:leftEditInputType="textPersonName"
+        app:rightEditInputType="textPersonName"/>
+            
 </LinearLayout>
 ```
 

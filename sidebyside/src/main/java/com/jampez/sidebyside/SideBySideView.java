@@ -28,6 +28,7 @@ import androidx.core.widget.TextViewCompat;
 import static com.jampez.sidebyside.Statics.getDrawableFromInt;
 import static com.jampez.sidebyside.Statics.getInputType;
 import static com.jampez.sidebyside.Statics.getTypeFace;
+import static com.jampez.sidebyside.Statics.isValidEmail;
 import static com.jampez.sidebyside.Statics.preventDoubleClick;
 import static com.jampez.sidebyside.Statics.showDatePickerDialog;
 import static com.jampez.sidebyside.Statics.showTimePickerDialog;
@@ -50,7 +51,7 @@ public class SideBySideView extends LinearLayout implements DatePickerDialog.OnD
     //TextViews
     private TextView lowerLeftTV, lowerRightTV;
 
-    private final String EditText = "EditText", CheckBox = "CheckBox", Spinner = "Spinner", Time = "Time", DateTime = "DateTime";
+    private final String EditText = "EditText", CheckBox = "CheckBox", Spinner = "Spinner", Time = "Time", DateTime = "DateTime", INVALID_EMAIL_ADDRESS = "Invalid Email Address";
 
     private final Context context;
 
@@ -156,7 +157,11 @@ public class SideBySideView extends LinearLayout implements DatePickerDialog.OnD
                 leftET.addTextChangedListener(new TextWatcher() {
                     @Override public void beforeTextChanged(CharSequence s, int start, int count, int after) { }
                     @Override public void onTextChanged(CharSequence s, int start, int before, int count) { }
-                    @Override public void afterTextChanged(Editable s) { leftEditTextText = s.toString(); }
+                    @Override public void afterTextChanged(Editable s) {
+                        leftEditTextText = s.toString();
+
+                        leftET.setError((leftEditInputType.contains("EmailAddress") && !isValidEmail(s.toString())) ? INVALID_EMAIL_ADDRESS : null);
+                    }
                 });
 
                 break;
@@ -285,6 +290,8 @@ public class SideBySideView extends LinearLayout implements DatePickerDialog.OnD
                     @Override public void onTextChanged(CharSequence s, int start, int before, int count) { }
                     @Override public void afterTextChanged(Editable s) {
                         rightEditTextText = s.toString();
+
+                        rightET.setError((rightEditInputType.contains("EmailAddress") && !isValidEmail(s.toString())) ? INVALID_EMAIL_ADDRESS : null);
 
                         //if both inputTypes are passwords then check if they match
                         if(rightEditInputType.contains("Password") && leftEditInputType.contains("Password")){

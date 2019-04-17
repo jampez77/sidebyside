@@ -19,9 +19,10 @@
         app:textViewTextStyle="bold"
         app:leftInput="EditText"
         app:rightSpinnerEntries="@array/planets_array"
-        app:rightInput="Spinner"
+        app:rightInput="EditText"
+        app:rightEditTextLines="2"
         app:leftEditInputType="textPersonName"
-        app:rightEditInputType="textPersonName"/>
+        app:rightEditInputType="textMultiLine"/>
 
     <TextView
         android:id="@+id/text"
