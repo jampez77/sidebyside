@@ -5,7 +5,6 @@ import android.app.TimePickerDialog;
 import android.content.Context;
 import android.content.res.Configuration;
 import android.content.res.TypedArray;
-import android.graphics.Color;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.util.AttributeSet;
@@ -163,7 +162,7 @@ public class SideBySideView extends LinearLayout implements DatePickerDialog.OnD
                     @Override public void onTextChanged(CharSequence s, int start, int before, int count) { }
                     @Override public void afterTextChanged(Editable s) {
                         leftEditTextText = s.toString();
-                        validateEditText(leftET, s.toString(), leftEditInputType);
+                        validEditText(leftET, s.toString(), leftEditInputType);
                     }
                 });
 
@@ -293,7 +292,7 @@ public class SideBySideView extends LinearLayout implements DatePickerDialog.OnD
                     @Override public void onTextChanged(CharSequence s, int start, int before, int count) { }
                     @Override public void afterTextChanged(Editable s) {
                         rightEditTextText = s.toString();
-                        validateEditText(rightET, s.toString(), rightEditInputType);
+                        validEditText(rightET, s.toString(), rightEditInputType);
                     }
                 });
 
@@ -432,6 +431,11 @@ public class SideBySideView extends LinearLayout implements DatePickerDialog.OnD
         else
             setLeftError(null);
 
+        if(!validEditText(leftET, leftET.getText().toString(), leftEditInputType))
+            return false;
+
+        if (!validEditText(rightET, rightET.getText().toString(), rightEditInputType))
+            return false;
 
         //set right validation
         if(rightRequired && !rightIsValid)
@@ -454,21 +458,33 @@ public class SideBySideView extends LinearLayout implements DatePickerDialog.OnD
     }
 
     private void validation(){
-        validateEditText(leftET, leftET.getText().toString(), leftEditInputType);
-        validateEditText(rightET, rightET.getText().toString(), rightEditInputType);
+        validEditText(leftET, leftET.getText().toString(), leftEditInputType);
+        validEditText(rightET, rightET.getText().toString(), rightEditInputType);
     }
 
-    private void validateEditText(EditText editText, String input, String inputType){
-        if(input.length() > 0)
-            editText.setError((inputType.contains("EmailAddress") && !isValidEmail(input) ? "Invalid Email Address" : null));
-
+    private boolean validEditTextPasswords(){
         //if both inputTypes are passwords then check if they match
         if(rightEditInputType.contains("Password") && leftEditInputType.contains("Password")){
-            if(((rightEditTextText != null && rightEditTextText.length() > 0) || (leftEditTextText != null && leftEditTextText.length() > 0)) && (rightEditTextText != null && !rightEditTextText.equals(leftEditTextText)))
+            if(((rightEditTextText != null && rightEditTextText.length() > 0) || (leftEditTextText != null && leftEditTextText.length() > 0)) && (rightEditTextText != null && !rightEditTextText.equals(leftEditTextText))) {
                 rightET.setError("'" + leftET.getHint().toString() + "' does not match '" + rightET.getHint().toString() + "'");
-            else
+                return false;
+            }else {
                 rightET.setError(null);
+                return true;
+            }
         }
+        return true;
+    }
+
+    private boolean validEditText(EditText editText, String input, String inputType){
+
+        if(input.length() > 0){
+            boolean validEmail = isValidEmail(input);
+
+            editText.setError((inputType.contains("EmailAddress") && !validEmail ? "Invalid Email Address" : null));
+            return validEmail;
+        }
+        return validEditTextPasswords();
     }
 
     @SuppressWarnings("unused")
