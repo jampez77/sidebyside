@@ -1,41 +1,75 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    tools:context=".MainActivity">
+    xmlns:tools="http://schemas.android.com/tools">
 
-    <com.jampez.sidebyside.SideBySideView
-        android:id="@+id/names"
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:leftText="@string/first_name"
-        app:rightText="@string/last_name"
-        app:textAppearance="?android:attr/textAppearanceMedium"
-        android:padding="5dp"
-        android:layout_marginBottom="10dp"
-        app:textViewTextStyle="bold"
-        app:leftInput="EditText"
-        app:rightSpinnerEntries="@array/planets_array"
-        app:rightInput="EditText"
-        app:leftRequired="true"
-        app:leftEditInputType="textPassword"
-        app:rightEditInputType="textPassword"/>
+        android:orientation="vertical"
+        tools:context=".MainActivity">
 
-    <TextView
-        android:id="@+id/text"
-        android:padding="5dp"
-        android:textColor="@color/black"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        <com.jampez.sidebyside.SideBySideView
+            android:id="@+id/names"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:leftText="@string/first_name"
+            app:rightText="@string/last_name"
+            app:textAppearance="?android:attr/textAppearanceMedium"
+            app:textViewTextStyle="bold"
+            app:leftInput="EditText"
+            app:rightInput="EditText"
+            app:leftRequired="true"
+            app:rightRequired="true"
+            app:leftEditInputType="textPersonName"
+            app:rightEditInputType="textPersonName"/>
 
-    <Button
-        android:id="@+id/validate"
-        android:layout_gravity="center"
-        android:text="@string/validate"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+        <com.jampez.sidebyside.SideBySideView
+            android:id="@+id/contact_info"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:leftText="@string/phone"
+            app:rightText="@string/email"
+            app:textAppearance="?android:attr/textAppearanceMedium"
+            app:textViewTextStyle="bold"
+            app:leftInput="EditText"
+            app:rightInput="EditText"
+            app:leftRequired="true"
+            app:rightRequired="true"
+            app:leftEditInputType="phone"
+            app:rightEditInputType="textEmailAddress"/>
 
-</LinearLayout>
+        <com.jampez.sidebyside.SideBySideView
+            android:id="@+id/password"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:leftText="@string/password"
+            app:rightText="@string/confirm_password"
+            app:textAppearance="?android:attr/textAppearanceMedium"
+            app:textViewTextStyle="bold"
+            app:leftInput="EditText"
+            app:rightInput="EditText"
+            app:leftRequired="true"
+            app:rightRequired="true"
+            app:leftEditInputType="textPassword"
+            app:rightEditInputType="textPassword"/>
+
+        <TextView
+            android:id="@+id/text"
+            android:padding="5dp"
+            android:textColor="@color/black"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <Button
+            android:id="@+id/validate"
+            android:layout_gravity="center"
+            android:text="@string/validate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+    </LinearLayout>
+
+</ScrollView>

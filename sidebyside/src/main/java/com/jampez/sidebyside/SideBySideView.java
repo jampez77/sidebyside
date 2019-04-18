@@ -162,7 +162,7 @@ public class SideBySideView extends LinearLayout implements DatePickerDialog.OnD
                     @Override public void onTextChanged(CharSequence s, int start, int before, int count) { }
                     @Override public void afterTextChanged(Editable s) {
                         leftEditTextText = s.toString();
-                        validEditText(leftET, s.toString(), leftEditInputType);
+                        validEditText(leftET, s.toString(), leftEditInputType, leftRequired);
                     }
                 });
 
@@ -292,7 +292,7 @@ public class SideBySideView extends LinearLayout implements DatePickerDialog.OnD
                     @Override public void onTextChanged(CharSequence s, int start, int before, int count) { }
                     @Override public void afterTextChanged(Editable s) {
                         rightEditTextText = s.toString();
-                        validEditText(rightET, s.toString(), rightEditInputType);
+                        validEditText(rightET, s.toString(), rightEditInputType, rightRequired);
                     }
                 });
 
@@ -419,47 +419,30 @@ public class SideBySideView extends LinearLayout implements DatePickerDialog.OnD
 
     @SuppressWarnings("unused")
     public boolean isValid(){
+        boolean isValid = true;
 
-        boolean leftIsValid = (leftInput() != null && leftInput().length() > 0);
-        boolean rightIsValid = (rightInput() != null && rightInput().length() > 0);
+        boolean leftIsValid = validEditText(leftET, leftET.getText().toString(), leftEditInputType, leftRequired);
+        boolean rightIsValid = validEditText(rightET, rightET.getText().toString(), rightEditInputType, rightRequired);
 
         boolean bothRequired = (leftRequired && rightRequired);
 
-        //set left validation
-        if(leftRequired && !leftIsValid)
-            setLeftError("Required");
-        else
-            setLeftError(null);
-
-        if(!validEditText(leftET, leftET.getText().toString(), leftEditInputType))
-            return false;
-
-        if (!validEditText(rightET, rightET.getText().toString(), rightEditInputType))
-            return false;
-
-        //set right validation
-        if(rightRequired && !rightIsValid)
-            setRightError("Required");
-        else
-            setRightError(null);
-
         //left and right
         if(bothRequired)
-            return (leftIsValid && rightIsValid);
+            isValid = (leftIsValid && rightIsValid);
         else {
             //left only
             if (leftRequired)
-                return leftIsValid;
+                isValid = leftIsValid;
             //right only
             if (rightRequired)
-                return rightIsValid;
+                isValid = rightIsValid;
         }
-        return true;
+        return isValid;
     }
 
     private void validation(){
-        validEditText(leftET, leftET.getText().toString(), leftEditInputType);
-        validEditText(rightET, rightET.getText().toString(), rightEditInputType);
+        validEditText(leftET, leftET.getText().toString(), leftEditInputType, leftRequired);
+        validEditText(rightET, rightET.getText().toString(), rightEditInputType, rightRequired);
     }
 
     private boolean validEditTextPasswords(){
@@ -467,25 +450,31 @@ public class SideBySideView extends LinearLayout implements DatePickerDialog.OnD
         if(rightEditInputType.contains("Password") && leftEditInputType.contains("Password")){
             if(((rightEditTextText != null && rightEditTextText.length() > 0) || (leftEditTextText != null && leftEditTextText.length() > 0)) && (rightEditTextText != null && !rightEditTextText.equals(leftEditTextText))) {
                 rightET.setError("'" + leftET.getHint().toString() + "' does not match '" + rightET.getHint().toString() + "'");
-                return false;
+                return true;
             }else {
                 rightET.setError(null);
-                return true;
+                return false;
             }
         }
-        return true;
+        return false;
     }
 
-    private boolean validEditText(EditText editText, String input, String inputType){
+    private boolean validEditText(EditText editText, String input, String inputType, boolean isRequired){
+        boolean isValid = true;
+        boolean validEmail = isValidEmail(input);
 
-        validEditTextPasswords();
-        if(input.length() > 0){
-            boolean validEmail = isValidEmail(input);
+        if(isRequired && (input == null || input.length() == 0)) {
+            editText.setError("Required");
+            isValid = false;
+        }else if(input.length() > 0 && inputType.contains("EmailAddress") && !validEmail) {
+            editText.setError("Invalid Email Address");
+            isValid = false;
+        }else if(validEditTextPasswords()){
+            return false;
+        } else
+            editText.setError(null);
 
-            editText.setError((inputType.contains("EmailAddress") && !validEmail ? "Invalid Email Address" : null));
-            return validEmail;
-        }
-        return false;
+        return isValid;
     }
 
     @SuppressWarnings("unused")

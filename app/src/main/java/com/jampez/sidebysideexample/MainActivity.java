@@ -13,18 +13,21 @@ import com.jampez.sidebyside.SideBySideView;
 
 public class MainActivity extends AppCompatActivity {
 
+    SideBySideView names, contactInfo, passwords;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
         final TextView text = findViewById(R.id.text);
-        final SideBySideView names = findViewById(R.id.names);
+        names = findViewById(R.id.names);
+        contactInfo = findViewById(R.id.contact_info);
+        passwords = findViewById(R.id.password);
         names.setLeftInputListener(new TextWatcher() {
             @Override public void beforeTextChanged(CharSequence s, int start, int count, int after) { }
             @Override public void onTextChanged(CharSequence s, int start, int before, int count) { }
-            @Override
-            public void afterTextChanged(Editable s) {
+            @Override public void afterTextChanged(Editable s) {
                 text.setText(s.toString());
             }
         });
@@ -33,8 +36,15 @@ public class MainActivity extends AppCompatActivity {
         validate.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(names.isValid()){
+
+                boolean namesValid = names.isValid();
+                boolean contactInfoValid = contactInfo.isValid();
+                boolean passwordsValid = passwords.isValid();
+
+                if(namesValid && contactInfoValid && passwordsValid){
                     text.setText("Validated!");
+                }else{
+                    text.setText("Not Validated!");
                 }
             }
         });
