@@ -463,11 +463,11 @@ public class SideBySideView extends LinearLayout implements DatePickerDialog.OnD
                 if (!bs) {
                     leftET.setError((passwordErrorMessage != null && passwordErrorMessage.length() > 0) ? passwordErrorMessage : "Password not valid!");
                     return true;
-                }else{
+                }else
                     leftET.setError(null);
-                    return false;
-                }
-            }else if(((rightEditTextText != null && rightEditTextText.length() > 0) || (leftEditTextText != null && leftEditTextText.length() > 0)) && (rightEditTextText != null && !rightEditTextText.equals(leftEditTextText))) {
+
+            }
+            if(((rightEditTextText != null && rightEditTextText.length() > 0) || (leftEditTextText != null && leftEditTextText.length() > 0)) && (rightEditTextText != null && !rightEditTextText.equals(leftEditTextText))) {
                 rightET.setError("'" + leftET.getHint().toString() + "' does not match '" + rightET.getHint().toString() + "'");
                 return true;
             }else{
