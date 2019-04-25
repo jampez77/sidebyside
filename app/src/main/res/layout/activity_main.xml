@@ -53,6 +53,8 @@
             app:rightInput="EditText"
             app:leftRequired="true"
             app:rightRequired="true"
+            app:passwordValidationExpression="^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&amp;*-]).{8,}$"
+            app:passwordErrorMessage="Your password must be at least 8 characters long, must contain capitals and lower case, numbers and special characters (_-=+~|!@#$%^(){}[],./?)."
             app:leftEditInputType="textPassword"
             app:rightEditInputType="textPassword"/>
 

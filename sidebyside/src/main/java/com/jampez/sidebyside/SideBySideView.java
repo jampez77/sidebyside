@@ -22,6 +22,8 @@ import android.widget.TextView;
 import android.widget.TimePicker;
 
 import java.util.Calendar;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 import androidx.core.widget.TextViewCompat;
 
@@ -67,6 +69,8 @@ public class SideBySideView extends LinearLayout implements DatePickerDialog.OnD
     private final String rightEditInputType;
     private final String rightEditTextHint;
     private final String leftEditTextHint;
+    private final String passwordValidationExpression;
+    private final String passwordErrorMessage;
 
     private String SET_DATE, leftTimeVal, rightTimeVal, rightDateTimeVal, leftDateTimeVal;
     private boolean rightCbVal, leftCbVal, rightTimeBool, leftTimeBool, rightDateTimeBool, leftDateTimeBool;
@@ -102,6 +106,8 @@ public class SideBySideView extends LinearLayout implements DatePickerDialog.OnD
         hideRightView = a.getBoolean(R.styleable.SideBySideView_hideRightView, false);
         leftRequired = a.getBoolean(R.styleable.SideBySideView_leftRequired, false);
         rightRequired = a.getBoolean(R.styleable.SideBySideView_rightRequired, false);
+        passwordValidationExpression = a.getString(R.styleable.SideBySideView_passwordValidationExpression);
+        passwordErrorMessage = a.getString(R.styleable.SideBySideView_passwordErrorMessage);
 
         a.recycle();
         init();
@@ -131,6 +137,8 @@ public class SideBySideView extends LinearLayout implements DatePickerDialog.OnD
         rightSP = findViewById(R.id.right_sp);
 
         calendar = Calendar.getInstance();
+
+
 
         switch (leftInput){
             case EditText:
@@ -448,10 +456,21 @@ public class SideBySideView extends LinearLayout implements DatePickerDialog.OnD
     private boolean validEditTextPasswords(){
         //if both inputTypes are passwords then check if they match
         if(rightEditInputType.contains("Password") && leftEditInputType.contains("Password")){
-            if(((rightEditTextText != null && rightEditTextText.length() > 0) || (leftEditTextText != null && leftEditTextText.length() > 0)) && (rightEditTextText != null && !rightEditTextText.equals(leftEditTextText))) {
+            if(passwordValidationExpression != null && passwordValidationExpression.length() > 0) {
+                Pattern ps = Pattern.compile(passwordValidationExpression);
+                Matcher ms = ps.matcher(leftEditTextText);
+                boolean bs = ms.matches();
+                if (!bs) {
+                    leftET.setError((passwordErrorMessage != null && passwordErrorMessage.length() > 0) ? passwordErrorMessage : "Password not valid!");
+                    return true;
+                }else{
+                    leftET.setError(null);
+                    return false;
+                }
+            }else if(((rightEditTextText != null && rightEditTextText.length() > 0) || (leftEditTextText != null && leftEditTextText.length() > 0)) && (rightEditTextText != null && !rightEditTextText.equals(leftEditTextText))) {
                 rightET.setError("'" + leftET.getHint().toString() + "' does not match '" + rightET.getHint().toString() + "'");
                 return true;
-            }else {
+            }else{
                 rightET.setError(null);
                 return false;
             }

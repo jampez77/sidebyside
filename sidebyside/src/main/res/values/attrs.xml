@@ -22,5 +22,7 @@
         <attr name="hideRightView" format="boolean"/>
         <attr name="leftRequired" format="boolean"/>
         <attr name="rightRequired" format="boolean"/>
+        <attr name="passwordValidationExpression" format="string"/>
+        <attr name="passwordErrorMessage" format="string"/>
     </declare-styleable>
 </resources>

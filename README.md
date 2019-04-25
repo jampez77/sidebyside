@@ -63,3 +63,5 @@ Each input used has a corresponding listener this would be either `OnItemSelecte
 * leftEditTextHint/rightEditTextHint - set left/right EditText hint
 * hideRightView - turn view into single input with label by hiding right side
 * leftRequired/rightRequired - force input to be required for validation
+* passwordValidationExpression - Regular expression for password validation
+* passwordErrorMessage - Error message to display when password validation fails
