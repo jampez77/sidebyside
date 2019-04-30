@@ -443,25 +443,6 @@ public class SideBySideView extends LinearLayout implements DatePickerDialog.OnD
 
     public boolean haveInputsBeenEdited(){
 
-        boolean rightInputUsed = false;
-        switch (rightInput) {
-            case EditText:
-                rightInputUsed = rightETUsed;
-                break;
-            case CheckBox:
-                rightInputUsed = rightCBUsed;
-                break;
-            case Spinner:
-                rightInputUsed = rightSpUsed;
-                break;
-            case Time:
-                rightInputUsed = rightTimeUsed;
-                break;
-            case DateTime:
-                rightInputUsed = rightDateTimeUsed;
-                break;
-        }
-
         boolean leftInputUsed = false;
         switch (leftInput) {
             case EditText:
@@ -481,9 +462,29 @@ public class SideBySideView extends LinearLayout implements DatePickerDialog.OnD
                 break;
         }
 
-        boolean haveInputBeenUsed = (leftInputUsed && rightInputUsed);
-        if(hideRightView)
-            haveInputBeenUsed = leftInputUsed;
+        boolean haveInputBeenUsed = leftInputUsed;
+
+        if(!hideRightView) {
+            boolean rightInputUsed = false;
+            switch (rightInput) {
+                case EditText:
+                    rightInputUsed = rightETUsed;
+                    break;
+                case CheckBox:
+                    rightInputUsed = rightCBUsed;
+                    break;
+                case Spinner:
+                    rightInputUsed = rightSpUsed;
+                    break;
+                case Time:
+                    rightInputUsed = rightTimeUsed;
+                    break;
+                case DateTime:
+                    rightInputUsed = rightDateTimeUsed;
+                    break;
+            }
+            haveInputBeenUsed = (leftInputUsed && rightInputUsed);
+        }
 
         return haveInputBeenUsed;
     }
