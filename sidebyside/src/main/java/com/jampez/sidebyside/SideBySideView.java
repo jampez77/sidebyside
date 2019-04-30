@@ -49,7 +49,6 @@ public class SideBySideView extends LinearLayout implements DatePickerDialog.OnD
 
     private Calendar calendar;
     private View updateView;
-
     //TextViews
     private TextView lowerLeftTV, lowerRightTV;
 
@@ -75,6 +74,8 @@ public class SideBySideView extends LinearLayout implements DatePickerDialog.OnD
     private String SET_DATE, leftTimeVal, rightTimeVal, rightDateTimeVal, leftDateTimeVal;
     private boolean rightCbVal, leftCbVal, rightTimeBool, leftTimeBool, rightDateTimeBool, leftDateTimeBool;
     private int leftSpinnerVal = 0, rightSpinnerVal = 0;
+
+    private boolean leftETUsed, leftCBUsed, leftSpUsed, leftTimeUsed, leftDateTimeUsed, rightETUsed, rightCBUsed, rightSpUsed, rightTimeUsed, rightDateTimeUsed;
 
     public SideBySideView(Context context) {
         this(context,null);
@@ -167,6 +168,7 @@ public class SideBySideView extends LinearLayout implements DatePickerDialog.OnD
                     @Override public void beforeTextChanged(CharSequence s, int start, int count, int after) { }
                     @Override public void onTextChanged(CharSequence s, int start, int before, int count) { }
                     @Override public void afterTextChanged(Editable s) {
+                        leftETUsed = true;
                         leftEditTextText = s.toString();
                         validEditText(leftET, s.toString(), leftEditInputType, leftRequired);
                     }
@@ -185,6 +187,7 @@ public class SideBySideView extends LinearLayout implements DatePickerDialog.OnD
                     public void onClick(View v) {
                         leftCbVal = !leftCB.isChecked();
                         leftCB.setChecked(leftCbVal);
+                        leftCBUsed = true;
                     }
                 });
 
@@ -203,6 +206,7 @@ public class SideBySideView extends LinearLayout implements DatePickerDialog.OnD
                     @Override
                     public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                         leftSpinnerVal = position;
+                        leftSpUsed = true;
                     }
                     @Override public void onNothingSelected(AdapterView<?> parent) { }
                 });
@@ -221,6 +225,7 @@ public class SideBySideView extends LinearLayout implements DatePickerDialog.OnD
                     public void onClick(View v) {
                         preventDoubleClick(v);
                         updateView = v;
+                        leftTimeUsed = true;
                         leftTimeBool = true;
                         showTimePickerDialog(context, SideBySideView.this);
                     }
@@ -231,6 +236,7 @@ public class SideBySideView extends LinearLayout implements DatePickerDialog.OnD
                     public boolean onLongClick(View v) {
                         lowerLeftTV.setText("");
                         leftTimeVal = null;
+                        leftTimeUsed = true;
                         return true;
                     }
                 });
@@ -250,6 +256,7 @@ public class SideBySideView extends LinearLayout implements DatePickerDialog.OnD
                     public void onClick(View v) {
                         preventDoubleClick(v);
                         updateView = v;
+                        leftDateTimeUsed = true;
                         leftDateTimeBool = true;
                         showDatePickerDialog(calendar, context, SideBySideView.this);
                     }
@@ -260,6 +267,7 @@ public class SideBySideView extends LinearLayout implements DatePickerDialog.OnD
                     public boolean onLongClick(View v) {
                         lowerLeftTV.setText("");
                         leftDateTimeVal = null;
+                        leftDateTimeUsed = true;
                         return true;
                     }
                 });
@@ -299,6 +307,7 @@ public class SideBySideView extends LinearLayout implements DatePickerDialog.OnD
                         @Override public void onTextChanged(CharSequence s, int start, int before, int count) { }
                         @Override public void afterTextChanged(Editable s) {
                             rightEditTextText = s.toString();
+                            rightETUsed = true;
                             validEditText(rightET, s.toString(), rightEditInputType, rightRequired);
                         }
                     });
@@ -316,6 +325,7 @@ public class SideBySideView extends LinearLayout implements DatePickerDialog.OnD
                         public void onClick(View v) {
                             rightCbVal = !rightCB.isChecked();
                             rightCB.setChecked(rightCbVal);
+                            rightCBUsed = true;
                         }
                     });
 
@@ -334,6 +344,7 @@ public class SideBySideView extends LinearLayout implements DatePickerDialog.OnD
                         @Override
                         public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                             rightSpinnerVal = position;
+                            rightSpUsed = true;
                         }
                         @Override public void onNothingSelected(AdapterView<?> parent) { }
                     });
@@ -352,6 +363,7 @@ public class SideBySideView extends LinearLayout implements DatePickerDialog.OnD
                         public void onClick(View v) {
                             preventDoubleClick(v);
                             updateView = v;
+                            rightTimeUsed = true;
                             rightTimeBool = true;
                             showTimePickerDialog(context, SideBySideView.this);
                         }
@@ -361,6 +373,7 @@ public class SideBySideView extends LinearLayout implements DatePickerDialog.OnD
                         @Override
                         public boolean onLongClick(View v) {
                             lowerRightTV.setText("");
+                            rightTimeUsed = true;
                             rightTimeVal = null;
                             return true;
                         }
@@ -380,6 +393,7 @@ public class SideBySideView extends LinearLayout implements DatePickerDialog.OnD
                         public void onClick(View v) {
                             preventDoubleClick(v);
                             updateView = v;
+                            rightDateTimeUsed = true;
                             rightDateTimeBool = true;
                             showDatePickerDialog(calendar, context, SideBySideView.this);
                         }
@@ -389,6 +403,7 @@ public class SideBySideView extends LinearLayout implements DatePickerDialog.OnD
                         @Override
                         public boolean onLongClick(View v) {
                             lowerRightTV.setText("");
+                            rightDateTimeUsed = true;
                             rightDateTimeVal = null;
                             return true;
                         }
@@ -424,6 +439,53 @@ public class SideBySideView extends LinearLayout implements DatePickerDialog.OnD
         //Override EditText focusing based on visibility of neighbouring view.
         if(leftET.getVisibility() == View.GONE || leftLayout.getVisibility() == View.GONE)
             rightET.setImeOptions(EditorInfo.IME_ACTION_DONE);
+    }
+
+    public boolean haveInputsBeenEdited(){
+
+        boolean rightInputUsed = false;
+        switch (rightInput) {
+            case EditText:
+                rightInputUsed = rightETUsed;
+                break;
+            case CheckBox:
+                rightInputUsed = rightCBUsed;
+                break;
+            case Spinner:
+                rightInputUsed = rightSpUsed;
+                break;
+            case Time:
+                rightInputUsed = rightTimeUsed;
+                break;
+            case DateTime:
+                rightInputUsed = rightDateTimeUsed;
+                break;
+        }
+
+        boolean leftInputUsed = false;
+        switch (leftInput) {
+            case EditText:
+                leftInputUsed = leftETUsed;
+                break;
+            case CheckBox:
+                leftInputUsed = leftCBUsed;
+                break;
+            case Spinner:
+                leftInputUsed = leftSpUsed;
+                break;
+            case Time:
+                leftInputUsed = leftTimeUsed;
+                break;
+            case DateTime:
+                leftInputUsed = leftDateTimeUsed;
+                break;
+        }
+
+        boolean haveInputBeenUsed = (leftInputUsed && rightInputUsed);
+        if(hideRightView)
+            haveInputBeenUsed = leftInputUsed;
+
+        return haveInputBeenUsed;
     }
 
     @SuppressWarnings("unused")
