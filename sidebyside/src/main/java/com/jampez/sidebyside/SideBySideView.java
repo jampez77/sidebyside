@@ -138,8 +138,6 @@ public class SideBySideView extends LinearLayout implements DatePickerDialog.OnD
 
         calendar = Calendar.getInstance();
 
-
-
         switch (leftInput){
             case EditText:
                 //Set EditText to be visible element for leftInput
@@ -270,157 +268,160 @@ public class SideBySideView extends LinearLayout implements DatePickerDialog.OnD
                 break;
         }
 
-        switch (rightInput){
-            case EditText:
-                //Set EditText to be visible element for leftInput
-                rightET.setVisibility(VISIBLE);
-                rightCB.setVisibility(GONE);
-                rightCB.setVisibility(GONE);
-                lowerRightTV.setVisibility(GONE);
+        if(!hideRightView){
+            switch (rightInput){
+                case EditText:
+                    //Set EditText to be visible element for leftInput
+                    rightET.setVisibility(VISIBLE);
+                    rightCB.setVisibility(GONE);
+                    rightCB.setVisibility(GONE);
+                    lowerRightTV.setVisibility(GONE);
 
-                //Set TextAppearance
-                TextViewCompat.setTextAppearance(rightET, textAppearance);
+                    //Set TextAppearance
+                    TextViewCompat.setTextAppearance(rightET, textAppearance);
 
-                //Set Hint
-                if(rightEditTextHint != null && rightEditTextHint.length() > 0)
-                    rightET.setHint(rightEditTextHint);
-                else
-                    rightET.setHint(rightText);
+                    //Set Hint
+                    if(rightEditTextHint != null && rightEditTextHint.length() > 0)
+                        rightET.setHint(rightEditTextHint);
+                    else
+                        rightET.setHint(rightText);
 
-                //Set input type
-                rightET.setInputType(getInputType(rightEditInputType));
+                    //Set input type
+                    rightET.setInputType(getInputType(rightEditInputType));
 
-                //Set typeface style
-                rightET.setTypeface(rightET.getTypeface(), getTypeFace(editTextTextStyle));
+                    //Set typeface style
+                    rightET.setTypeface(rightET.getTypeface(), getTypeFace(editTextTextStyle));
 
-                //Set text
-                rightET.setText(rightEditTextText);
-                rightET.addTextChangedListener(new TextWatcher() {
-                    @Override public void beforeTextChanged(CharSequence s, int start, int count, int after) { }
-                    @Override public void onTextChanged(CharSequence s, int start, int before, int count) { }
-                    @Override public void afterTextChanged(Editable s) {
-                        rightEditTextText = s.toString();
-                        validEditText(rightET, s.toString(), rightEditInputType, rightRequired);
-                    }
-                });
+                    //Set text
+                    rightET.setText(rightEditTextText);
+                    rightET.addTextChangedListener(new TextWatcher() {
+                        @Override public void beforeTextChanged(CharSequence s, int start, int count, int after) { }
+                        @Override public void onTextChanged(CharSequence s, int start, int before, int count) { }
+                        @Override public void afterTextChanged(Editable s) {
+                            rightEditTextText = s.toString();
+                            validEditText(rightET, s.toString(), rightEditInputType, rightRequired);
+                        }
+                    });
 
-                break;
-            case CheckBox:
-                //Set CheckBox to be visible element for leftInput
-                rightET.setVisibility(GONE);
-                rightCB.setVisibility(VISIBLE);
-                rightSP.setVisibility(GONE);
-                lowerRightTV.setVisibility(GONE);
+                    break;
+                case CheckBox:
+                    //Set CheckBox to be visible element for leftInput
+                    rightET.setVisibility(GONE);
+                    rightCB.setVisibility(VISIBLE);
+                    rightSP.setVisibility(GONE);
+                    lowerRightTV.setVisibility(GONE);
 
-                rightLayout.setOnClickListener(new OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-                        rightCbVal = !rightCB.isChecked();
-                        rightCB.setChecked(rightCbVal);
-                    }
-                });
+                    rightLayout.setOnClickListener(new OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+                            rightCbVal = !rightCB.isChecked();
+                            rightCB.setChecked(rightCbVal);
+                        }
+                    });
 
-                if(rightCbVal)rightCB.setChecked(true);
-                break;
-            case Spinner:
-                //Set Spinner to be visible element for leftInput
-                rightET.setVisibility(GONE);
-                rightCB.setVisibility(GONE);
-                rightSP.setVisibility(VISIBLE);
-                lowerRightTV.setVisibility(GONE);
+                    if(rightCbVal)rightCB.setChecked(true);
+                    break;
+                case Spinner:
+                    //Set Spinner to be visible element for leftInput
+                    rightET.setVisibility(GONE);
+                    rightCB.setVisibility(GONE);
+                    rightSP.setVisibility(VISIBLE);
+                    lowerRightTV.setVisibility(GONE);
 
-                ArrayAdapter<CharSequence> spinnerArrayAdapter = new ArrayAdapter<>(context, android.R.layout.simple_spinner_dropdown_item, rightSpinnerEntries);
-                rightSP.setAdapter(spinnerArrayAdapter);
-                rightSP.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-                    @Override
-                    public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                        rightSpinnerVal = position;
-                    }
-                    @Override public void onNothingSelected(AdapterView<?> parent) { }
-                });
+                    ArrayAdapter<CharSequence> spinnerArrayAdapter = new ArrayAdapter<>(context, android.R.layout.simple_spinner_dropdown_item, rightSpinnerEntries);
+                    rightSP.setAdapter(spinnerArrayAdapter);
+                    rightSP.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+                        @Override
+                        public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                            rightSpinnerVal = position;
+                        }
+                        @Override public void onNothingSelected(AdapterView<?> parent) { }
+                    });
 
-                rightSP.setSelection(rightSpinnerVal);
-                break;
-            case Time:
-                rightET.setVisibility(GONE);
-                rightCB.setVisibility(GONE);
-                rightSP.setVisibility(GONE);
-                lowerRightTV.setVisibility(VISIBLE);
+                    rightSP.setSelection(rightSpinnerVal);
+                    break;
+                case Time:
+                    rightET.setVisibility(GONE);
+                    rightCB.setVisibility(GONE);
+                    rightSP.setVisibility(GONE);
+                    lowerRightTV.setVisibility(VISIBLE);
 
-                lowerRightTV.setCompoundDrawablesWithIntrinsicBounds(null, null, getDrawableFromInt(context, R.mipmap.ic_access_time_black_24dp), null);
-                lowerRightTV.setOnClickListener(new OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-                        preventDoubleClick(v);
-                        updateView = v;
-                        rightTimeBool = true;
-                        showTimePickerDialog(context, SideBySideView.this);
-                    }
-                });
+                    lowerRightTV.setCompoundDrawablesWithIntrinsicBounds(null, null, getDrawableFromInt(context, R.mipmap.ic_access_time_black_24dp), null);
+                    lowerRightTV.setOnClickListener(new OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+                            preventDoubleClick(v);
+                            updateView = v;
+                            rightTimeBool = true;
+                            showTimePickerDialog(context, SideBySideView.this);
+                        }
+                    });
 
-                lowerRightTV.setOnLongClickListener(new OnLongClickListener() {
-                    @Override
-                    public boolean onLongClick(View v) {
-                        lowerRightTV.setText("");
-                        rightTimeVal = null;
-                        return true;
-                    }
-                });
+                    lowerRightTV.setOnLongClickListener(new OnLongClickListener() {
+                        @Override
+                        public boolean onLongClick(View v) {
+                            lowerRightTV.setText("");
+                            rightTimeVal = null;
+                            return true;
+                        }
+                    });
 
-                lowerRightTV.setText(rightTimeVal);
-                break;
-            case DateTime:
-                rightET.setVisibility(GONE);
-                rightCB.setVisibility(GONE);
-                rightSP.setVisibility(GONE);
-                lowerRightTV.setVisibility(VISIBLE);
+                    lowerRightTV.setText(rightTimeVal);
+                    break;
+                case DateTime:
+                    rightET.setVisibility(GONE);
+                    rightCB.setVisibility(GONE);
+                    rightSP.setVisibility(GONE);
+                    lowerRightTV.setVisibility(VISIBLE);
 
-                lowerRightTV.setCompoundDrawablesWithIntrinsicBounds(null, null, getDrawableFromInt(context, R.mipmap.ic_date_range_black_24dp), null);
-                lowerRightTV.setOnClickListener(new OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-                        preventDoubleClick(v);
-                        updateView = v;
-                        rightDateTimeBool = true;
-                        showDatePickerDialog(calendar, context, SideBySideView.this);
-                    }
-                });
+                    lowerRightTV.setCompoundDrawablesWithIntrinsicBounds(null, null, getDrawableFromInt(context, R.mipmap.ic_date_range_black_24dp), null);
+                    lowerRightTV.setOnClickListener(new OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+                            preventDoubleClick(v);
+                            updateView = v;
+                            rightDateTimeBool = true;
+                            showDatePickerDialog(calendar, context, SideBySideView.this);
+                        }
+                    });
 
-                lowerRightTV.setOnLongClickListener(new OnLongClickListener() {
-                    @Override
-                    public boolean onLongClick(View v) {
-                        lowerRightTV.setText("");
-                        rightDateTimeVal = null;
-                        return true;
-                    }
-                });
+                    lowerRightTV.setOnLongClickListener(new OnLongClickListener() {
+                        @Override
+                        public boolean onLongClick(View v) {
+                            lowerRightTV.setText("");
+                            rightDateTimeVal = null;
+                            return true;
+                        }
+                    });
 
-                lowerRightTV.setText(rightDateTimeVal);
-                break;
-        }
+                    lowerRightTV.setText(rightDateTimeVal);
+                    break;
+            }
+
+            TextView rightTV = findViewById(R.id.right_tv);
+
+            TextViewCompat.setTextAppearance(rightTV, textAppearance);
+            rightTV.setText(rightText);
+            rightTV.setTypeface(rightTV.getTypeface(), getTypeFace(textViewTextStyle));
+
+            if(rightET.getVisibility() == View.GONE || rightLayout.getVisibility() == View.GONE)
+                leftET.setImeOptions(EditorInfo.IME_ACTION_DONE);
+
+        }else
+            rightLayout.setVisibility(GONE);
 
         TextView leftTV  = findViewById(R.id.left_tv);
-        TextView rightTV = findViewById(R.id.right_tv);
 
         //Setting Text Appearance
         TextViewCompat.setTextAppearance(leftTV, textAppearance);
-        TextViewCompat.setTextAppearance(rightTV, textAppearance);
 
         //Setting Labels
         leftTV.setText(leftText);
-        rightTV.setText(rightText);
 
         //Setting TextView Style
         leftTV.setTypeface(leftTV.getTypeface(), getTypeFace(textViewTextStyle));
-        rightTV.setTypeface(rightTV.getTypeface(), getTypeFace(textViewTextStyle));
-
-        if(hideRightView)
-            rightLayout.setVisibility(GONE);
 
         //Override EditText focusing based on visibility of neighbouring view.
-        if(rightET.getVisibility() == View.GONE || rightLayout.getVisibility() == View.GONE)
-            leftET.setImeOptions(EditorInfo.IME_ACTION_DONE);
-
         if(leftET.getVisibility() == View.GONE || leftLayout.getVisibility() == View.GONE)
             rightET.setImeOptions(EditorInfo.IME_ACTION_DONE);
     }
@@ -450,12 +451,14 @@ public class SideBySideView extends LinearLayout implements DatePickerDialog.OnD
 
     private void validation(){
         validEditText(leftET, leftET.getText().toString(), leftEditInputType, leftRequired);
-        validEditText(rightET, rightET.getText().toString(), rightEditInputType, rightRequired);
+
+        if(!hideRightView)
+            validEditText(rightET, rightET.getText().toString(), rightEditInputType, rightRequired);
     }
 
     private boolean validEditTextPasswords(){
         //if both inputTypes are passwords then check if they match
-        if(rightEditInputType.contains("Password") && leftEditInputType.contains("Password")){
+        if(!hideRightView && rightEditInputType.contains("Password") && leftEditInputType.contains("Password")){
             if(passwordValidationExpression != null && passwordValidationExpression.length() > 0) {
                 Pattern ps = Pattern.compile(passwordValidationExpression);
                 Matcher ms = ps.matcher(leftEditTextText);

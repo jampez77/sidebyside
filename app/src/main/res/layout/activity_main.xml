@@ -58,6 +58,18 @@
             app:leftEditInputType="textPassword"
             app:rightEditInputType="textPassword"/>
 
+        <com.jampez.sidebyside.SideBySideView
+            android:id="@+id/authorisation_code"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:leftText="@string/authorisation_code"
+            app:textAppearance="?android:attr/textAppearanceMedium"
+            app:textViewTextStyle="bold"
+            app:leftInput="EditText"
+            app:leftRequired="true"
+            app:hideRightView="true"
+            app:leftEditInputType="textCapCharacters"/>
+
         <TextView
             android:id="@+id/text"
             android:padding="5dp"
