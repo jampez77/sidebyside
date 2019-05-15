@@ -121,6 +121,86 @@ public class SideBySideView extends LinearLayout implements DatePickerDialog.OnD
         validation();
     }
 
+    public void setLeftInput(Object input){
+        switch (leftInput) {
+            case EditText:
+                if(input instanceof String) {
+                    leftET.setText((String)input);
+                    leftEditTextText = (String)input;
+                }else
+                    throw new RuntimeException(leftInput + " Input MUST be type String");
+                break;
+            case CheckBox:
+                if(input instanceof Boolean) {
+                    leftCB.setChecked((boolean)input);
+                    leftCbVal = (boolean)input;
+                }else
+                    throw new RuntimeException(leftInput + " Input MUST be type Boolean");
+                break;
+            case Spinner:
+                if(input instanceof Integer) {
+                    leftSP.setSelection((int)input);
+                    leftSpinnerVal = (int)input;
+                }else
+                    throw new RuntimeException(leftInput + " Input MUST be type Integer");
+                break;
+            case Time:
+                if(input instanceof String) {
+                    lowerLeftTV.setText((String)input);
+                    leftTimeVal = (String)input;
+                }else
+                    throw new RuntimeException(leftInput + " Input MUST be type String");
+                break;
+            case DateTime:
+                if(input instanceof String) {
+                    lowerLeftTV.setText((String)input);
+                    leftDateTimeVal = (String)input;
+                }else
+                    throw new RuntimeException(leftInput + " Input MUST be type String");
+                break;
+        }
+    }
+
+    public void setRightInput(Object input){
+        switch (rightInput) {
+            case EditText:
+                if(input instanceof String) {
+                    rightET.setText((String)input);
+                    rightEditTextText = (String)input;
+                }else
+                    throw new RuntimeException(rightInput + " Input MUST be type String");
+                break;
+            case CheckBox:
+                if(input instanceof Boolean) {
+                    rightCB.setChecked((boolean)input);
+                    rightCbVal = (boolean)input;
+                }else
+                    throw new RuntimeException(rightInput + " Input MUST be type Boolean");
+                break;
+            case Spinner:
+                if(input instanceof Integer) {
+                    rightSP.setSelection((int)input);
+                    rightSpinnerVal = (int)input;
+                }else
+                    throw new RuntimeException(rightInput + " Input MUST be type Integer");
+                break;
+            case Time:
+                if(input instanceof String) {
+                    lowerRightTV.setText((String)input);
+                    rightTimeVal = (String)input;
+                }else
+                    throw new RuntimeException(rightInput + " Input MUST be type String");
+                break;
+            case DateTime:
+                if(input instanceof String) {
+                    lowerRightTV.setText((String)input);
+                    rightDateTimeVal = (String)input;
+                }else
+                    throw new RuntimeException(rightInput + " Input MUST be type String");
+                break;
+        }
+    }
+
     private void init(){
         inflate(getContext(), R.layout.side_by_side,this);
 
@@ -513,10 +593,12 @@ public class SideBySideView extends LinearLayout implements DatePickerDialog.OnD
     }
 
     private void validation(){
-        validEditText(leftET, leftET.getText().toString(), leftEditInputType, leftRequired);
+        if(haveInputsBeenEdited()) {
+            validEditText(leftET, leftET.getText().toString(), leftEditInputType, leftRequired);
 
-        if(!hideRightView)
-            validEditText(rightET, rightET.getText().toString(), rightEditInputType, rightRequired);
+            if (!hideRightView)
+                validEditText(rightET, rightET.getText().toString(), rightEditInputType, rightRequired);
+        }
     }
 
     private boolean validEditTextPasswords(){

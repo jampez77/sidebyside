@@ -22,6 +22,7 @@ public class MainActivity extends AppCompatActivity {
 
         final TextView text = findViewById(R.id.text);
         names = findViewById(R.id.names);
+        names.setLeftInput("testing");
         contactInfo = findViewById(R.id.contact_info);
         passwords = findViewById(R.id.password);
         authCode = findViewById(R.id.authorisation_code);
@@ -43,11 +44,10 @@ public class MainActivity extends AppCompatActivity {
                 boolean passwordsValid = passwords.isValid();
                 boolean authCodeValid = authCode.isValid();
 
-                if(namesValid && contactInfoValid && passwordsValid && authCodeValid){
+                if(namesValid && contactInfoValid && passwordsValid && authCodeValid)
                     text.setText("Validated!");
-                }else{
+                else
                     text.setText("Not Validated!");
-                }
             }
         });
     }
