@@ -24,5 +24,7 @@
         <attr name="rightRequired" format="boolean"/>
         <attr name="passwordValidationExpression" format="string"/>
         <attr name="passwordErrorMessage" format="string"/>
+        <attr name="leftInputEnabled" format="boolean"/>
+        <attr name="rightInputEnabled" format="boolean"/>
     </declare-styleable>
 </resources>

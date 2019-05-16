@@ -13,7 +13,7 @@ This is a simple merged view to easily display two inputs with labels side  by s
 
 ```
 dependencies {
-    implementation 'com.github.jampez77:sidebyside:1.0.16'
+    implementation 'com.github.jampez77:sidebyside:1.0.17'
 }
 ```
 
@@ -65,3 +65,4 @@ Each input used has a corresponding listener this would be either `OnItemSelecte
 * leftRequired/rightRequired - force input to be required for validation
 * passwordValidationExpression - Regular expression for password validation
 * passwordErrorMessage - Error message to display when password validation fails
+* leftInputEnabled/rightInputEnabled - disable/enable input

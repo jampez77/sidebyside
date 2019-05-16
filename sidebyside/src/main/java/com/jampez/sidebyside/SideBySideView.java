@@ -38,7 +38,7 @@ import static com.jampez.sidebyside.Statics.showTimePickerDialog;
 public class SideBySideView extends LinearLayout implements DatePickerDialog.OnDateSetListener, TimePickerDialog.OnTimeSetListener {
 
     private final int textAppearance;
-    private final boolean hideRightView, leftRequired, rightRequired;
+    private boolean hideRightView, leftRequired, rightRequired, leftEnabled, rightEnabled;
     private final CharSequence[] rightSpinnerEntries, leftSpinnerEntries;
     //EditTexts
     private EditText leftET, rightET;
@@ -109,6 +109,8 @@ public class SideBySideView extends LinearLayout implements DatePickerDialog.OnD
         rightRequired = a.getBoolean(R.styleable.SideBySideView_rightRequired, false);
         passwordValidationExpression = a.getString(R.styleable.SideBySideView_passwordValidationExpression);
         passwordErrorMessage = a.getString(R.styleable.SideBySideView_passwordErrorMessage);
+        leftEnabled = a.getBoolean(R.styleable.SideBySideView_leftInputEnabled, true);
+        rightEnabled = a.getBoolean(R.styleable.SideBySideView_rightInputEnabled, true);
 
         a.recycle();
         init();
@@ -116,89 +118,10 @@ public class SideBySideView extends LinearLayout implements DatePickerDialog.OnD
 
     @Override
     protected void onConfigurationChanged(Configuration newConfig) {
+        super.onConfigurationChanged(newConfig);
         removeAllViews();
         init();
         validation();
-    }
-
-    public void setLeftInput(Object input){
-        switch (leftInput) {
-            case EditText:
-                if(input instanceof String) {
-                    leftET.setText((String)input);
-                    leftEditTextText = (String)input;
-                }else
-                    throw new RuntimeException(leftInput + " Input MUST be type String");
-                break;
-            case CheckBox:
-                if(input instanceof Boolean) {
-                    leftCB.setChecked((boolean)input);
-                    leftCbVal = (boolean)input;
-                }else
-                    throw new RuntimeException(leftInput + " Input MUST be type Boolean");
-                break;
-            case Spinner:
-                if(input instanceof Integer) {
-                    leftSP.setSelection((int)input);
-                    leftSpinnerVal = (int)input;
-                }else
-                    throw new RuntimeException(leftInput + " Input MUST be type Integer");
-                break;
-            case Time:
-                if(input instanceof String) {
-                    lowerLeftTV.setText((String)input);
-                    leftTimeVal = (String)input;
-                }else
-                    throw new RuntimeException(leftInput + " Input MUST be type String");
-                break;
-            case DateTime:
-                if(input instanceof String) {
-                    lowerLeftTV.setText((String)input);
-                    leftDateTimeVal = (String)input;
-                }else
-                    throw new RuntimeException(leftInput + " Input MUST be type String");
-                break;
-        }
-    }
-
-    public void setRightInput(Object input){
-        switch (rightInput) {
-            case EditText:
-                if(input instanceof String) {
-                    rightET.setText((String)input);
-                    rightEditTextText = (String)input;
-                }else
-                    throw new RuntimeException(rightInput + " Input MUST be type String");
-                break;
-            case CheckBox:
-                if(input instanceof Boolean) {
-                    rightCB.setChecked((boolean)input);
-                    rightCbVal = (boolean)input;
-                }else
-                    throw new RuntimeException(rightInput + " Input MUST be type Boolean");
-                break;
-            case Spinner:
-                if(input instanceof Integer) {
-                    rightSP.setSelection((int)input);
-                    rightSpinnerVal = (int)input;
-                }else
-                    throw new RuntimeException(rightInput + " Input MUST be type Integer");
-                break;
-            case Time:
-                if(input instanceof String) {
-                    lowerRightTV.setText((String)input);
-                    rightTimeVal = (String)input;
-                }else
-                    throw new RuntimeException(rightInput + " Input MUST be type String");
-                break;
-            case DateTime:
-                if(input instanceof String) {
-                    lowerRightTV.setText((String)input);
-                    rightDateTimeVal = (String)input;
-                }else
-                    throw new RuntimeException(rightInput + " Input MUST be type String");
-                break;
-        }
     }
 
     private void init(){
@@ -356,6 +279,8 @@ public class SideBySideView extends LinearLayout implements DatePickerDialog.OnD
                 break;
         }
 
+        setLeftInputEnabled(leftEnabled);
+
         if(!hideRightView){
             switch (rightInput){
                 case EditText:
@@ -386,9 +311,11 @@ public class SideBySideView extends LinearLayout implements DatePickerDialog.OnD
                         @Override public void beforeTextChanged(CharSequence s, int start, int count, int after) { }
                         @Override public void onTextChanged(CharSequence s, int start, int before, int count) { }
                         @Override public void afterTextChanged(Editable s) {
-                            rightEditTextText = s.toString();
-                            rightETUsed = true;
-                            validEditText(rightET, s.toString(), rightEditInputType, rightRequired);
+                            if(rightET.hasFocus()) {
+                                rightEditTextText = s.toString();
+                                rightETUsed = true;
+                                validEditText(rightET, rightEditTextText, rightEditInputType, rightRequired);
+                            }
                         }
                     });
 
@@ -502,8 +429,14 @@ public class SideBySideView extends LinearLayout implements DatePickerDialog.OnD
             if(rightET.getVisibility() == View.GONE || rightLayout.getVisibility() == View.GONE)
                 leftET.setImeOptions(EditorInfo.IME_ACTION_DONE);
 
-        }else
+            if (!rightET.isEnabled())
+                leftET.setImeOptions(EditorInfo.IME_FLAG_NAVIGATE_NEXT);
+
+            setRightInputEnabled(rightEnabled);
+        }else {
             rightLayout.setVisibility(GONE);
+            rightET.setFocusable(false);
+        }
 
         TextView leftTV  = findViewById(R.id.left_tv);
 
@@ -573,8 +506,21 @@ public class SideBySideView extends LinearLayout implements DatePickerDialog.OnD
     public boolean isValid(){
         boolean isValid = true;
 
-        boolean leftIsValid = validEditText(leftET, leftET.getText().toString(), leftEditInputType, leftRequired);
-        boolean rightIsValid = validEditText(rightET, rightET.getText().toString(), rightEditInputType, rightRequired);
+
+        boolean leftIsValid = true;
+        boolean rightIsValid = true;
+
+        //if inputs have been disabled the override any requirement for validation.
+
+        if(!getLeftInputEnabled())
+            leftRequired = false;
+        else
+            leftIsValid = validEditText(leftET, leftET.getText().toString(), leftEditInputType, leftRequired);
+
+        if(!getRightInputEnabled())
+            rightRequired = false;
+        else
+            rightIsValid = validEditText(rightET, rightET.getText().toString(), rightEditInputType, rightRequired);
 
         boolean bothRequired = (leftRequired && rightRequired);
 
@@ -630,15 +576,15 @@ public class SideBySideView extends LinearLayout implements DatePickerDialog.OnD
         boolean isValid = true;
         boolean validEmail = isValidEmail(input);
 
-        if(isRequired && (input == null || input.length() == 0)) {
+        if(isRequired && editText.isEnabled() && (input == null || input.length() == 0)) {
             editText.setError("Required");
             isValid = false;
-        }else if(input.length() > 0 && inputType.contains("EmailAddress") && !validEmail) {
+        }else if(input != null && editText.isEnabled() && input.length() > 0 && inputType.contains("EmailAddress") && !validEmail) {
             editText.setError("Invalid Email Address");
             isValid = false;
-        }else if(validEditTextPasswords()){
+        }else if(editText.isEnabled() && validEditTextPasswords()){
             return false;
-        } else
+        }else
             editText.setError(null);
 
         return isValid;
@@ -720,6 +666,165 @@ public class SideBySideView extends LinearLayout implements DatePickerDialog.OnD
                 return lowerLeftTV.getText().toString();
         }
         return null;
+    }
+
+    @SuppressWarnings("unused")
+    public void setLeftInputEnabled(boolean isEnabled){
+        switch (leftInput) {
+            case EditText:
+                leftET.setEnabled(isEnabled);
+                leftET.setFocusable(isEnabled);
+                break;
+            case CheckBox:
+                leftCB.setEnabled(isEnabled);
+                break;
+            case Spinner:
+                leftSP.setEnabled(isEnabled);
+                break;
+            case Time:
+                lowerLeftTV.setEnabled(isEnabled);
+                break;
+            case DateTime:
+                lowerLeftTV.setEnabled(isEnabled);
+                break;
+        }
+    }
+
+    @SuppressWarnings("unused")
+    public boolean getLeftInputEnabled(){
+        switch (leftInput) {
+            case EditText:
+                return leftET.isEnabled();
+            case CheckBox:
+                return leftCB.isEnabled();
+            case Spinner:
+                return leftSP.isEnabled();
+            case Time:
+                return lowerLeftTV.isEnabled();
+            case DateTime:
+                return lowerLeftTV.isEnabled();
+        }
+        return false;
+    }
+
+    @SuppressWarnings("unused")
+    public void setRightInputEnabled(boolean isEnabled){
+        switch (rightInput) {
+            case EditText:
+                rightET.setEnabled(isEnabled);
+                rightET.setFocusable(isEnabled);
+                break;
+            case CheckBox:
+                rightCB.setEnabled(isEnabled);
+                break;
+            case Spinner:
+                rightSP.setEnabled(isEnabled);
+                break;
+            case Time:
+                lowerRightTV.setEnabled(isEnabled);
+                break;
+            case DateTime:
+                lowerRightTV.setEnabled(isEnabled);
+                break;
+        }
+    }
+
+    @SuppressWarnings("unused")
+    public boolean getRightInputEnabled(){
+        switch (leftInput) {
+            case EditText:
+                return rightET.isEnabled();
+            case CheckBox:
+                return rightCB.isEnabled();
+            case Spinner:
+                return rightSP.isEnabled();
+            case Time:
+                return lowerRightTV.isEnabled();
+            case DateTime:
+                return lowerRightTV.isEnabled();
+        }
+        return false;
+    }
+
+    public void setLeftInput(Object input){
+        switch (leftInput) {
+            case EditText:
+                if(input instanceof String) {
+                    leftET.setText((String)input);
+                    leftEditTextText = (String)input;
+                }else
+                    throw new RuntimeException(leftInput + " Input MUST be type String");
+                break;
+            case CheckBox:
+                if(input instanceof Boolean) {
+                    leftCB.setChecked((boolean)input);
+                    leftCbVal = (boolean)input;
+                }else
+                    throw new RuntimeException(leftInput + " Input MUST be type Boolean");
+                break;
+            case Spinner:
+                if(input instanceof Integer) {
+                    leftSP.setSelection((int)input);
+                    leftSpinnerVal = (int)input;
+                }else
+                    throw new RuntimeException(leftInput + " Input MUST be type Integer");
+                break;
+            case Time:
+                if(input instanceof String) {
+                    lowerLeftTV.setText((String)input);
+                    leftTimeVal = (String)input;
+                }else
+                    throw new RuntimeException(leftInput + " Input MUST be type String");
+                break;
+            case DateTime:
+                if(input instanceof String) {
+                    lowerLeftTV.setText((String)input);
+                    leftDateTimeVal = (String)input;
+                }else
+                    throw new RuntimeException(leftInput + " Input MUST be type String");
+                break;
+        }
+    }
+
+    @SuppressWarnings("unused")
+    public void setRightInput(Object input){
+        switch (rightInput) {
+            case EditText:
+                if(input instanceof String) {
+                    rightET.setText((String)input);
+                    rightEditTextText = (String)input;
+                }else
+                    throw new RuntimeException(rightInput + " Input MUST be type String");
+                break;
+            case CheckBox:
+                if(input instanceof Boolean) {
+                    rightCB.setChecked((boolean)input);
+                    rightCbVal = (boolean)input;
+                }else
+                    throw new RuntimeException(rightInput + " Input MUST be type Boolean");
+                break;
+            case Spinner:
+                if(input instanceof Integer) {
+                    rightSP.setSelection((int)input);
+                    rightSpinnerVal = (int)input;
+                }else
+                    throw new RuntimeException(rightInput + " Input MUST be type Integer");
+                break;
+            case Time:
+                if(input instanceof String) {
+                    lowerRightTV.setText((String)input);
+                    rightTimeVal = (String)input;
+                }else
+                    throw new RuntimeException(rightInput + " Input MUST be type String");
+                break;
+            case DateTime:
+                if(input instanceof String) {
+                    lowerRightTV.setText((String)input);
+                    rightDateTimeVal = (String)input;
+                }else
+                    throw new RuntimeException(rightInput + " Input MUST be type String");
+                break;
+        }
     }
 
     @SuppressWarnings("unused")

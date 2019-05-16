@@ -36,6 +36,8 @@
             app:textViewTextStyle="bold"
             app:leftInput="EditText"
             app:rightInput="EditText"
+            app:rightInputEnabled="false"
+            app:rightEditTextText="jampez@c.c"
             app:leftRequired="true"
             app:rightRequired="true"
             app:leftEditInputType="phone"
