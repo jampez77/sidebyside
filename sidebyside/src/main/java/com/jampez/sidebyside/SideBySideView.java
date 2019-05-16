@@ -457,27 +457,29 @@ public class SideBySideView extends LinearLayout implements DatePickerDialog.OnD
     public boolean haveInputsBeenEdited(){
 
         boolean leftInputUsed = false;
-        switch (leftInput) {
-            case EditText:
-                leftInputUsed = leftETUsed;
-                break;
-            case CheckBox:
-                leftInputUsed = leftCBUsed;
-                break;
-            case Spinner:
-                leftInputUsed = leftSpUsed;
-                break;
-            case Time:
-                leftInputUsed = leftTimeUsed;
-                break;
-            case DateTime:
-                leftInputUsed = leftDateTimeUsed;
-                break;
+        if(getLeftInputEnabled()) {
+            switch (leftInput) {
+                case EditText:
+                    leftInputUsed = leftETUsed;
+                    break;
+                case CheckBox:
+                    leftInputUsed = leftCBUsed;
+                    break;
+                case Spinner:
+                    leftInputUsed = leftSpUsed;
+                    break;
+                case Time:
+                    leftInputUsed = leftTimeUsed;
+                    break;
+                case DateTime:
+                    leftInputUsed = leftDateTimeUsed;
+                    break;
+            }
         }
 
         boolean haveInputBeenUsed = leftInputUsed;
 
-        if(!hideRightView) {
+        if(!hideRightView && getRightInputEnabled()) {
             boolean rightInputUsed = false;
             switch (rightInput) {
                 case EditText:
