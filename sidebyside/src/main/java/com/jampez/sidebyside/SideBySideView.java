@@ -171,9 +171,11 @@ public class SideBySideView extends LinearLayout implements DatePickerDialog.OnD
                     @Override public void beforeTextChanged(CharSequence s, int start, int count, int after) { }
                     @Override public void onTextChanged(CharSequence s, int start, int before, int count) { }
                     @Override public void afterTextChanged(Editable s) {
-                        leftETUsed = true;
-                        leftEditTextText = s.toString();
-                        validEditText(leftET, s.toString(), leftEditInputType, leftRequired);
+                        if(leftET.hasFocus()) {
+                            leftETUsed = true;
+                            leftEditTextText = s.toString();
+                            validEditText(leftET, s.toString(), leftEditInputType, leftRequired);
+                        }
                     }
                 });
 
@@ -676,7 +678,6 @@ public class SideBySideView extends LinearLayout implements DatePickerDialog.OnD
             case EditText:
                 leftET.setEnabled(isEnabled);
                 leftET.setFocusable(isEnabled);
-                //leftET.setFocusableInTouchMode(isEnabled);
                 break;
             case CheckBox:
                 leftCB.setEnabled(isEnabled);
@@ -697,7 +698,7 @@ public class SideBySideView extends LinearLayout implements DatePickerDialog.OnD
     public void setRightInputEnabled(boolean isEnabled){
         switch (rightInput) {
             case EditText:
-                ((View)rightET).setEnabled(isEnabled);
+                rightET.setEnabled(isEnabled);
                 rightET.setFocusable(isEnabled);
                 break;
             case CheckBox:
