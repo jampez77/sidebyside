@@ -457,7 +457,7 @@ public class SideBySideView extends LinearLayout implements DatePickerDialog.OnD
     public boolean haveInputsBeenEdited(){
 
         boolean leftInputUsed = false;
-        if(getLeftInputEnabled()) {
+        if(leftEnabled) {
             switch (leftInput) {
                 case EditText:
                     leftInputUsed = leftETUsed;
@@ -479,7 +479,7 @@ public class SideBySideView extends LinearLayout implements DatePickerDialog.OnD
 
         boolean haveInputBeenUsed = leftInputUsed;
 
-        if(!hideRightView && getRightInputEnabled()) {
+        if(!hideRightView && rightEnabled) {
             boolean rightInputUsed = false;
             switch (rightInput) {
                 case EditText:
@@ -514,12 +514,12 @@ public class SideBySideView extends LinearLayout implements DatePickerDialog.OnD
 
         //if inputs have been disabled the override any requirement for validation.
 
-        if(!getLeftInputEnabled())
+        if(!leftEnabled)
             leftRequired = false;
         else
             leftIsValid = validEditText(leftET, leftET.getText().toString(), leftEditInputType, leftRequired);
 
-        if(!getRightInputEnabled())
+        if(!rightEnabled)
             rightRequired = false;
         else
             rightIsValid = validEditText(rightET, rightET.getText().toString(), rightEditInputType, rightRequired);
@@ -694,31 +694,6 @@ public class SideBySideView extends LinearLayout implements DatePickerDialog.OnD
     }
 
     @SuppressWarnings("unused")
-    public boolean getLeftInputEnabled(){
-        boolean enabled = false;
-        if(leftInput != null){
-            switch (leftInput) {
-                case EditText:
-                    enabled = leftET.isEnabled();
-                    break;
-                case CheckBox:
-                    enabled = leftCB.isEnabled();
-                    break;
-                case Spinner:
-                    enabled = leftSP.isEnabled();
-                    break;
-                case Time:
-                    enabled = lowerLeftTV.isEnabled();
-                    break;
-                case DateTime:
-                    enabled = lowerLeftTV.isEnabled();
-                    break;
-            }
-        }
-        return enabled;
-    }
-
-    @SuppressWarnings("unused")
     public void setRightInputEnabled(boolean isEnabled){
         switch (rightInput) {
             case EditText:
@@ -738,31 +713,6 @@ public class SideBySideView extends LinearLayout implements DatePickerDialog.OnD
                 lowerRightTV.setEnabled(isEnabled);
                 break;
         }
-    }
-
-    @SuppressWarnings("unused")
-    public boolean getRightInputEnabled(){
-        boolean enabled = false;
-        if(rightInput != null){
-            switch (rightInput) {
-                case EditText:
-                    enabled = rightET.isEnabled();
-                    break;
-                case CheckBox:
-                    enabled = rightCB.isEnabled();
-                    break;
-                case Spinner:
-                    enabled = rightSP.isEnabled();
-                    break;
-                case Time:
-                    enabled = lowerRightTV.isEnabled();
-                    break;
-                case DateTime:
-                    enabled = lowerRightTV.isEnabled();
-                    break;
-            }
-        }
-        return enabled;
     }
 
     public void setLeftInput(Object input){
