@@ -694,19 +694,25 @@ public class SideBySideView extends LinearLayout implements DatePickerDialog.OnD
 
     @SuppressWarnings("unused")
     public boolean getLeftInputEnabled(){
+        boolean enabled = false;
         switch (leftInput) {
             case EditText:
-                return leftET.isEnabled();
+                enabled = leftET.isEnabled();
+                break;
             case CheckBox:
-                return leftCB.isEnabled();
+                enabled = leftCB.isEnabled();
+                break;
             case Spinner:
-                return leftSP.isEnabled();
+                enabled = leftSP.isEnabled();
+                break;
             case Time:
-                return lowerLeftTV.isEnabled();
+                enabled = lowerLeftTV.isEnabled();
+                break;
             case DateTime:
-                return lowerLeftTV.isEnabled();
+                enabled = lowerLeftTV.isEnabled();
+                break;
         }
-        return false;
+        return enabled;
     }
 
     @SuppressWarnings("unused")
@@ -733,19 +739,25 @@ public class SideBySideView extends LinearLayout implements DatePickerDialog.OnD
 
     @SuppressWarnings("unused")
     public boolean getRightInputEnabled(){
-        switch (leftInput) {
+        boolean enabled = false;
+        switch (rightInput) {
             case EditText:
-                return rightET.isEnabled();
+                enabled = rightET.isEnabled();
+                break;
             case CheckBox:
-                return rightCB.isEnabled();
+                enabled = rightCB.isEnabled();
+                break;
             case Spinner:
-                return rightSP.isEnabled();
+                enabled = rightSP.isEnabled();
+                break;
             case Time:
-                return lowerRightTV.isEnabled();
+                enabled = lowerRightTV.isEnabled();
+                break;
             case DateTime:
-                return lowerRightTV.isEnabled();
+                enabled = lowerRightTV.isEnabled();
+                break;
         }
-        return false;
+        return enabled;
     }
 
     public void setLeftInput(Object input){
