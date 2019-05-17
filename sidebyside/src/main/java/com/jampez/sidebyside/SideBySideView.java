@@ -676,6 +676,7 @@ public class SideBySideView extends LinearLayout implements DatePickerDialog.OnD
             case EditText:
                 leftET.setEnabled(isEnabled);
                 leftET.setFocusable(isEnabled);
+                //leftET.setFocusableInTouchMode(isEnabled);
                 break;
             case CheckBox:
                 leftCB.setEnabled(isEnabled);
@@ -695,22 +696,24 @@ public class SideBySideView extends LinearLayout implements DatePickerDialog.OnD
     @SuppressWarnings("unused")
     public boolean getLeftInputEnabled(){
         boolean enabled = false;
-        switch (leftInput) {
-            case EditText:
-                enabled = leftET.isEnabled();
-                break;
-            case CheckBox:
-                enabled = leftCB.isEnabled();
-                break;
-            case Spinner:
-                enabled = leftSP.isEnabled();
-                break;
-            case Time:
-                enabled = lowerLeftTV.isEnabled();
-                break;
-            case DateTime:
-                enabled = lowerLeftTV.isEnabled();
-                break;
+        if(leftInput != null){
+            switch (leftInput) {
+                case EditText:
+                    enabled = leftET.isEnabled();
+                    break;
+                case CheckBox:
+                    enabled = leftCB.isEnabled();
+                    break;
+                case Spinner:
+                    enabled = leftSP.isEnabled();
+                    break;
+                case Time:
+                    enabled = lowerLeftTV.isEnabled();
+                    break;
+                case DateTime:
+                    enabled = lowerLeftTV.isEnabled();
+                    break;
+            }
         }
         return enabled;
     }
@@ -740,22 +743,24 @@ public class SideBySideView extends LinearLayout implements DatePickerDialog.OnD
     @SuppressWarnings("unused")
     public boolean getRightInputEnabled(){
         boolean enabled = false;
-        switch (rightInput) {
-            case EditText:
-                enabled = rightET.isEnabled();
-                break;
-            case CheckBox:
-                enabled = rightCB.isEnabled();
-                break;
-            case Spinner:
-                enabled = rightSP.isEnabled();
-                break;
-            case Time:
-                enabled = lowerRightTV.isEnabled();
-                break;
-            case DateTime:
-                enabled = lowerRightTV.isEnabled();
-                break;
+        if(rightInput != null){
+            switch (rightInput) {
+                case EditText:
+                    enabled = rightET.isEnabled();
+                    break;
+                case CheckBox:
+                    enabled = rightCB.isEnabled();
+                    break;
+                case Spinner:
+                    enabled = rightSP.isEnabled();
+                    break;
+                case Time:
+                    enabled = lowerRightTV.isEnabled();
+                    break;
+                case DateTime:
+                    enabled = lowerRightTV.isEnabled();
+                    break;
+            }
         }
         return enabled;
     }
