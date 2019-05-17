@@ -722,7 +722,7 @@ public class SideBySideView extends LinearLayout implements DatePickerDialog.OnD
     public void setRightInputEnabled(boolean isEnabled){
         switch (rightInput) {
             case EditText:
-                rightET.setEnabled(isEnabled);
+                ((View)rightET).setEnabled(isEnabled);
                 rightET.setFocusable(isEnabled);
                 break;
             case CheckBox:
