@@ -553,7 +553,7 @@ public class SideBySideView extends LinearLayout implements DatePickerDialog.OnD
 
     private boolean validEditTextPasswords(){
         //if both inputTypes are passwords then check if they match
-        if(!hideRightView && rightEditInputType.contains("Password") && leftEditInputType.contains("Password")){
+        if(!hideRightView && rightEditInputType != null && rightEditInputType.contains("Password") && leftEditInputType != null && leftEditInputType.contains("Password")){
             if(passwordValidationExpression != null && passwordValidationExpression.length() > 0) {
                 Pattern ps = Pattern.compile(passwordValidationExpression);
                 Matcher ms = ps.matcher(leftEditTextText);

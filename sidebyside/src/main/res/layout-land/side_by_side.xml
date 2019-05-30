@@ -5,7 +5,6 @@
 
     <LinearLayout android:id="@+id/main_layout"
         android:orientation="horizontal"
-        android:padding="10dp"
         android:baselineAligned="true"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
