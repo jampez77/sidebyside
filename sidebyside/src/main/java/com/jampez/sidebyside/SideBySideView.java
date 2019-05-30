@@ -584,16 +584,18 @@ public class SideBySideView extends LinearLayout implements DatePickerDialog.OnD
         boolean isValid = true;
         boolean validEmail = isValidEmail(input);
 
-        if(isRequired && editText.isEnabled() && (input == null || input.length() == 0)) {
-            editText.setError("Required");
-            isValid = false;
-        }else if(input != null && editText.isEnabled() && input.length() > 0 && inputType.contains("EmailAddress") && !validEmail) {
-            editText.setError("Invalid Email Address");
-            isValid = false;
-        }else if(editText.isEnabled() && validEditTextPasswords()){
-            return false;
-        }else
-            editText.setError(null);
+        if (editText != null){
+            if(isRequired && editText.isEnabled() && (input == null || input.length() == 0)) {
+                editText.setError("Required");
+                isValid = false;
+            }else if(input != null && editText.isEnabled() && input.length() > 0 && inputType != null && inputType.contains("EmailAddress") && !validEmail) {
+                editText.setError("Invalid Email Address");
+                isValid = false;
+            }else if(editText.isEnabled() && validEditTextPasswords()){
+                return false;
+            }else
+                editText.setError(null);
+        }
 
         return isValid;
     }
