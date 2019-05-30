@@ -197,7 +197,7 @@ public class SideBySideView extends LinearLayout implements DatePickerDialog.OnD
                     }
                 });
 
-                if(leftCbVal)rightCB.setChecked(true);
+                if(leftCbVal)leftCB.setChecked(true);
                 break;
             case Spinner:
                 //Set Spinner to be visible element for leftInput
@@ -642,6 +642,12 @@ public class SideBySideView extends LinearLayout implements DatePickerDialog.OnD
     }
 
     @SuppressWarnings("unused")
+    /**
+     * Updated method name.
+     *
+     * @deprecated use {@link #getLeftInputView()} )} instead.
+     */
+    @Deprecated
     public View getLeftView(){
         switch (leftInput) {
             case EditText:
@@ -659,7 +665,47 @@ public class SideBySideView extends LinearLayout implements DatePickerDialog.OnD
     }
 
     @SuppressWarnings("unused")
+    public View getLeftInputView(){
+        switch (leftInput) {
+            case EditText:
+                return leftET;
+            case CheckBox:
+                return leftCB;
+            case Spinner:
+                return leftSP;
+            case Time:
+                return lowerLeftTV;
+            case DateTime:
+                return lowerLeftTV;
+        }
+        return null;
+    }
+
+    @SuppressWarnings("unused")
+    /**
+     * Updated method name.
+     *
+     * @deprecated use {@link #getRightInputView()} )} instead.
+     */
+    @Deprecated
     public View getRightView(){
+        switch (rightInput) {
+            case EditText:
+                return rightET;
+            case CheckBox:
+                return rightCB;
+            case Spinner:
+                return rightSP;
+            case Time:
+                return lowerRightTV;
+            case DateTime:
+                return lowerRightTV;
+        }
+        return null;
+    }
+
+    @SuppressWarnings("unused")
+    public View getRightInputView(){
         switch (rightInput) {
             case EditText:
                 return rightET;
