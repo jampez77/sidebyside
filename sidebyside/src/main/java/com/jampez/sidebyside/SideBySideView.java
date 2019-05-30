@@ -838,106 +838,110 @@ public class SideBySideView extends LinearLayout implements DatePickerDialog.OnD
 
     @SuppressWarnings("unused")
     public void setLeftInputListener(Object listener){
-        this.leftInputListener = listener;
-        boolean shouldThrow = false;
-        String listenerName = "";
-        switch (leftInput){
-            case EditText:
-                if(listener instanceof TextWatcher)
-                    leftET.addTextChangedListener((TextWatcher)listener);
-                else {
-                    shouldThrow = true;
-                    listenerName = TextWatcher.class.getSimpleName();
-                }
-                break;
-            case CheckBox:
-                if(listener instanceof CompoundButton.OnCheckedChangeListener)
-                    leftCB.setOnCheckedChangeListener((CompoundButton.OnCheckedChangeListener)listener);
-                else {
-                    shouldThrow = true;
-                    listenerName = CompoundButton.OnCheckedChangeListener.class.getSimpleName();
-                }
-                break;
-            case Spinner:
-                if(listener instanceof AdapterView.OnItemSelectedListener)
-                    leftSP.setOnItemSelectedListener((AdapterView.OnItemSelectedListener)listener);
-                else {
-                    shouldThrow = true;
-                    listenerName = AdapterView.OnItemSelectedListener.class.getSimpleName();
-                }
-                break;
-            case Time:
-                if(listener instanceof TextWatcher)
-                    lowerLeftTV.addTextChangedListener((TextWatcher)listener);
-                else {
-                    shouldThrow = true;
-                    listenerName = TextWatcher.class.getSimpleName();
-                }
-                break;
-            case DateTime:
-                if(listener instanceof TextWatcher)
-                    lowerLeftTV.addTextChangedListener((TextWatcher)listener);
-                else {
-                    shouldThrow = true;
-                    listenerName = TextWatcher.class.getSimpleName();
-                }
-                break;
-        }
+        if(listener != null){
+            this.leftInputListener = listener;
+            boolean shouldThrow = false;
+            String listenerName = "";
+            switch (leftInput){
+                case EditText:
+                    if(listener instanceof TextWatcher)
+                        leftET.addTextChangedListener((TextWatcher)listener);
+                    else {
+                        shouldThrow = true;
+                        listenerName = TextWatcher.class.getSimpleName();
+                    }
+                    break;
+                case CheckBox:
+                    if(listener instanceof CompoundButton.OnCheckedChangeListener)
+                        leftCB.setOnCheckedChangeListener((CompoundButton.OnCheckedChangeListener)listener);
+                    else {
+                        shouldThrow = true;
+                        listenerName = CompoundButton.OnCheckedChangeListener.class.getSimpleName();
+                    }
+                    break;
+                case Spinner:
+                    if(listener instanceof AdapterView.OnItemSelectedListener)
+                        leftSP.setOnItemSelectedListener((AdapterView.OnItemSelectedListener)listener);
+                    else {
+                        shouldThrow = true;
+                        listenerName = AdapterView.OnItemSelectedListener.class.getSimpleName();
+                    }
+                    break;
+                case Time:
+                    if(listener instanceof TextWatcher)
+                        lowerLeftTV.addTextChangedListener((TextWatcher)listener);
+                    else {
+                        shouldThrow = true;
+                        listenerName = TextWatcher.class.getSimpleName();
+                    }
+                    break;
+                case DateTime:
+                    if(listener instanceof TextWatcher)
+                        lowerLeftTV.addTextChangedListener((TextWatcher)listener);
+                    else {
+                        shouldThrow = true;
+                        listenerName = TextWatcher.class.getSimpleName();
+                    }
+                    break;
+            }
 
-        if(shouldThrow)
-            throw new RuntimeException(leftInput + " must use " + listenerName);
+            if(shouldThrow)
+                throw new RuntimeException(leftInput + " must use " + listenerName);
+        }
     }
 
     @SuppressWarnings("unused")
     public void setRightInputListener(Object listener){
-        this.rightInputListener = listener;
-        boolean shouldThrow = false;
-        String listenerName = "";
-        switch (rightInput){
-            case EditText:
-                if(listener instanceof TextWatcher)
-                    rightET.addTextChangedListener((TextWatcher)listener);
-                else {
-                    shouldThrow = true;
-                    listenerName = TextWatcher.class.getSimpleName();
-                }
-                break;
-            case CheckBox:
-                if(listener instanceof CompoundButton.OnCheckedChangeListener)
-                    rightCB.setOnCheckedChangeListener((CompoundButton.OnCheckedChangeListener)listener);
-                else {
-                    shouldThrow = true;
-                    listenerName = CompoundButton.OnCheckedChangeListener.class.getSimpleName();
-                }
-                break;
-            case Spinner:
-                if(listener instanceof AdapterView.OnItemSelectedListener)
-                    rightSP.setOnItemSelectedListener((AdapterView.OnItemSelectedListener)listener);
-                else {
-                    shouldThrow = true;
-                    listenerName = AdapterView.OnItemSelectedListener.class.getSimpleName();
-                }
-                break;
-            case Time:
-                if(listener instanceof TextWatcher)
-                    lowerRightTV.addTextChangedListener((TextWatcher)listener);
-                else {
-                    shouldThrow = true;
-                    listenerName = TextWatcher.class.getSimpleName();
-                }
-                break;
-            case DateTime:
-                if(listener instanceof TextWatcher)
-                    lowerRightTV.addTextChangedListener((TextWatcher)listener);
-                else {
-                    shouldThrow = true;
-                    listenerName = TextWatcher.class.getSimpleName();
-                }
-                break;
-        }
+        if(listener != null){
+            this.rightInputListener = listener;
+            boolean shouldThrow = false;
+            String listenerName = "";
+            switch (rightInput){
+                case EditText:
+                    if(listener instanceof TextWatcher)
+                        rightET.addTextChangedListener((TextWatcher)listener);
+                    else {
+                        shouldThrow = true;
+                        listenerName = TextWatcher.class.getSimpleName();
+                    }
+                    break;
+                case CheckBox:
+                    if(listener instanceof CompoundButton.OnCheckedChangeListener)
+                        rightCB.setOnCheckedChangeListener((CompoundButton.OnCheckedChangeListener)listener);
+                    else {
+                        shouldThrow = true;
+                        listenerName = CompoundButton.OnCheckedChangeListener.class.getSimpleName();
+                    }
+                    break;
+                case Spinner:
+                    if(listener instanceof AdapterView.OnItemSelectedListener)
+                        rightSP.setOnItemSelectedListener((AdapterView.OnItemSelectedListener)listener);
+                    else {
+                        shouldThrow = true;
+                        listenerName = AdapterView.OnItemSelectedListener.class.getSimpleName();
+                    }
+                    break;
+                case Time:
+                    if(listener instanceof TextWatcher)
+                        lowerRightTV.addTextChangedListener((TextWatcher)listener);
+                    else {
+                        shouldThrow = true;
+                        listenerName = TextWatcher.class.getSimpleName();
+                    }
+                    break;
+                case DateTime:
+                    if(listener instanceof TextWatcher)
+                        lowerRightTV.addTextChangedListener((TextWatcher)listener);
+                    else {
+                        shouldThrow = true;
+                        listenerName = TextWatcher.class.getSimpleName();
+                    }
+                    break;
+            }
 
-        if(shouldThrow)
-            throw new RuntimeException(rightInput + " must use " + listenerName);
+            if(shouldThrow)
+                throw new RuntimeException(rightInput + " must use " + listenerName);
+        }
     }
 
     @Override
