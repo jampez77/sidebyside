@@ -807,83 +807,87 @@ public class SideBySideView extends LinearLayout implements DatePickerDialog.OnD
     }
 
     public void setLeftInput(Object input){
-        switch (leftInput) {
-            case EditText:
-                if(input instanceof String) {
-                    leftET.setText((String)input);
-                    leftEditTextText = (String)input;
-                }else
-                    throw new RuntimeException(leftInput + " Input MUST be type String");
-                break;
-            case CheckBox:
-                if(input instanceof Boolean) {
-                    leftCB.setChecked((boolean)input);
-                    leftCbVal = (boolean)input;
-                }else
-                    throw new RuntimeException(leftInput + " Input MUST be type Boolean");
-                break;
-            case Spinner:
-                if(input instanceof Integer) {
-                    leftSP.setSelection((int)input);
-                    leftSpinnerVal = (int)input;
-                }else
-                    throw new RuntimeException(leftInput + " Input MUST be type Integer");
-                break;
-            case Time:
-                if(input instanceof String) {
-                    lowerLeftTV.setText((String)input);
-                    leftTimeVal = (String)input;
-                }else
-                    throw new RuntimeException(leftInput + " Input MUST be type String");
-                break;
-            case DateTime:
-                if(input instanceof String) {
-                    lowerLeftTV.setText((String)input);
-                    leftDateTimeVal = (String)input;
-                }else
-                    throw new RuntimeException(leftInput + " Input MUST be type String");
-                break;
+        if(input != null){
+            switch (leftInput) {
+                case EditText:
+                    if(input instanceof String) {
+                        leftET.setText((String)input);
+                        leftEditTextText = (String)input;
+                    }else
+                        throw new RuntimeException("Left " + leftInput + " Input MUST be type String");
+                    break;
+                case CheckBox:
+                    if(input instanceof Boolean) {
+                        leftCB.setChecked((boolean)input);
+                        leftCbVal = (boolean)input;
+                    }else
+                        throw new RuntimeException("Left " + leftInput + " Input MUST be type Boolean");
+                    break;
+                case Spinner:
+                    if(input instanceof Integer) {
+                        leftSP.setSelection((int)input);
+                        leftSpinnerVal = (int)input;
+                    }else
+                        throw new RuntimeException("Left " + leftInput + " Input MUST be type Integer");
+                    break;
+                case Time:
+                    if(input instanceof String) {
+                        lowerLeftTV.setText((String)input);
+                        leftTimeVal = (String)input;
+                    }else
+                        throw new RuntimeException("Left " + leftInput + " Input MUST be type String");
+                    break;
+                case DateTime:
+                    if(input instanceof String) {
+                        lowerLeftTV.setText((String)input);
+                        leftDateTimeVal = (String)input;
+                    }else
+                        throw new RuntimeException("Left " + leftInput + " Input MUST be type String");
+                    break;
+            }
         }
     }
 
     @SuppressWarnings("unused")
     public void setRightInput(Object input){
-        switch (rightInput) {
-            case EditText:
-                if(input instanceof String) {
-                    rightET.setText((String)input);
-                    rightEditTextText = (String)input;
-                }else
-                    throw new RuntimeException(rightInput + " Input MUST be type String");
-                break;
-            case CheckBox:
-                if(input instanceof Boolean) {
-                    rightCB.setChecked((boolean)input);
-                    rightCbVal = (boolean)input;
-                }else
-                    throw new RuntimeException(rightInput + " Input MUST be type Boolean");
-                break;
-            case Spinner:
-                if(input instanceof Integer) {
-                    rightSP.setSelection((int)input);
-                    rightSpinnerVal = (int)input;
-                }else
-                    throw new RuntimeException(rightInput + " Input MUST be type Integer");
-                break;
-            case Time:
-                if(input instanceof String) {
-                    lowerRightTV.setText((String)input);
-                    rightTimeVal = (String)input;
-                }else
-                    throw new RuntimeException(rightInput + " Input MUST be type String");
-                break;
-            case DateTime:
-                if(input instanceof String) {
-                    lowerRightTV.setText((String)input);
-                    rightDateTimeVal = (String)input;
-                }else
-                    throw new RuntimeException(rightInput + " Input MUST be type String");
-                break;
+        if(input != null){
+            switch (rightInput) {
+                case EditText:
+                    if(input instanceof String) {
+                        rightET.setText((String)input);
+                        rightEditTextText = (String)input;
+                    }else
+                        throw new RuntimeException("Right " + rightInput + " Input MUST be type String");
+                    break;
+                case CheckBox:
+                    if(input instanceof Boolean) {
+                        rightCB.setChecked((boolean)input);
+                        rightCbVal = (boolean)input;
+                    }else
+                        throw new RuntimeException("Right " + rightInput + " Input MUST be type Boolean");
+                    break;
+                case Spinner:
+                    if(input instanceof Integer) {
+                        rightSP.setSelection((int)input);
+                        rightSpinnerVal = (int)input;
+                    }else
+                        throw new RuntimeException("Right " + rightInput + " Input MUST be type Integer");
+                    break;
+                case Time:
+                    if(input instanceof String) {
+                        lowerRightTV.setText((String)input);
+                        rightTimeVal = (String)input;
+                    }else
+                        throw new RuntimeException("Right " + rightInput + " Input MUST be type String");
+                    break;
+                case DateTime:
+                    if(input instanceof String) {
+                        lowerRightTV.setText((String)input);
+                        rightDateTimeVal = (String)input;
+                    }else
+                        throw new RuntimeException("Right " + rightInput + " Input MUST be type String");
+                    break;
+            }
         }
     }
 
