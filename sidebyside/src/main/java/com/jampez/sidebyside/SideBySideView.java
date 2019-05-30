@@ -71,6 +71,7 @@ public class SideBySideView extends LinearLayout implements DatePickerDialog.OnD
     private final String passwordValidationExpression;
     private final String passwordErrorMessage;
     private Object leftInputListener = null, rightInputListener = null;
+    private LinearLayout leftLayout, rightLayout;
 
     private String SET_DATE, leftTimeVal, rightTimeVal, rightDateTimeVal, leftDateTimeVal;
     private boolean rightCbVal, leftCbVal, rightTimeBool, leftTimeBool, rightDateTimeBool, leftDateTimeBool;
@@ -128,8 +129,8 @@ public class SideBySideView extends LinearLayout implements DatePickerDialog.OnD
     private void init(){
         inflate(getContext(), R.layout.side_by_side,this);
 
-        LinearLayout leftLayout = findViewById(R.id.left_layout);
-        LinearLayout rightLayout = findViewById(R.id.right_layout);
+        leftLayout = findViewById(R.id.left_layout);
+        rightLayout = findViewById(R.id.right_layout);
 
         lowerLeftTV = findViewById(R.id.lower_left_tv);
         lowerRightTV = findViewById(R.id.lower_right_tv);
@@ -765,6 +766,7 @@ public class SideBySideView extends LinearLayout implements DatePickerDialog.OnD
                 break;
             case CheckBox:
                 leftCB.setEnabled(leftEnabled);
+                leftLayout.setEnabled(leftEnabled);
                 break;
             case Spinner:
                 leftSP.setEnabled(leftEnabled);
@@ -788,6 +790,7 @@ public class SideBySideView extends LinearLayout implements DatePickerDialog.OnD
                 break;
             case CheckBox:
                 rightCB.setEnabled(rightEnabled);
+                rightLayout.setEnabled(rightEnabled);
                 break;
             case Spinner:
                 rightSP.setEnabled(rightEnabled);
