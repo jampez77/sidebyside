@@ -639,6 +639,40 @@ public class SideBySideView extends LinearLayout implements DatePickerDialog.OnD
     }
 
     @SuppressWarnings("unused")
+    public View getLeftView(){
+        switch (leftInput) {
+            case EditText:
+                return leftET;
+            case CheckBox:
+                return leftCB;
+            case Spinner:
+                return leftSP;
+            case Time:
+                return lowerLeftTV;
+            case DateTime:
+                return lowerLeftTV;
+        }
+        return null;
+    }
+
+    @SuppressWarnings("unused")
+    public View getRightView(){
+        switch (rightInput) {
+            case EditText:
+                return rightET;
+            case CheckBox:
+                return rightCB;
+            case Spinner:
+                return rightSP;
+            case Time:
+                return lowerRightTV;
+            case DateTime:
+                return lowerRightTV;
+        }
+        return null;
+    }
+
+    @SuppressWarnings("unused")
     public String rightInput(){
         switch (rightInput) {
             case EditText:
