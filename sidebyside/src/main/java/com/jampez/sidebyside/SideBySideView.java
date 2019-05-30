@@ -70,6 +70,7 @@ public class SideBySideView extends LinearLayout implements DatePickerDialog.OnD
     private final String leftEditTextHint;
     private final String passwordValidationExpression;
     private final String passwordErrorMessage;
+    private Object leftInputListener = null, rightInputListener = null;
 
     private String SET_DATE, leftTimeVal, rightTimeVal, rightDateTimeVal, leftDateTimeVal;
     private boolean rightCbVal, leftCbVal, rightTimeBool, leftTimeBool, rightDateTimeBool, leftDateTimeBool;
@@ -281,6 +282,7 @@ public class SideBySideView extends LinearLayout implements DatePickerDialog.OnD
                 break;
         }
 
+        setLeftInputListener(leftInputListener);
         setLeftInputEnabled(leftEnabled);
 
         if(!hideRightView){
@@ -435,6 +437,7 @@ public class SideBySideView extends LinearLayout implements DatePickerDialog.OnD
                 leftET.setImeOptions(EditorInfo.IME_FLAG_NAVIGATE_NEXT);
 
             setRightInputEnabled(rightEnabled);
+            setRightInputListener(rightInputListener);
         }else {
             rightLayout.setVisibility(GONE);
             rightET.setFocusable(false);
@@ -708,44 +711,46 @@ public class SideBySideView extends LinearLayout implements DatePickerDialog.OnD
 
     @SuppressWarnings("unused")
     public void setLeftInputEnabled(boolean isEnabled){
+        leftEnabled = isEnabled;
         switch (leftInput) {
             case EditText:
-                leftET.setEnabled(isEnabled);
-                leftET.setFocusable(isEnabled);
+                leftET.setEnabled(leftEnabled);
+                leftET.setFocusable(leftEnabled);
                 break;
             case CheckBox:
-                leftCB.setEnabled(isEnabled);
+                leftCB.setEnabled(leftEnabled);
                 break;
             case Spinner:
-                leftSP.setEnabled(isEnabled);
+                leftSP.setEnabled(leftEnabled);
                 break;
             case Time:
-                lowerLeftTV.setEnabled(isEnabled);
+                lowerLeftTV.setEnabled(leftEnabled);
                 break;
             case DateTime:
-                lowerLeftTV.setEnabled(isEnabled);
+                lowerLeftTV.setEnabled(leftEnabled);
                 break;
         }
     }
 
     @SuppressWarnings("unused")
     public void setRightInputEnabled(boolean isEnabled){
+        rightEnabled = isEnabled;
         switch (rightInput) {
             case EditText:
-                rightET.setEnabled(isEnabled);
-                rightET.setFocusable(isEnabled);
+                rightET.setEnabled(rightEnabled);
+                rightET.setFocusable(rightEnabled);
                 break;
             case CheckBox:
-                rightCB.setEnabled(isEnabled);
+                rightCB.setEnabled(rightEnabled);
                 break;
             case Spinner:
-                rightSP.setEnabled(isEnabled);
+                rightSP.setEnabled(rightEnabled);
                 break;
             case Time:
-                lowerRightTV.setEnabled(isEnabled);
+                lowerRightTV.setEnabled(rightEnabled);
                 break;
             case DateTime:
-                lowerRightTV.setEnabled(isEnabled);
+                lowerRightTV.setEnabled(rightEnabled);
                 break;
         }
     }
@@ -833,6 +838,7 @@ public class SideBySideView extends LinearLayout implements DatePickerDialog.OnD
 
     @SuppressWarnings("unused")
     public void setLeftInputListener(Object listener){
+        this.leftInputListener = listener;
         boolean shouldThrow = false;
         String listenerName = "";
         switch (leftInput){
@@ -884,6 +890,7 @@ public class SideBySideView extends LinearLayout implements DatePickerDialog.OnD
 
     @SuppressWarnings("unused")
     public void setRightInputListener(Object listener){
+        this.rightInputListener = listener;
         boolean shouldThrow = false;
         String listenerName = "";
         switch (rightInput){
