@@ -504,7 +504,7 @@ public class SideBySideView extends LinearLayout implements DatePickerDialog.OnD
                     rightInputUsed = rightDateTimeUsed;
                     break;
             }
-            haveInputBeenUsed = (leftInputUsed && rightInputUsed);
+            haveInputBeenUsed = (leftInputUsed || rightInputUsed);
         }
 
         return haveInputBeenUsed;
