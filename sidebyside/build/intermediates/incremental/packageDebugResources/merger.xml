@@ -3,7 +3,7 @@
         
     </style><style name="DateTimePickerTheme" parent="Theme.AppCompat.Light.Dialog">
         <item name="colorAccent">@color/colorAccent</item>
-    </style></file><file path="/Users/ontrac/Documents/GitHub/sidebyside/sidebyside/src/main/res/values/strings.xml" qualifiers=""><string name="app_name">Side By Side</string><string name="validate">Validate</string><string name="first_name">First Name is the name that comes before your last name, I would hope this is obvious but you are a bit of a tool so thought it was best to clarify</string><string name="last_name">Last Name</string><string name="phone">Phone</string><string name="email">Email</string><string name="password">Password</string><string name="confirm_password">Confirm Password</string><string name="authorisation_code">Authorisation Code</string></file><file path="/Users/ontrac/Documents/GitHub/sidebyside/sidebyside/src/main/res/values/attrs.xml" qualifiers=""><declare-styleable name="SideBySideView">
+    </style></file><file path="/Users/ontrac/Documents/GitHub/sidebyside/sidebyside/src/main/res/values/strings.xml" qualifiers=""><string name="app_name">Side By Side</string><string name="validate">Validate</string><string name="first_name">First Name is the name that comes before your last name, I would hope this is obvious but you are a bit of a tool so thought it was best to clarify</string><string name="last_name">last name</string><string name="phone">Phone</string><string name="email">Email</string><string name="password">Password</string><string name="confirm_password">Confirm Password</string><string name="authorisation_code">Authorisation Code</string></file><file path="/Users/ontrac/Documents/GitHub/sidebyside/sidebyside/src/main/res/values/attrs.xml" qualifiers=""><declare-styleable name="SideBySideView">
 
         <attr format="string" name="textViewTextStyle"/>
         <attr format="color" name="textViewTextColor"/>
@@ -27,6 +27,13 @@
         <attr format="dimension" name="leftPadding"/>
         <attr format="reference" name="leftBackground"/>
         <attr format="boolean" name="leftHideTitle"/>
+        <attr format="enum" name="leftTextViewInputType">
+            <enum name="none" value="0"/>
+            <enum name="uppercase" value="1"/>
+            <enum name="lowercase" value="2"/>
+            <enum name="cap_words" value="3"/>
+            <enum name="cap_sentences" value="4"/>
+        </attr>
 
         <attr format="string" localization="suggested" name="rightText"/>
         <attr format="string" name="rightInput"/>
@@ -40,8 +47,15 @@
         <attr format="dimension" name="rightPadding"/>
         <attr format="reference" name="rightBackground"/>
         <attr format="boolean" name="rightHideTitle"/>
+        <attr format="enum" name="rightTextViewInputType">
+            <enum name="none" value="0"/>
+            <enum name="uppercase" value="1"/>
+            <enum name="lowercase" value="2"/>
+            <enum name="cap_words" value="3"/>
+            <enum name="cap_sentences" value="4"/>
+        </attr>
 
-    </declare-styleable></file><file name="ic_check_box_black_24dp" path="/Users/ontrac/Documents/GitHub/sidebyside/sidebyside/src/main/res/mipmap-xhdpi/ic_check_box_black_24dp.png" qualifiers="xhdpi-v4" type="mipmap"/><file name="ic_arrow_drop_down_black_24dp" path="/Users/ontrac/Documents/GitHub/sidebyside/sidebyside/src/main/res/mipmap-xhdpi/ic_arrow_drop_down_black_24dp.png" qualifiers="xhdpi-v4" type="mipmap"/><file name="ic_check_box_outline_blank_black_24dp" path="/Users/ontrac/Documents/GitHub/sidebyside/sidebyside/src/main/res/mipmap-xhdpi/ic_check_box_outline_blank_black_24dp.png" qualifiers="xhdpi-v4" type="mipmap"/><file name="ic_access_time_black_24dp" path="/Users/ontrac/Documents/GitHub/sidebyside/sidebyside/src/main/res/mipmap-xhdpi/ic_access_time_black_24dp.png" qualifiers="xhdpi-v4" type="mipmap"/><file name="ic_date_range_black_24dp" path="/Users/ontrac/Documents/GitHub/sidebyside/sidebyside/src/main/res/mipmap-xhdpi/ic_date_range_black_24dp.png" qualifiers="xhdpi-v4" type="mipmap"/><file name="side_by_side" path="/Users/ontrac/Documents/GitHub/sidebyside/sidebyside/src/main/res/layout-small/side_by_side.xml" qualifiers="small-v4" type="layout"/></source><source path="/Users/ontrac/Documents/GitHub/sidebyside/sidebyside/build/generated/res/rs/debug"/><source path="/Users/ontrac/Documents/GitHub/sidebyside/sidebyside/build/generated/res/resValues/debug"/></dataSet><dataSet aapt-namespace="http://schemas.android.com/apk/res-auto" config="debug$Generated" generated="true" ignore_pattern="!.svn:!.git:!.ds_store:!*.scc:.*:&lt;dir>_*:!CVS:!thumbs.db:!picasa.ini:!*~"><source path="/Users/ontrac/Documents/GitHub/sidebyside/sidebyside/src/debug/res"/></dataSet><dataSet aapt-namespace="http://schemas.android.com/apk/res-auto" config="debug" generated-set="debug$Generated" ignore_pattern="!.svn:!.git:!.ds_store:!*.scc:.*:&lt;dir>_*:!CVS:!thumbs.db:!picasa.ini:!*~"><source path="/Users/ontrac/Documents/GitHub/sidebyside/sidebyside/src/debug/res"/></dataSet><mergedItems><configuration qualifiers=""><declare-styleable name="SideBySideView">
+    </declare-styleable></file><file name="ic_check_box_black_24dp" path="/Users/ontrac/Documents/GitHub/sidebyside/sidebyside/src/main/res/mipmap-xhdpi/ic_check_box_black_24dp.png" qualifiers="xhdpi-v4" type="mipmap"/><file name="ic_arrow_drop_down_black_24dp" path="/Users/ontrac/Documents/GitHub/sidebyside/sidebyside/src/main/res/mipmap-xhdpi/ic_arrow_drop_down_black_24dp.png" qualifiers="xhdpi-v4" type="mipmap"/><file name="ic_check_box_outline_blank_black_24dp" path="/Users/ontrac/Documents/GitHub/sidebyside/sidebyside/src/main/res/mipmap-xhdpi/ic_check_box_outline_blank_black_24dp.png" qualifiers="xhdpi-v4" type="mipmap"/><file name="ic_access_time_black_24dp" path="/Users/ontrac/Documents/GitHub/sidebyside/sidebyside/src/main/res/mipmap-xhdpi/ic_access_time_black_24dp.png" qualifiers="xhdpi-v4" type="mipmap"/><file name="ic_date_range_black_24dp" path="/Users/ontrac/Documents/GitHub/sidebyside/sidebyside/src/main/res/mipmap-xhdpi/ic_date_range_black_24dp.png" qualifiers="xhdpi-v4" type="mipmap"/><file name="side_by_side" path="/Users/ontrac/Documents/GitHub/sidebyside/sidebyside/src/main/res/layout-small/side_by_side.xml" qualifiers="small-v4" type="layout"/><file name="blank" path="/Users/ontrac/Documents/GitHub/sidebyside/sidebyside/src/main/res/drawable/blank.xml" qualifiers="" type="drawable"/></source><source path="/Users/ontrac/Documents/GitHub/sidebyside/sidebyside/build/generated/res/rs/debug"/><source path="/Users/ontrac/Documents/GitHub/sidebyside/sidebyside/build/generated/res/resValues/debug"/></dataSet><dataSet aapt-namespace="http://schemas.android.com/apk/res-auto" config="debug$Generated" generated="true" ignore_pattern="!.svn:!.git:!.ds_store:!*.scc:.*:&lt;dir>_*:!CVS:!thumbs.db:!picasa.ini:!*~"><source path="/Users/ontrac/Documents/GitHub/sidebyside/sidebyside/src/debug/res"/></dataSet><dataSet aapt-namespace="http://schemas.android.com/apk/res-auto" config="debug" generated-set="debug$Generated" ignore_pattern="!.svn:!.git:!.ds_store:!*.scc:.*:&lt;dir>_*:!CVS:!thumbs.db:!picasa.ini:!*~"><source path="/Users/ontrac/Documents/GitHub/sidebyside/sidebyside/src/debug/res"/></dataSet><mergedItems><configuration qualifiers=""><declare-styleable name="SideBySideView">
 
         <attr format="string" name="textViewTextStyle"/>
         <attr format="color" name="textViewTextColor"/>
@@ -65,6 +79,13 @@
         <attr format="dimension" name="leftPadding"/>
         <attr format="reference" name="leftBackground"/>
         <attr format="boolean" name="leftHideTitle"/>
+        <attr format="enum" name="leftTextViewInputType">
+            <enum name="none" value="0"/>
+            <enum name="uppercase" value="1"/>
+            <enum name="lowercase" value="2"/>
+            <enum name="cap_words" value="3"/>
+            <enum name="cap_sentences" value="4"/>
+        </attr>
 
         <attr format="string" localization="suggested" name="rightText"/>
         <attr format="string" name="rightInput"/>
@@ -78,5 +99,12 @@
         <attr format="dimension" name="rightPadding"/>
         <attr format="reference" name="rightBackground"/>
         <attr format="boolean" name="rightHideTitle"/>
+        <attr format="enum" name="rightTextViewInputType">
+            <enum name="none" value="0"/>
+            <enum name="uppercase" value="1"/>
+            <enum name="lowercase" value="2"/>
+            <enum name="cap_words" value="3"/>
+            <enum name="cap_sentences" value="4"/>
+        </attr>
 
     </declare-styleable></configuration></mergedItems></merger>

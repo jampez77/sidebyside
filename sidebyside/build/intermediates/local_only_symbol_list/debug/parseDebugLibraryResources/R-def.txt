@@ -15,6 +15,7 @@ attr? leftPadding
 attr? leftRequired
 attr? leftSpinnerEntries
 attr? leftText
+attr? leftTextViewInputType
 attr? passwordErrorMessage
 attr? passwordValidationExpression
 attr? rightBackground
@@ -28,6 +29,7 @@ attr? rightPadding
 attr? rightRequired
 attr? rightSpinnerEntries
 attr? rightText
+attr? rightTextViewInputType
 attr? textAppearance
 attr? textViewTextColor
 attr? textViewTextStyle
@@ -38,12 +40,15 @@ color edit_text_selected_border
 color white
 dimen button_min_height
 dimen button_text_padding
+drawable blank
 drawable checkbox_selector_black
 drawable edit_text_selected
 drawable edit_text_selector
 drawable edit_text_style
 drawable ic_launcher_background
 drawable shape_drop_down_normal
+id cap_sentences
+id cap_words
 id coordinatorLayout
 id coordinatorLayout2
 id left_cb
@@ -55,12 +60,15 @@ id lower_left_layout
 id lower_left_tv
 id lower_right_layout
 id lower_right_tv
+id lowercase
 id main_layout
+id none
 id right_cb
 id right_et
 id right_layout
 id right_sp
 id right_tv
+id uppercase
 layout side_by_side
 mipmap ic_access_time_black_24dp
 mipmap ic_arrow_drop_down_black_24dp
@@ -78,4 +86,4 @@ string phone
 string validate
 style AppBaseTheme
 style DateTimePickerTheme
-styleable SideBySideView textViewTextStyle textViewTextColor editTextBackground editTextTextColor editTextTextStyle textAppearance passwordValidationExpression passwordErrorMessage leftText leftInput leftEditInputType leftSpinnerEntries leftEditTextText leftEditTextHint leftRequired leftInputEnabled leftPadding leftBackground leftHideTitle rightText rightInput rightEditInputType rightSpinnerEntries rightEditTextText rightEditTextHint hideRightView rightRequired rightInputEnabled rightPadding rightBackground rightHideTitle
+styleable SideBySideView textViewTextStyle textViewTextColor editTextBackground editTextTextColor editTextTextStyle textAppearance passwordValidationExpression passwordErrorMessage leftText leftInput leftEditInputType leftSpinnerEntries leftEditTextText leftEditTextHint leftRequired leftInputEnabled leftPadding leftBackground leftHideTitle leftTextViewInputType rightText rightInput rightEditInputType rightSpinnerEntries rightEditTextText rightEditTextHint hideRightView rightRequired rightInputEnabled rightPadding rightBackground rightHideTitle rightTextViewInputType

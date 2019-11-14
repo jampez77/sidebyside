@@ -303,6 +303,7 @@ attr leftPadding
 attr leftRequired
 attr leftSpinnerEntries
 attr leftText
+attr leftTextViewInputType
 attr lineHeight
 attr listChoiceBackgroundIndicator
 attr listChoiceIndicatorMultipleAnimated
@@ -406,6 +407,7 @@ attr rightPadding
 attr rightRequired
 attr rightSpinnerEntries
 attr rightText
+attr rightTextViewInputType
 attr round
 attr roundPercent
 attr saturation
@@ -817,6 +819,7 @@ drawable abc_textfield_search_activated_mtrl_alpha
 drawable abc_textfield_search_default_mtrl_alpha
 drawable abc_textfield_search_material
 drawable abc_vector_test
+drawable blank
 drawable btn_checkbox_checked_mtrl
 drawable btn_checkbox_checked_to_unchecked_mtrl_animation
 drawable btn_checkbox_unchecked_mtrl
@@ -928,6 +931,8 @@ id blocking
 id bottom
 id bounce
 id buttonPanel
+id cap_sentences
+id cap_words
 id center
 id center_vertical
 id chain
@@ -999,6 +1004,7 @@ id lower_left_layout
 id lower_left_tv
 id lower_right_layout
 id lower_right_tv
+id lowercase
 id main_layout
 id message
 id middle
@@ -1102,6 +1108,7 @@ id triangle
 id unchecked
 id uniform
 id up
+id uppercase
 id useLogo
 id validate
 id visible
@@ -1616,7 +1623,7 @@ styleable PopupWindowBackgroundState state_above_anchor
 styleable PropertySet android_visibility android_alpha layout_constraintTag motionProgress visibilityMode
 styleable RecycleListView paddingBottomNoButtons paddingTopNoTitle
 styleable SearchView android_focusable android_maxWidth android_inputType android_imeOptions closeIcon commitIcon defaultQueryHint goIcon iconifiedByDefault layout queryBackground queryHint searchHintIcon searchIcon submitBackground suggestionRowLayout voiceIcon
-styleable SideBySideView editTextBackground editTextTextColor editTextTextStyle hideRightView leftBackground leftEditInputType leftEditTextHint leftEditTextText leftHideTitle leftInput leftInputEnabled leftPadding leftRequired leftSpinnerEntries leftText passwordErrorMessage passwordValidationExpression rightBackground rightEditInputType rightEditTextHint rightEditTextText rightHideTitle rightInput rightInputEnabled rightPadding rightRequired rightSpinnerEntries rightText textAppearance textViewTextColor textViewTextStyle
+styleable SideBySideView editTextBackground editTextTextColor editTextTextStyle hideRightView leftBackground leftEditInputType leftEditTextHint leftEditTextText leftHideTitle leftInput leftInputEnabled leftPadding leftRequired leftSpinnerEntries leftText leftTextViewInputType passwordErrorMessage passwordValidationExpression rightBackground rightEditInputType rightEditTextHint rightEditTextText rightHideTitle rightInput rightInputEnabled rightPadding rightRequired rightSpinnerEntries rightText rightTextViewInputType textAppearance textViewTextColor textViewTextStyle
 styleable Spinner android_entries android_popupBackground android_prompt android_dropDownWidth popupTheme
 styleable State android_id constraints
 styleable StateListDrawable android_dither android_visible android_variablePadding android_constantSize android_enterFadeDuration android_exitFadeDuration

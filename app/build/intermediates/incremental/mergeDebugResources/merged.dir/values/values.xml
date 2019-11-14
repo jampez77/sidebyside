@@ -574,7 +574,7 @@
     <string name="confirm_password">Confirm Password</string>
     <string name="email">Email</string>
     <string name="first_name">First Name is the name that comes before your last name, I would hope this is obvious but you are a bit of a tool so thought it was best to clarify</string>
-    <string name="last_name">Last Name</string>
+    <string name="last_name">last name</string>
     <string name="password">Password</string>
     <string name="phone">Phone</string>
     <string name="search_menu_title">Search</string>
@@ -3153,6 +3153,13 @@
         <attr format="dimension" name="leftPadding"/>
         <attr format="reference" name="leftBackground"/>
         <attr format="boolean" name="leftHideTitle"/>
+        <attr format="enum" name="leftTextViewInputType">
+            <enum name="none" value="0"/>
+            <enum name="uppercase" value="1"/>
+            <enum name="lowercase" value="2"/>
+            <enum name="cap_words" value="3"/>
+            <enum name="cap_sentences" value="4"/>
+        </attr>
 
         <attr format="string" localization="suggested" name="rightText"/>
         <attr format="string" name="rightInput"/>
@@ -3166,6 +3173,13 @@
         <attr format="dimension" name="rightPadding"/>
         <attr format="reference" name="rightBackground"/>
         <attr format="boolean" name="rightHideTitle"/>
+        <attr format="enum" name="rightTextViewInputType">
+            <enum name="none" value="0"/>
+            <enum name="uppercase" value="1"/>
+            <enum name="lowercase" value="2"/>
+            <enum name="cap_words" value="3"/>
+            <enum name="cap_sentences" value="4"/>
+        </attr>
 
     </declare-styleable>
     <declare-styleable name="Spinner">
