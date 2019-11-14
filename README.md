@@ -13,7 +13,7 @@ This is a simple merged view to easily display two inputs with labels side  by s
 
 ```
 dependencies {
-    implementation 'com.github.jampez77:sidebyside:1.0.33'
+    api 'com.github.jampez77:sidebyside:1.0.35'
 }
 ```
 
