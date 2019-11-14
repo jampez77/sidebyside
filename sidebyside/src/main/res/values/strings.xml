@@ -2,7 +2,7 @@
     <string name="app_name">Side By Side</string>
     <string name="validate">Validate</string>
     <string name="first_name">First Name is the name that comes before your last name, I would hope this is obvious but you are a bit of a tool so thought it was best to clarify</string>
-    <string name="last_name">Last Name</string>
+    <string name="last_name">last name</string>
     <string name="phone">Phone</string>
     <string name="email">Email</string>
     <string name="password">Password</string>

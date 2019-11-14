@@ -34,6 +34,7 @@ import static com.jampez.sidebyside.Statics.isValidEmail;
 import static com.jampez.sidebyside.Statics.preventDoubleClick;
 import static com.jampez.sidebyside.Statics.showDatePickerDialog;
 import static com.jampez.sidebyside.Statics.showTimePickerDialog;
+import static com.jampez.sidebyside.Statics.transformString;
 import static java.util.Calendar.getInstance;
 
 public class SideBySideView extends LinearLayout implements DatePickerDialog.OnDateSetListener, TimePickerDialog.OnTimeSetListener {
@@ -79,6 +80,7 @@ public class SideBySideView extends LinearLayout implements DatePickerDialog.OnD
     private int leftSpinnerVal = 0, rightSpinnerVal = 0;
     private final int textAppearance, leftBackground, rightBackground;
     private float leftPadding, rightPadding;
+    private int leftTextViewInputType, rightTextViewInputType;
 
     private boolean leftETUsed, leftCBUsed, leftSpUsed, leftTimeUsed, leftDateTimeUsed, rightETUsed, rightCBUsed, rightSpUsed, rightTimeUsed, rightDateTimeUsed, leftHideTitle, rightHideTitle;
 
@@ -96,7 +98,7 @@ public class SideBySideView extends LinearLayout implements DatePickerDialog.OnD
         TypedArray a = context.obtainStyledAttributes(attrs, R.styleable.SideBySideView, 0, 0);
         leftText = a.getString(R.styleable.SideBySideView_leftText);
         rightText = a.getString(R.styleable.SideBySideView_rightText);
-        textAppearance = a.getResourceId(R.styleable.SideBySideView_textAppearance, android.R.attr.textAppearanceMedium);
+        textAppearance = a.getResourceId(R.styleable.SideBySideView_textAppearance, android.R.style.TextAppearance);
         textViewTextStyle = a.getString(R.styleable.SideBySideView_textViewTextStyle);
         editTextTextStyle = a.getString(R.styleable.SideBySideView_editTextTextStyle);
         leftInput = a.getString(R.styleable.SideBySideView_leftInput);
@@ -123,6 +125,11 @@ public class SideBySideView extends LinearLayout implements DatePickerDialog.OnD
 
         leftHideTitle = a.getBoolean(R.styleable.SideBySideView_leftHideTitle, false);
         rightHideTitle = a.getBoolean(R.styleable.SideBySideView_rightHideTitle, false);
+
+
+        rightTextViewInputType = a.getInt(R.styleable.SideBySideView_rightTextViewInputType, 0);
+        leftTextViewInputType = a.getInt(R.styleable.SideBySideView_leftTextViewInputType, 0);
+
 
         a.recycle();
         init();
@@ -167,7 +174,13 @@ public class SideBySideView extends LinearLayout implements DatePickerDialog.OnD
                 //Set TextAppearance
                 TextViewCompat.setTextAppearance(lowerLeftTV, textAppearance);
 
-                lowerLeftTV.setText(leftText);
+                //Set input type
+                lowerLeftTV.setInputType(getInputType(leftEditInputType));
+
+                //Set typeface style
+                lowerLeftTV.setTypeface(lowerLeftTV.getTypeface(), getTypeFace(editTextTextStyle));
+
+                lowerLeftTV.setText(transformString(leftText, leftTextViewInputType));
                 if(leftPadding > 0)
                     lowerLeftTV.setPadding((int)leftPadding, (int)leftPadding, (int)leftPadding, (int)leftPadding);
 
@@ -341,7 +354,10 @@ public class SideBySideView extends LinearLayout implements DatePickerDialog.OnD
                     //Set TextAppearance
                     TextViewCompat.setTextAppearance(lowerRightTV, textAppearance);
 
-                    lowerRightTV.setText(rightText);
+                    //Set typeface style
+                    lowerRightTV.setTypeface(lowerRightTV.getTypeface(), getTypeFace(editTextTextStyle));
+
+                    lowerRightTV.setText(transformString(rightText, rightTextViewInputType));
                     if (rightPadding > 0) lowerRightTV.setPadding((int)rightPadding, (int)rightPadding, (int)rightPadding, (int)rightPadding);
                     if(rightBackground > 0) lowerRightTV.setBackgroundResource(rightBackground);
                     break;

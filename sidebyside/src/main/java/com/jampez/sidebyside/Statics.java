@@ -13,8 +13,17 @@ import android.view.View;
 
 import java.util.Calendar;
 import java.util.Date;
+import java.util.Locale;
+import java.util.StringTokenizer;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 import androidx.core.content.ContextCompat;
+
+import static java.lang.Character.toUpperCase;
+import static java.util.Locale.getDefault;
+import static java.util.regex.Pattern.CASE_INSENSITIVE;
+import static java.util.regex.Pattern.compile;
 
 class Statics {
     static void showTimePickerDialog(Context context, TimePickerDialog.OnTimeSetListener callback){
@@ -61,6 +70,51 @@ class Statics {
             return context.getResources().getDrawable(id);
     }
 
+    public static String transformString(String input, int inputType){
+        switch (inputType){
+            case 1:
+                return uppercaseString(input);
+            case 2:
+                return lowercaseString(input);
+            case 3:
+                return capitalizeWords(input);
+            case 4:
+                return capitalizeSentence(input);
+            default:
+                return input;
+        }
+    }
+
+
+    private static String uppercaseString(final String input) {
+        return input.toUpperCase(getDefault());
+    }
+
+    private static String lowercaseString(final String input) {
+        return input.toLowerCase(getDefault());
+    }
+
+    private static String capitalizeSentence(final String input) {
+        return toUpperCase(input.charAt(0)) + input.substring(1);
+    }
+
+    public static String capitalizeWords(String str) {
+        String[] words = str.trim().split(" ");
+        StringBuilder ret = new StringBuilder();
+        for(int i = 0; i < words.length; i++)
+        {
+            if(words[i].trim().length() > 0)
+            {
+                ret.append(Character.toUpperCase(words[i].trim().charAt(0)));
+                ret.append(words[i].trim().substring(1));
+                if(i < words.length - 1)
+                    ret.append(' ');
+            }
+        }
+
+        return ret.toString();
+    }
+
     static int getInputType(String value){
         if(value != null){
             int returnType = -1;
@@ -94,6 +148,8 @@ class Statics {
     static boolean isValidEmail(CharSequence target) {
         return (!TextUtils.isEmpty(target) && Patterns.EMAIL_ADDRESS.matcher(target).matches());
     }
+
+
 
     private static int translateInputType(String value){
         switch (value){

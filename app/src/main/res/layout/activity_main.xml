@@ -25,8 +25,8 @@
             app:leftRequired="true"
             app:rightRequired="true"
             app:rightPadding="10dp"
-            app:leftEditInputType="textPersonName"
-            app:rightEditInputType="textPersonName"/>
+            app:leftEditInputType="textCapWords"
+            app:rightTextViewInputType="uppercase"/>
 
         <com.jampez.sidebyside.SideBySideView
             android:id="@+id/contact_info"

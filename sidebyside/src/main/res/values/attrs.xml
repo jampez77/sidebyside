@@ -24,6 +24,13 @@
         <attr name="leftPadding" format="dimension"/>
         <attr name="leftBackground" format="reference" />
         <attr name="leftHideTitle" format="boolean"/>
+        <attr name="leftTextViewInputType" format="enum">
+            <enum name="none" value="0"/>
+            <enum name="uppercase" value="1"/>
+            <enum name="lowercase" value="2"/>
+            <enum name="cap_words" value="3"/>
+            <enum name="cap_sentences" value="4"/>
+        </attr>
 
         <attr name="rightText" format="string" localization="suggested" />
         <attr name="rightInput" format="string"/>
@@ -37,6 +44,13 @@
         <attr name="rightPadding" format="dimension"/>
         <attr name="rightBackground" format="reference" />
         <attr name="rightHideTitle" format="boolean" />
+        <attr name="rightTextViewInputType" format="enum">
+            <enum name="none" value="0"/>
+            <enum name="uppercase" value="1"/>
+            <enum name="lowercase" value="2"/>
+            <enum name="cap_words" value="3"/>
+            <enum name="cap_sentences" value="4"/>
+        </attr>
 
     </declare-styleable>
 </resources>
