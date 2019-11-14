@@ -13,7 +13,7 @@ This is a simple merged view to easily display two inputs with labels side  by s
 
 ```
 dependencies {
-    api 'com.github.jampez77:sidebyside:1.0.35'
+    api 'com.github.jampez77:sidebyside:1.0.36'
 }
 ```
 
@@ -47,7 +47,7 @@ Then in your activity's XML:
 
 ### Overview
 
-The view is split into two views. They are laid out horizontally unless using a small screen, in which case they are laid out vertically. Each view has a label and an input. The inputs can be a `Spinner`, `Checkbox`, `EditText`, `Time` or `DateTime`.
+The view is split into two views. They are laid out horizontally unless using a small screen, in which case they are laid out vertically. Each view has a label and an input. The inputs can be a `TextView`, `Spinner`, `Checkbox`, `EditText`, `Time` or `DateTime`.
 Each input used has a corresponding listener this would be either `OnItemSelectedListener`, `OnCheckedChangeListener` or `TextWatcher` respectively. The listener used will return the String value of the input.
 
 ## Options

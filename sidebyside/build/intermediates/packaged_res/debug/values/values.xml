@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#000000</color>
+    <color name="colorAccent">#D81B60</color>
+    <color name="edit_text_border">#646668</color>
+    <color name="edit_text_selected_border">#e17501</color>
+    <color name="white">#FFFFFF</color>
+    <dimen name="button_min_height">7dp</dimen>
+    <dimen name="button_text_padding">2dp</dimen>
+    <string name="app_name">Side By Side</string>
+    <string name="authorisation_code">Authorisation Code</string>
+    <string name="confirm_password">Confirm Password</string>
+    <string name="email">Email</string>
+    <string name="first_name">First Name is the name that comes before your last name, I would hope this is obvious but you are a bit of a tool so thought it was best to clarify</string>
+    <string name="last_name">Last Name</string>
+    <string name="password">Password</string>
+    <string name="phone">Phone</string>
+    <string name="validate">Validate</string>
+    <style name="AppBaseTheme" parent="Theme.AppCompat.Light">
+        <!--
+            Theme customizations available in newer API levels can go in
+            res/values-vXX/styles.xml, while customizations related to
+            backward-compatibility can go here.
+        -->
+    </style>
+    <style name="DateTimePickerTheme" parent="Theme.AppCompat.Light.Dialog">
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>
+    <declare-styleable name="SideBySideView">
+        <attr format="string" localization="suggested" name="leftText"/>
+        <attr format="string" localization="suggested" name="rightText"/>
+        <attr format="reference" name="textAppearance"/>
+        <attr format="reference" name="editTextBackground"/>
+        <attr format="color" name="textViewTextColor"/>
+        <attr format="color" name="editTextTextColor"/>
+        <attr format="string" name="textViewTextStyle"/>
+        <attr format="string" name="editTextTextStyle"/>
+        <attr format="string" name="leftInput"/>
+        <attr format="string" name="rightInput"/>
+        <attr format="string" name="leftEditInputType"/>
+        <attr format="string" name="rightEditInputType"/>
+        <attr format="reference" name="leftSpinnerEntries"/>
+        <attr format="reference" name="rightSpinnerEntries"/>
+        <attr format="string" name="rightEditTextText"/>
+        <attr format="string" name="leftEditTextText"/>
+        <attr format="string" name="rightEditTextHint"/>
+        <attr format="string" name="leftEditTextHint"/>
+        <attr format="boolean" name="hideRightView"/>
+        <attr format="boolean" name="leftRequired"/>
+        <attr format="boolean" name="rightRequired"/>
+        <attr format="string" name="passwordValidationExpression"/>
+        <attr format="string" name="passwordErrorMessage"/>
+        <attr format="boolean" name="leftInputEnabled"/>
+        <attr format="boolean" name="rightInputEnabled"/>
+    </declare-styleable>
+</resources>
