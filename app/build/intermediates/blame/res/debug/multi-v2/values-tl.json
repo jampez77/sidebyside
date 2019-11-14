@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "/Users/ontrac/Downloads/sidebyside-master/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-tl/values-tl.xml",
+            "outputFile": "/Users/ontrac/Documents/GitHub/sidebyside/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-tl/values-tl.xml",
             "map": [
                 {
-                    "source": "/Users/ontrac/.gradle/caches/transforms-1/files-1.1/appcompat-1.1.0-alpha04.aar/060eb94b437acc17abb72ca4b75b91c2/res/values-tl/values-tl.xml",
+                    "source": "/Users/ontrac/.gradle/caches/transforms-2/files-2.1/61f169bcc6dee4625f5d8831175b80c2/appcompat-1.1.0/res/values-tl/values-tl.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
@@ -14,7 +14,7 @@
                     }
                 },
                 {
-                    "source": "/Users/ontrac/.gradle/caches/transforms-1/files-1.1/core-1.1.0-alpha05.aar/9b239bc4bbf6569835dec1c53205513e/res/values-tl/values-tl.xml",
+                    "source": "/Users/ontrac/.gradle/caches/transforms-2/files-2.1/e9e6bb05b9e42dcf54f0496be243d44a/core-1.1.0/res/values-tl/values-tl.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",

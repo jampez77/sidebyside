@@ -5,28 +5,28 @@ INJECTED from /Users/ontrac/Documents/GitHub/sidebyside/app/src/main/AndroidMani
 INJECTED from /Users/ontrac/Documents/GitHub/sidebyside/app/src/main/AndroidManifest.xml:2:1-22:12
 INJECTED from /Users/ontrac/Documents/GitHub/sidebyside/app/src/main/AndroidManifest.xml:2:1-22:12
 MERGED from [:sidebyside] /Users/ontrac/Documents/GitHub/sidebyside/sidebyside/build/intermediates/library_manifest/debug/AndroidManifest.xml:2:1-11:12
-MERGED from [androidx.constraintlayout:constraintlayout:2.0.0-beta2] /Users/ontrac/.gradle/caches/transforms-2/files-2.1/0207afd84567913bf50ca2644f5a20b2/AndroidManifest.xml:2:1-11:12
-MERGED from [androidx.appcompat:appcompat:1.1.0-rc01] /Users/ontrac/.gradle/caches/transforms-2/files-2.1/4e218a976950b9f0ca838f4bb40ca638/AndroidManifest.xml:17:1-24:12
-MERGED from [androidx.fragment:fragment:1.1.0-rc01] /Users/ontrac/.gradle/caches/transforms-2/files-2.1/fd9232f06fd3ec7259652ef638a38406/AndroidManifest.xml:17:1-24:12
-MERGED from [androidx.appcompat:appcompat-resources:1.1.0-rc01] /Users/ontrac/.gradle/caches/transforms-2/files-2.1/7daed3fd8044e994bca441dd15000703/AndroidManifest.xml:17:1-24:12
-MERGED from [androidx.drawerlayout:drawerlayout:1.0.0] /Users/ontrac/.gradle/caches/transforms-2/files-2.1/844dff4b23f3bb3e01adf3c0330782de/AndroidManifest.xml:17:1-22:12
-MERGED from [androidx.viewpager:viewpager:1.0.0] /Users/ontrac/.gradle/caches/transforms-2/files-2.1/74fecbf8fce94488bf8bdd2638a8025a/AndroidManifest.xml:17:1-22:12
-MERGED from [androidx.loader:loader:1.0.0] /Users/ontrac/.gradle/caches/transforms-2/files-2.1/70955f912c53f2f6e99b1fb67da9b85c/AndroidManifest.xml:17:1-22:12
-MERGED from [androidx.activity:activity:1.0.0-rc01] /Users/ontrac/.gradle/caches/transforms-2/files-2.1/b6f0d054b89458c39443ab530b4fe63a/AndroidManifest.xml:17:1-24:12
-MERGED from [androidx.vectordrawable:vectordrawable-animated:1.1.0-rc01] /Users/ontrac/.gradle/caches/transforms-2/files-2.1/f0f7c79afc31d0dfaa064a584039b11c/AndroidManifest.xml:17:1-24:12
-MERGED from [androidx.vectordrawable:vectordrawable:1.1.0-rc01] /Users/ontrac/.gradle/caches/transforms-2/files-2.1/12499534e48a821b3733031f950fbc7c/AndroidManifest.xml:17:1-24:12
-MERGED from [androidx.customview:customview:1.0.0] /Users/ontrac/.gradle/caches/transforms-2/files-2.1/9d235c18526e34adc4e16ad09a23f2b0/AndroidManifest.xml:17:1-22:12
-MERGED from [androidx.core:core:1.1.0-rc01] /Users/ontrac/.gradle/caches/transforms-2/files-2.1/760803acbb993f86808962fab6cf7e82/AndroidManifest.xml:17:1-26:12
-MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] /Users/ontrac/.gradle/caches/transforms-2/files-2.1/26392f1ef89d3a3628987616ee99d3f9/AndroidManifest.xml:17:1-22:12
-MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.0-rc01] /Users/ontrac/.gradle/caches/transforms-2/files-2.1/8115b3097d1187b9043e6c90322d8097/AndroidManifest.xml:17:1-27:12
-MERGED from [androidx.lifecycle:lifecycle-runtime:2.1.0-rc01] /Users/ontrac/.gradle/caches/transforms-2/files-2.1/2eee0e6545475382e1438d9272e21a87/AndroidManifest.xml:17:1-22:12
-MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.1.0-rc01] /Users/ontrac/.gradle/caches/transforms-2/files-2.1/bb8ccd1748f94fa2f3499dc638bf9dcd/AndroidManifest.xml:17:1-22:12
-MERGED from [androidx.savedstate:savedstate:1.0.0-rc01] /Users/ontrac/.gradle/caches/transforms-2/files-2.1/f34029cfac2d55978b29d3ea93a730b3/AndroidManifest.xml:17:1-24:12
-MERGED from [androidx.interpolator:interpolator:1.0.0] /Users/ontrac/.gradle/caches/transforms-2/files-2.1/b264d9b129229aa8833c9dde9d7ef6b2/AndroidManifest.xml:17:1-22:12
-MERGED from [androidx.lifecycle:lifecycle-livedata:2.0.0] /Users/ontrac/.gradle/caches/transforms-2/files-2.1/93ca0a202dd2a649f48fc2e812b2d8e7/AndroidManifest.xml:17:1-22:12
-MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.0.0] /Users/ontrac/.gradle/caches/transforms-2/files-2.1/f63a84ef36e40ba14085884c4e34b4c5/AndroidManifest.xml:17:1-22:12
-MERGED from [androidx.arch.core:core-runtime:2.0.0] /Users/ontrac/.gradle/caches/transforms-2/files-2.1/81fca4e9ac0930b9796f9596b0f78bca/AndroidManifest.xml:17:1-22:12
-MERGED from [androidx.multidex:multidex:2.0.0] /Users/ontrac/.gradle/caches/transforms-2/files-2.1/83448e70041d9c2da762c75949d16188/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.constraintlayout:constraintlayout:2.0.0-beta3] /Users/ontrac/.gradle/caches/transforms-2/files-2.1/f89357f1a0d4f1114d5a2e78d7842798/constraintlayout-2.0.0-beta3/AndroidManifest.xml:2:1-11:12
+MERGED from [androidx.appcompat:appcompat:1.1.0] /Users/ontrac/.gradle/caches/transforms-2/files-2.1/61f169bcc6dee4625f5d8831175b80c2/appcompat-1.1.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.fragment:fragment:1.1.0] /Users/ontrac/.gradle/caches/transforms-2/files-2.1/fbfb4ebdbf33eaec3844f543d877ecc0/fragment-1.1.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.appcompat:appcompat-resources:1.1.0] /Users/ontrac/.gradle/caches/transforms-2/files-2.1/0fe42844f4016e63e5a18d53ffdc465a/appcompat-resources-1.1.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.drawerlayout:drawerlayout:1.0.0] /Users/ontrac/.gradle/caches/transforms-2/files-2.1/288dca3ea1c8c209a1ac7b070a10f146/drawerlayout-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.viewpager:viewpager:1.0.0] /Users/ontrac/.gradle/caches/transforms-2/files-2.1/20942291c5d9647ef1cd52f7db8a592e/viewpager-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.loader:loader:1.0.0] /Users/ontrac/.gradle/caches/transforms-2/files-2.1/75dc372d4b82c138290b26e9370dee64/loader-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.activity:activity:1.0.0] /Users/ontrac/.gradle/caches/transforms-2/files-2.1/092d40ad87e6a641016706d9c2c34eef/activity-1.0.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.vectordrawable:vectordrawable-animated:1.1.0] /Users/ontrac/.gradle/caches/transforms-2/files-2.1/d5a27a6386d35a108f3ac3555716da45/vectordrawable-animated-1.1.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.vectordrawable:vectordrawable:1.1.0] /Users/ontrac/.gradle/caches/transforms-2/files-2.1/64411e92e81c708607641b8c3c21562a/vectordrawable-1.1.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.customview:customview:1.0.0] /Users/ontrac/.gradle/caches/transforms-2/files-2.1/c13b08e0a85da4fcc9658e0bf19795c1/customview-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.core:core:1.1.0] /Users/ontrac/.gradle/caches/transforms-2/files-2.1/e9e6bb05b9e42dcf54f0496be243d44a/core-1.1.0/AndroidManifest.xml:17:1-26:12
+MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] /Users/ontrac/.gradle/caches/transforms-2/files-2.1/b095285d0636041cf01ba0e9561abc37/cursoradapter-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.0] /Users/ontrac/.gradle/caches/transforms-2/files-2.1/aaf1cacc2f104fb68509f792f62ff76a/versionedparcelable-1.1.0/AndroidManifest.xml:17:1-27:12
+MERGED from [androidx.lifecycle:lifecycle-runtime:2.1.0] /Users/ontrac/.gradle/caches/transforms-2/files-2.1/b475fbd157489b00e48d841af0985371/lifecycle-runtime-2.1.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.1.0] /Users/ontrac/.gradle/caches/transforms-2/files-2.1/0b264f7a212519df75ecacc707729a78/lifecycle-viewmodel-2.1.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.savedstate:savedstate:1.0.0] /Users/ontrac/.gradle/caches/transforms-2/files-2.1/89823c434e47074ec63a34d007092e8a/savedstate-1.0.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.interpolator:interpolator:1.0.0] /Users/ontrac/.gradle/caches/transforms-2/files-2.1/5fe9a63b6071287e04ba1d2d18d08f39/interpolator-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.lifecycle:lifecycle-livedata:2.0.0] /Users/ontrac/.gradle/caches/transforms-2/files-2.1/469126e1f7b38924edfafbfcfdada605/lifecycle-livedata-2.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.0.0] /Users/ontrac/.gradle/caches/transforms-2/files-2.1/41f768643472fec7021b665fc7e49233/lifecycle-livedata-core-2.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.arch.core:core-runtime:2.0.0] /Users/ontrac/.gradle/caches/transforms-2/files-2.1/dfef27d9219aa61b02a62607fe37699e/core-runtime-2.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.multidex:multidex:2.0.0] /Users/ontrac/.gradle/caches/transforms-2/files-2.1/c73dae321a5e42cdd403d6d6dca9a874/multidex-2.0.0/AndroidManifest.xml:17:1-22:12
 INJECTED from /Users/ontrac/Documents/GitHub/sidebyside/app/src/main/AndroidManifest.xml:2:1-22:12
 INJECTED from /Users/ontrac/Documents/GitHub/sidebyside/app/src/main/AndroidManifest.xml:2:1-22:12
 INJECTED from /Users/ontrac/Documents/GitHub/sidebyside/app/src/main/AndroidManifest.xml:2:1-22:12
@@ -46,14 +46,14 @@ INJECTED from /Users/ontrac/Documents/GitHub/sidebyside/app/src/main/AndroidMani
 		ADDED from /Users/ontrac/Documents/GitHub/sidebyside/app/src/main/AndroidManifest.xml:2:11-69
 application
 ADDED from /Users/ontrac/Documents/GitHub/sidebyside/app/src/main/AndroidManifest.xml:5:5-20:19
-MERGED from [androidx.constraintlayout:constraintlayout:2.0.0-beta2] /Users/ontrac/.gradle/caches/transforms-2/files-2.1/0207afd84567913bf50ca2644f5a20b2/AndroidManifest.xml:9:5-20
-MERGED from [androidx.constraintlayout:constraintlayout:2.0.0-beta2] /Users/ontrac/.gradle/caches/transforms-2/files-2.1/0207afd84567913bf50ca2644f5a20b2/AndroidManifest.xml:9:5-20
-MERGED from [androidx.core:core:1.1.0-rc01] /Users/ontrac/.gradle/caches/transforms-2/files-2.1/760803acbb993f86808962fab6cf7e82/AndroidManifest.xml:24:5-89
-MERGED from [androidx.core:core:1.1.0-rc01] /Users/ontrac/.gradle/caches/transforms-2/files-2.1/760803acbb993f86808962fab6cf7e82/AndroidManifest.xml:24:5-89
-MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.0-rc01] /Users/ontrac/.gradle/caches/transforms-2/files-2.1/8115b3097d1187b9043e6c90322d8097/AndroidManifest.xml:24:5-25:19
-MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.0-rc01] /Users/ontrac/.gradle/caches/transforms-2/files-2.1/8115b3097d1187b9043e6c90322d8097/AndroidManifest.xml:24:5-25:19
+MERGED from [androidx.constraintlayout:constraintlayout:2.0.0-beta3] /Users/ontrac/.gradle/caches/transforms-2/files-2.1/f89357f1a0d4f1114d5a2e78d7842798/constraintlayout-2.0.0-beta3/AndroidManifest.xml:9:5-20
+MERGED from [androidx.constraintlayout:constraintlayout:2.0.0-beta3] /Users/ontrac/.gradle/caches/transforms-2/files-2.1/f89357f1a0d4f1114d5a2e78d7842798/constraintlayout-2.0.0-beta3/AndroidManifest.xml:9:5-20
+MERGED from [androidx.core:core:1.1.0] /Users/ontrac/.gradle/caches/transforms-2/files-2.1/e9e6bb05b9e42dcf54f0496be243d44a/core-1.1.0/AndroidManifest.xml:24:5-89
+MERGED from [androidx.core:core:1.1.0] /Users/ontrac/.gradle/caches/transforms-2/files-2.1/e9e6bb05b9e42dcf54f0496be243d44a/core-1.1.0/AndroidManifest.xml:24:5-89
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.0] /Users/ontrac/.gradle/caches/transforms-2/files-2.1/aaf1cacc2f104fb68509f792f62ff76a/versionedparcelable-1.1.0/AndroidManifest.xml:24:5-25:19
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.0] /Users/ontrac/.gradle/caches/transforms-2/files-2.1/aaf1cacc2f104fb68509f792f62ff76a/versionedparcelable-1.1.0/AndroidManifest.xml:24:5-25:19
 	android:appComponentFactory
-		ADDED from [androidx.core:core:1.1.0-rc01] /Users/ontrac/.gradle/caches/transforms-2/files-2.1/760803acbb993f86808962fab6cf7e82/AndroidManifest.xml:24:18-86
+		ADDED from [androidx.core:core:1.1.0] /Users/ontrac/.gradle/caches/transforms-2/files-2.1/e9e6bb05b9e42dcf54f0496be243d44a/core-1.1.0/AndroidManifest.xml:24:18-86
 	android:supportsRtl
 		ADDED from /Users/ontrac/Documents/GitHub/sidebyside/app/src/main/AndroidManifest.xml:10:9-35
 	android:label
@@ -88,50 +88,50 @@ INJECTED from /Users/ontrac/Documents/GitHub/sidebyside/app/src/main/AndroidMani
 INJECTED from /Users/ontrac/Documents/GitHub/sidebyside/app/src/main/AndroidManifest.xml
 MERGED from [:sidebyside] /Users/ontrac/Documents/GitHub/sidebyside/sidebyside/build/intermediates/library_manifest/debug/AndroidManifest.xml:7:5-9:41
 MERGED from [:sidebyside] /Users/ontrac/Documents/GitHub/sidebyside/sidebyside/build/intermediates/library_manifest/debug/AndroidManifest.xml:7:5-9:41
-MERGED from [androidx.constraintlayout:constraintlayout:2.0.0-beta2] /Users/ontrac/.gradle/caches/transforms-2/files-2.1/0207afd84567913bf50ca2644f5a20b2/AndroidManifest.xml:5:5-7:41
-MERGED from [androidx.constraintlayout:constraintlayout:2.0.0-beta2] /Users/ontrac/.gradle/caches/transforms-2/files-2.1/0207afd84567913bf50ca2644f5a20b2/AndroidManifest.xml:5:5-7:41
-MERGED from [androidx.appcompat:appcompat:1.1.0-rc01] /Users/ontrac/.gradle/caches/transforms-2/files-2.1/4e218a976950b9f0ca838f4bb40ca638/AndroidManifest.xml:20:5-22:41
-MERGED from [androidx.appcompat:appcompat:1.1.0-rc01] /Users/ontrac/.gradle/caches/transforms-2/files-2.1/4e218a976950b9f0ca838f4bb40ca638/AndroidManifest.xml:20:5-22:41
-MERGED from [androidx.fragment:fragment:1.1.0-rc01] /Users/ontrac/.gradle/caches/transforms-2/files-2.1/fd9232f06fd3ec7259652ef638a38406/AndroidManifest.xml:20:5-22:41
-MERGED from [androidx.fragment:fragment:1.1.0-rc01] /Users/ontrac/.gradle/caches/transforms-2/files-2.1/fd9232f06fd3ec7259652ef638a38406/AndroidManifest.xml:20:5-22:41
-MERGED from [androidx.appcompat:appcompat-resources:1.1.0-rc01] /Users/ontrac/.gradle/caches/transforms-2/files-2.1/7daed3fd8044e994bca441dd15000703/AndroidManifest.xml:20:5-22:41
-MERGED from [androidx.appcompat:appcompat-resources:1.1.0-rc01] /Users/ontrac/.gradle/caches/transforms-2/files-2.1/7daed3fd8044e994bca441dd15000703/AndroidManifest.xml:20:5-22:41
-MERGED from [androidx.drawerlayout:drawerlayout:1.0.0] /Users/ontrac/.gradle/caches/transforms-2/files-2.1/844dff4b23f3bb3e01adf3c0330782de/AndroidManifest.xml:20:5-44
-MERGED from [androidx.drawerlayout:drawerlayout:1.0.0] /Users/ontrac/.gradle/caches/transforms-2/files-2.1/844dff4b23f3bb3e01adf3c0330782de/AndroidManifest.xml:20:5-44
-MERGED from [androidx.viewpager:viewpager:1.0.0] /Users/ontrac/.gradle/caches/transforms-2/files-2.1/74fecbf8fce94488bf8bdd2638a8025a/AndroidManifest.xml:20:5-44
-MERGED from [androidx.viewpager:viewpager:1.0.0] /Users/ontrac/.gradle/caches/transforms-2/files-2.1/74fecbf8fce94488bf8bdd2638a8025a/AndroidManifest.xml:20:5-44
-MERGED from [androidx.loader:loader:1.0.0] /Users/ontrac/.gradle/caches/transforms-2/files-2.1/70955f912c53f2f6e99b1fb67da9b85c/AndroidManifest.xml:20:5-44
-MERGED from [androidx.loader:loader:1.0.0] /Users/ontrac/.gradle/caches/transforms-2/files-2.1/70955f912c53f2f6e99b1fb67da9b85c/AndroidManifest.xml:20:5-44
-MERGED from [androidx.activity:activity:1.0.0-rc01] /Users/ontrac/.gradle/caches/transforms-2/files-2.1/b6f0d054b89458c39443ab530b4fe63a/AndroidManifest.xml:20:5-22:41
-MERGED from [androidx.activity:activity:1.0.0-rc01] /Users/ontrac/.gradle/caches/transforms-2/files-2.1/b6f0d054b89458c39443ab530b4fe63a/AndroidManifest.xml:20:5-22:41
-MERGED from [androidx.vectordrawable:vectordrawable-animated:1.1.0-rc01] /Users/ontrac/.gradle/caches/transforms-2/files-2.1/f0f7c79afc31d0dfaa064a584039b11c/AndroidManifest.xml:20:5-22:41
-MERGED from [androidx.vectordrawable:vectordrawable-animated:1.1.0-rc01] /Users/ontrac/.gradle/caches/transforms-2/files-2.1/f0f7c79afc31d0dfaa064a584039b11c/AndroidManifest.xml:20:5-22:41
-MERGED from [androidx.vectordrawable:vectordrawable:1.1.0-rc01] /Users/ontrac/.gradle/caches/transforms-2/files-2.1/12499534e48a821b3733031f950fbc7c/AndroidManifest.xml:20:5-22:41
-MERGED from [androidx.vectordrawable:vectordrawable:1.1.0-rc01] /Users/ontrac/.gradle/caches/transforms-2/files-2.1/12499534e48a821b3733031f950fbc7c/AndroidManifest.xml:20:5-22:41
-MERGED from [androidx.customview:customview:1.0.0] /Users/ontrac/.gradle/caches/transforms-2/files-2.1/9d235c18526e34adc4e16ad09a23f2b0/AndroidManifest.xml:20:5-44
-MERGED from [androidx.customview:customview:1.0.0] /Users/ontrac/.gradle/caches/transforms-2/files-2.1/9d235c18526e34adc4e16ad09a23f2b0/AndroidManifest.xml:20:5-44
-MERGED from [androidx.core:core:1.1.0-rc01] /Users/ontrac/.gradle/caches/transforms-2/files-2.1/760803acbb993f86808962fab6cf7e82/AndroidManifest.xml:20:5-22:41
-MERGED from [androidx.core:core:1.1.0-rc01] /Users/ontrac/.gradle/caches/transforms-2/files-2.1/760803acbb993f86808962fab6cf7e82/AndroidManifest.xml:20:5-22:41
-MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] /Users/ontrac/.gradle/caches/transforms-2/files-2.1/26392f1ef89d3a3628987616ee99d3f9/AndroidManifest.xml:20:5-44
-MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] /Users/ontrac/.gradle/caches/transforms-2/files-2.1/26392f1ef89d3a3628987616ee99d3f9/AndroidManifest.xml:20:5-44
-MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.0-rc01] /Users/ontrac/.gradle/caches/transforms-2/files-2.1/8115b3097d1187b9043e6c90322d8097/AndroidManifest.xml:20:5-22:41
-MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.0-rc01] /Users/ontrac/.gradle/caches/transforms-2/files-2.1/8115b3097d1187b9043e6c90322d8097/AndroidManifest.xml:20:5-22:41
-MERGED from [androidx.lifecycle:lifecycle-runtime:2.1.0-rc01] /Users/ontrac/.gradle/caches/transforms-2/files-2.1/2eee0e6545475382e1438d9272e21a87/AndroidManifest.xml:20:5-44
-MERGED from [androidx.lifecycle:lifecycle-runtime:2.1.0-rc01] /Users/ontrac/.gradle/caches/transforms-2/files-2.1/2eee0e6545475382e1438d9272e21a87/AndroidManifest.xml:20:5-44
-MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.1.0-rc01] /Users/ontrac/.gradle/caches/transforms-2/files-2.1/bb8ccd1748f94fa2f3499dc638bf9dcd/AndroidManifest.xml:20:5-44
-MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.1.0-rc01] /Users/ontrac/.gradle/caches/transforms-2/files-2.1/bb8ccd1748f94fa2f3499dc638bf9dcd/AndroidManifest.xml:20:5-44
-MERGED from [androidx.savedstate:savedstate:1.0.0-rc01] /Users/ontrac/.gradle/caches/transforms-2/files-2.1/f34029cfac2d55978b29d3ea93a730b3/AndroidManifest.xml:20:5-22:41
-MERGED from [androidx.savedstate:savedstate:1.0.0-rc01] /Users/ontrac/.gradle/caches/transforms-2/files-2.1/f34029cfac2d55978b29d3ea93a730b3/AndroidManifest.xml:20:5-22:41
-MERGED from [androidx.interpolator:interpolator:1.0.0] /Users/ontrac/.gradle/caches/transforms-2/files-2.1/b264d9b129229aa8833c9dde9d7ef6b2/AndroidManifest.xml:20:5-44
-MERGED from [androidx.interpolator:interpolator:1.0.0] /Users/ontrac/.gradle/caches/transforms-2/files-2.1/b264d9b129229aa8833c9dde9d7ef6b2/AndroidManifest.xml:20:5-44
-MERGED from [androidx.lifecycle:lifecycle-livedata:2.0.0] /Users/ontrac/.gradle/caches/transforms-2/files-2.1/93ca0a202dd2a649f48fc2e812b2d8e7/AndroidManifest.xml:20:5-44
-MERGED from [androidx.lifecycle:lifecycle-livedata:2.0.0] /Users/ontrac/.gradle/caches/transforms-2/files-2.1/93ca0a202dd2a649f48fc2e812b2d8e7/AndroidManifest.xml:20:5-44
-MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.0.0] /Users/ontrac/.gradle/caches/transforms-2/files-2.1/f63a84ef36e40ba14085884c4e34b4c5/AndroidManifest.xml:20:5-44
-MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.0.0] /Users/ontrac/.gradle/caches/transforms-2/files-2.1/f63a84ef36e40ba14085884c4e34b4c5/AndroidManifest.xml:20:5-44
-MERGED from [androidx.arch.core:core-runtime:2.0.0] /Users/ontrac/.gradle/caches/transforms-2/files-2.1/81fca4e9ac0930b9796f9596b0f78bca/AndroidManifest.xml:20:5-44
-MERGED from [androidx.arch.core:core-runtime:2.0.0] /Users/ontrac/.gradle/caches/transforms-2/files-2.1/81fca4e9ac0930b9796f9596b0f78bca/AndroidManifest.xml:20:5-44
-MERGED from [androidx.multidex:multidex:2.0.0] /Users/ontrac/.gradle/caches/transforms-2/files-2.1/83448e70041d9c2da762c75949d16188/AndroidManifest.xml:20:5-43
-MERGED from [androidx.multidex:multidex:2.0.0] /Users/ontrac/.gradle/caches/transforms-2/files-2.1/83448e70041d9c2da762c75949d16188/AndroidManifest.xml:20:5-43
+MERGED from [androidx.constraintlayout:constraintlayout:2.0.0-beta3] /Users/ontrac/.gradle/caches/transforms-2/files-2.1/f89357f1a0d4f1114d5a2e78d7842798/constraintlayout-2.0.0-beta3/AndroidManifest.xml:5:5-7:41
+MERGED from [androidx.constraintlayout:constraintlayout:2.0.0-beta3] /Users/ontrac/.gradle/caches/transforms-2/files-2.1/f89357f1a0d4f1114d5a2e78d7842798/constraintlayout-2.0.0-beta3/AndroidManifest.xml:5:5-7:41
+MERGED from [androidx.appcompat:appcompat:1.1.0] /Users/ontrac/.gradle/caches/transforms-2/files-2.1/61f169bcc6dee4625f5d8831175b80c2/appcompat-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.appcompat:appcompat:1.1.0] /Users/ontrac/.gradle/caches/transforms-2/files-2.1/61f169bcc6dee4625f5d8831175b80c2/appcompat-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.fragment:fragment:1.1.0] /Users/ontrac/.gradle/caches/transforms-2/files-2.1/fbfb4ebdbf33eaec3844f543d877ecc0/fragment-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.fragment:fragment:1.1.0] /Users/ontrac/.gradle/caches/transforms-2/files-2.1/fbfb4ebdbf33eaec3844f543d877ecc0/fragment-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.appcompat:appcompat-resources:1.1.0] /Users/ontrac/.gradle/caches/transforms-2/files-2.1/0fe42844f4016e63e5a18d53ffdc465a/appcompat-resources-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.appcompat:appcompat-resources:1.1.0] /Users/ontrac/.gradle/caches/transforms-2/files-2.1/0fe42844f4016e63e5a18d53ffdc465a/appcompat-resources-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.drawerlayout:drawerlayout:1.0.0] /Users/ontrac/.gradle/caches/transforms-2/files-2.1/288dca3ea1c8c209a1ac7b070a10f146/drawerlayout-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.drawerlayout:drawerlayout:1.0.0] /Users/ontrac/.gradle/caches/transforms-2/files-2.1/288dca3ea1c8c209a1ac7b070a10f146/drawerlayout-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.viewpager:viewpager:1.0.0] /Users/ontrac/.gradle/caches/transforms-2/files-2.1/20942291c5d9647ef1cd52f7db8a592e/viewpager-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.viewpager:viewpager:1.0.0] /Users/ontrac/.gradle/caches/transforms-2/files-2.1/20942291c5d9647ef1cd52f7db8a592e/viewpager-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.loader:loader:1.0.0] /Users/ontrac/.gradle/caches/transforms-2/files-2.1/75dc372d4b82c138290b26e9370dee64/loader-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.loader:loader:1.0.0] /Users/ontrac/.gradle/caches/transforms-2/files-2.1/75dc372d4b82c138290b26e9370dee64/loader-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.activity:activity:1.0.0] /Users/ontrac/.gradle/caches/transforms-2/files-2.1/092d40ad87e6a641016706d9c2c34eef/activity-1.0.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.activity:activity:1.0.0] /Users/ontrac/.gradle/caches/transforms-2/files-2.1/092d40ad87e6a641016706d9c2c34eef/activity-1.0.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.vectordrawable:vectordrawable-animated:1.1.0] /Users/ontrac/.gradle/caches/transforms-2/files-2.1/d5a27a6386d35a108f3ac3555716da45/vectordrawable-animated-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.vectordrawable:vectordrawable-animated:1.1.0] /Users/ontrac/.gradle/caches/transforms-2/files-2.1/d5a27a6386d35a108f3ac3555716da45/vectordrawable-animated-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.vectordrawable:vectordrawable:1.1.0] /Users/ontrac/.gradle/caches/transforms-2/files-2.1/64411e92e81c708607641b8c3c21562a/vectordrawable-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.vectordrawable:vectordrawable:1.1.0] /Users/ontrac/.gradle/caches/transforms-2/files-2.1/64411e92e81c708607641b8c3c21562a/vectordrawable-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.customview:customview:1.0.0] /Users/ontrac/.gradle/caches/transforms-2/files-2.1/c13b08e0a85da4fcc9658e0bf19795c1/customview-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.customview:customview:1.0.0] /Users/ontrac/.gradle/caches/transforms-2/files-2.1/c13b08e0a85da4fcc9658e0bf19795c1/customview-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.core:core:1.1.0] /Users/ontrac/.gradle/caches/transforms-2/files-2.1/e9e6bb05b9e42dcf54f0496be243d44a/core-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.core:core:1.1.0] /Users/ontrac/.gradle/caches/transforms-2/files-2.1/e9e6bb05b9e42dcf54f0496be243d44a/core-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] /Users/ontrac/.gradle/caches/transforms-2/files-2.1/b095285d0636041cf01ba0e9561abc37/cursoradapter-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] /Users/ontrac/.gradle/caches/transforms-2/files-2.1/b095285d0636041cf01ba0e9561abc37/cursoradapter-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.0] /Users/ontrac/.gradle/caches/transforms-2/files-2.1/aaf1cacc2f104fb68509f792f62ff76a/versionedparcelable-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.0] /Users/ontrac/.gradle/caches/transforms-2/files-2.1/aaf1cacc2f104fb68509f792f62ff76a/versionedparcelable-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.lifecycle:lifecycle-runtime:2.1.0] /Users/ontrac/.gradle/caches/transforms-2/files-2.1/b475fbd157489b00e48d841af0985371/lifecycle-runtime-2.1.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-runtime:2.1.0] /Users/ontrac/.gradle/caches/transforms-2/files-2.1/b475fbd157489b00e48d841af0985371/lifecycle-runtime-2.1.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.1.0] /Users/ontrac/.gradle/caches/transforms-2/files-2.1/0b264f7a212519df75ecacc707729a78/lifecycle-viewmodel-2.1.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.1.0] /Users/ontrac/.gradle/caches/transforms-2/files-2.1/0b264f7a212519df75ecacc707729a78/lifecycle-viewmodel-2.1.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.savedstate:savedstate:1.0.0] /Users/ontrac/.gradle/caches/transforms-2/files-2.1/89823c434e47074ec63a34d007092e8a/savedstate-1.0.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.savedstate:savedstate:1.0.0] /Users/ontrac/.gradle/caches/transforms-2/files-2.1/89823c434e47074ec63a34d007092e8a/savedstate-1.0.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.interpolator:interpolator:1.0.0] /Users/ontrac/.gradle/caches/transforms-2/files-2.1/5fe9a63b6071287e04ba1d2d18d08f39/interpolator-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.interpolator:interpolator:1.0.0] /Users/ontrac/.gradle/caches/transforms-2/files-2.1/5fe9a63b6071287e04ba1d2d18d08f39/interpolator-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-livedata:2.0.0] /Users/ontrac/.gradle/caches/transforms-2/files-2.1/469126e1f7b38924edfafbfcfdada605/lifecycle-livedata-2.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-livedata:2.0.0] /Users/ontrac/.gradle/caches/transforms-2/files-2.1/469126e1f7b38924edfafbfcfdada605/lifecycle-livedata-2.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.0.0] /Users/ontrac/.gradle/caches/transforms-2/files-2.1/41f768643472fec7021b665fc7e49233/lifecycle-livedata-core-2.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.0.0] /Users/ontrac/.gradle/caches/transforms-2/files-2.1/41f768643472fec7021b665fc7e49233/lifecycle-livedata-core-2.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.arch.core:core-runtime:2.0.0] /Users/ontrac/.gradle/caches/transforms-2/files-2.1/dfef27d9219aa61b02a62607fe37699e/core-runtime-2.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.arch.core:core-runtime:2.0.0] /Users/ontrac/.gradle/caches/transforms-2/files-2.1/dfef27d9219aa61b02a62607fe37699e/core-runtime-2.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.multidex:multidex:2.0.0] /Users/ontrac/.gradle/caches/transforms-2/files-2.1/c73dae321a5e42cdd403d6d6dca9a874/multidex-2.0.0/AndroidManifest.xml:20:5-43
+MERGED from [androidx.multidex:multidex:2.0.0] /Users/ontrac/.gradle/caches/transforms-2/files-2.1/c73dae321a5e42cdd403d6d6dca9a874/multidex-2.0.0/AndroidManifest.xml:20:5-43
 INJECTED from /Users/ontrac/Documents/GitHub/sidebyside/app/src/main/AndroidManifest.xml
 INJECTED from /Users/ontrac/Documents/GitHub/sidebyside/app/src/main/AndroidManifest.xml
 	android:targetSdkVersion

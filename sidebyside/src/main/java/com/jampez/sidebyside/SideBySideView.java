@@ -52,12 +52,12 @@ public class SideBySideView extends LinearLayout implements DatePickerDialog.OnD
     //TextViews
     private TextView lowerLeftTV, lowerRightTV;
 
-    private final String EditText = "EditText", CheckBox = "CheckBox", Spinner = "Spinner", Time = "Time", DateTime = "DateTime";
+    private final String TextView = "TextView", EditText = "EditText", CheckBox = "CheckBox", Spinner = "Spinner", Time = "Time", DateTime = "DateTime";
 
     private final Context context;
 
-    private final String leftText;
-    private final String rightText;
+    private String leftText;
+    private String rightText;
     private String rightEditTextText;
     private String leftEditTextText;
     private final String textViewTextStyle;
@@ -145,6 +145,18 @@ public class SideBySideView extends LinearLayout implements DatePickerDialog.OnD
         calendar = Calendar.getInstance();
 
         switch (leftInput){
+            case TextView:
+                //Set EditText to be visible element for leftInput
+                leftET.setVisibility(GONE);
+                leftCB.setVisibility(GONE);
+                leftSP.setVisibility(GONE);
+                lowerLeftTV.setVisibility(VISIBLE);
+
+                //Set TextAppearance
+                TextViewCompat.setTextAppearance(leftET, textAppearance);
+
+                lowerLeftTV.setText(leftText);
+                break;
             case EditText:
                 //Set EditText to be visible element for leftInput
                 leftET.setVisibility(VISIBLE);
@@ -288,6 +300,18 @@ public class SideBySideView extends LinearLayout implements DatePickerDialog.OnD
 
         if(!hideRightView){
             switch (rightInput){
+                case TextView:
+                    //Set EditText to be visible element for leftInput
+                    rightET.setVisibility(GONE);
+                    rightCB.setVisibility(GONE);
+                    rightCB.setVisibility(GONE);
+                    lowerRightTV.setVisibility(VISIBLE);
+
+                    //Set TextAppearance
+                    TextViewCompat.setTextAppearance(rightET, textAppearance);
+
+                    lowerRightTV.setText(rightText);
+                    break;
                 case EditText:
                     //Set EditText to be visible element for leftInput
                     rightET.setVisibility(VISIBLE);
@@ -602,158 +626,172 @@ public class SideBySideView extends LinearLayout implements DatePickerDialog.OnD
 
     @SuppressWarnings("unused")
     public void setLeftError(String error){
-        switch (leftInput) {
-            case EditText:
-                leftET.setError(error);
-                break;
-            case CheckBox:
-                leftCB.setError(error);
-                break;
-            case Spinner:
-                TextView errorText = (TextView) leftSP.getSelectedView();
-                errorText.setError(error);
-                break;
-            case Time:
-                lowerLeftTV.setError(error);
-                break;
-            case DateTime:
-                lowerLeftTV.setError(error);
-                break;
+        if(leftInput.equals(Time) || leftInput.equals(DateTime))
+            lowerLeftTV.setError(error);
+        else{
+            switch (leftInput) {
+                case TextView:
+                    lowerLeftTV.setError(error);
+                    break;
+                case EditText:
+                    leftET.setError(error);
+                    break;
+                case CheckBox:
+                    leftCB.setError(error);
+                    break;
+                case Spinner:
+                    TextView errorText = (TextView) leftSP.getSelectedView();
+                    errorText.setError(error);
+                    break;
+            }
         }
+
     }
 
     @SuppressWarnings("unused")
     public void setRightError(String error){
-        switch (rightInput) {
-            case EditText:
-                rightET.setError(error);
-                break;
-            case CheckBox:
-                rightCB.setError(error);
-                break;
-            case Spinner:
-                TextView errorText = (TextView) rightSP.getSelectedView();
-                errorText.setError(error);
-                break;
-            case Time:
-                lowerRightTV.setError(error);
-                break;
-            case DateTime:
-                lowerRightTV.setError(error);
-                break;
+        if (rightInput.equals(Time) || rightInput.equals(DateTime))
+            lowerRightTV.setError(error);
+        else{
+            switch (rightInput) {
+                case TextView:
+                    lowerRightTV.setError(error);
+                    break;
+                case EditText:
+                    rightET.setError(error);
+                    break;
+                case CheckBox:
+                    rightCB.setError(error);
+                    break;
+                case Spinner:
+                    TextView errorText = (TextView) rightSP.getSelectedView();
+                    errorText.setError(error);
+                    break;
+            }
         }
     }
 
-    @SuppressWarnings("unused")
+
     /**
      * Updated method name.
      *
      * @deprecated use {@link #getLeftInputView()} )} instead.
      */
-    @Deprecated
+    @SuppressWarnings("unused") @Deprecated
     public View getLeftView(){
-        switch (leftInput) {
-            case EditText:
-                return leftET;
-            case CheckBox:
-                return leftCB;
-            case Spinner:
-                return leftSP;
-            case Time:
-                return lowerLeftTV;
-            case DateTime:
-                return lowerLeftTV;
+        if(leftInput.equals(Time) || leftInput.equals(DateTime))
+            return lowerLeftTV;
+        else{
+            switch (leftInput) {
+                case TextView:
+                    return lowerLeftTV;
+                case EditText:
+                    return leftET;
+                case CheckBox:
+                    return leftCB;
+                case Spinner:
+                    return leftSP;
+            }
         }
         return null;
     }
 
     @SuppressWarnings("unused")
     public View getLeftInputView(){
-        switch (leftInput) {
-            case EditText:
-                return leftET;
-            case CheckBox:
-                return leftCB;
-            case Spinner:
-                return leftSP;
-            case Time:
-                return lowerLeftTV;
-            case DateTime:
-                return lowerLeftTV;
+        if (leftInput.equals(Time) || leftInput.equals(DateTime))
+            return lowerLeftTV;
+        else{
+            switch (leftInput) {
+                case TextView:
+                    return lowerLeftTV;
+                case EditText:
+                    return leftET;
+                case CheckBox:
+                    return leftCB;
+                case Spinner:
+                    return leftSP;
+            }
         }
         return null;
     }
 
-    @SuppressWarnings("unused")
     /**
      * Updated method name.
      *
      * @deprecated use {@link #getRightInputView()} )} instead.
      */
-    @Deprecated
+    @Deprecated @SuppressWarnings("unused")
     public View getRightView(){
-        switch (rightInput) {
-            case EditText:
-                return rightET;
-            case CheckBox:
-                return rightCB;
-            case Spinner:
-                return rightSP;
-            case Time:
-                return lowerRightTV;
-            case DateTime:
-                return lowerRightTV;
+        if(rightInput.equals(Time) || rightInput.equals(DateTime))
+            return lowerRightTV;
+        else{
+            switch (rightInput) {
+                case TextView:
+                    return lowerRightTV;
+                case EditText:
+                    return rightET;
+                case CheckBox:
+                    return rightCB;
+                case Spinner:
+                    return rightSP;
+            }
         }
         return null;
     }
 
     @SuppressWarnings("unused")
     public View getRightInputView(){
-        switch (rightInput) {
-            case EditText:
-                return rightET;
-            case CheckBox:
-                return rightCB;
-            case Spinner:
-                return rightSP;
-            case Time:
-                return lowerRightTV;
-            case DateTime:
-                return lowerRightTV;
+        if (rightInput.equals(Time) || rightInput.equals(DateTime))
+            return lowerRightTV;
+        else{
+            switch (rightInput) {
+                case TextView:
+                    return lowerRightTV;
+                case EditText:
+                    return rightET;
+                case CheckBox:
+                    return rightCB;
+                case Spinner:
+                    return rightSP;
+            }
         }
         return null;
     }
 
     @SuppressWarnings("unused")
     public String rightInput(){
-        switch (rightInput) {
-            case EditText:
-                return rightET.getText().toString();
-            case CheckBox:
-                return String.valueOf(rightCB.isChecked());
-            case Spinner:
-                return (rightSP.getSelectedItemPosition() == 0) ? null : String.valueOf(rightSP.getSelectedItemPosition());
-            case Time:
-                return lowerRightTV.getText().toString();
-            case DateTime:
-                return lowerRightTV.getText().toString();
+        if (rightInput.equals(Time) || rightInput.equals(DateTime))
+            return lowerRightTV.getText().toString();
+        else{
+            switch (rightInput) {
+                case TextView:
+                    return lowerRightTV.getText().toString();
+                case EditText:
+                    return rightET.getText().toString();
+                case CheckBox:
+                    return String.valueOf(rightCB.isChecked());
+                case Spinner:
+                    return (rightSP.getSelectedItemPosition() == 0) ? null : String.valueOf(rightSP.getSelectedItemPosition());
+            }
         }
         return null;
     }
 
     @SuppressWarnings("unused")
     public String leftInput(){
-        switch (leftInput) {
-            case EditText:
-                return leftET.getText().toString();
-            case CheckBox:
-                return String.valueOf(leftCB.isChecked());
-            case Spinner:
-                return (leftSP.getSelectedItemPosition() == 0) ? null : String.valueOf(leftSP.getSelectedItemPosition());
-            case Time:
-                return lowerLeftTV.getText().toString();
-            case DateTime:
-                return lowerLeftTV.getText().toString();
+        if (leftInput.equals(Time) || leftInput.equals(DateTime))
+            return lowerLeftTV.getText().toString();
+        else{
+            switch (leftInput) {
+                case TextView:
+                    return lowerLeftTV.getText().toString();
+                case EditText:
+                    return leftET.getText().toString();
+                case CheckBox:
+                    return String.valueOf(leftCB.isChecked());
+                case Spinner:
+                    return (leftSP.getSelectedItemPosition() == 0) ? null : String.valueOf(leftSP.getSelectedItemPosition());
+            }
         }
         return null;
     }
@@ -761,54 +799,63 @@ public class SideBySideView extends LinearLayout implements DatePickerDialog.OnD
     @SuppressWarnings("unused")
     public void setLeftInputEnabled(boolean isEnabled){
         leftEnabled = isEnabled;
-        switch (leftInput) {
-            case EditText:
-                leftET.setEnabled(leftEnabled);
-                leftET.setFocusable(leftEnabled);
-                break;
-            case CheckBox:
-                leftCB.setEnabled(leftEnabled);
-                leftLayout.setEnabled(leftEnabled);
-                break;
-            case Spinner:
-                leftSP.setEnabled(leftEnabled);
-                break;
-            case Time:
-                lowerLeftTV.setEnabled(leftEnabled);
-                break;
-            case DateTime:
-                lowerLeftTV.setEnabled(leftEnabled);
-                break;
+        if (leftInput.equals(Time) || leftInput.equals(DateTime))
+            lowerLeftTV.setEnabled(leftEnabled);
+        else{
+            switch (leftInput) {
+                case TextView:
+                    lowerLeftTV.setEnabled(leftEnabled);
+                    break;
+                case EditText:
+                    leftET.setEnabled(leftEnabled);
+                    leftET.setFocusable(leftEnabled);
+                    break;
+                case CheckBox:
+                    leftCB.setEnabled(leftEnabled);
+                    leftLayout.setEnabled(leftEnabled);
+                    break;
+                case Spinner:
+                    leftSP.setEnabled(leftEnabled);
+                    break;
+            }
         }
     }
 
     @SuppressWarnings("unused")
     public void setRightInputEnabled(boolean isEnabled){
         rightEnabled = isEnabled;
-        switch (rightInput) {
-            case EditText:
-                rightET.setEnabled(rightEnabled);
-                rightET.setFocusable(rightEnabled);
-                break;
-            case CheckBox:
-                rightCB.setEnabled(rightEnabled);
-                rightLayout.setEnabled(rightEnabled);
-                break;
-            case Spinner:
-                rightSP.setEnabled(rightEnabled);
-                break;
-            case Time:
-                lowerRightTV.setEnabled(rightEnabled);
-                break;
-            case DateTime:
-                lowerRightTV.setEnabled(rightEnabled);
-                break;
+        if (rightInput.equals(Time) || rightInput.equals(DateTime))
+            lowerRightTV.setEnabled(rightEnabled);
+        else{
+            switch (rightInput) {
+                case TextView:
+                    lowerRightTV.setEnabled(rightEnabled);
+                    break;
+                case EditText:
+                    rightET.setEnabled(rightEnabled);
+                    rightET.setFocusable(rightEnabled);
+                    break;
+                case CheckBox:
+                    rightCB.setEnabled(rightEnabled);
+                    rightLayout.setEnabled(rightEnabled);
+                    break;
+                case Spinner:
+                    rightSP.setEnabled(rightEnabled);
+                    break;
+            }
         }
     }
 
     public void setLeftInput(Object input){
         if(input != null){
             switch (leftInput) {
+                case TextView:
+                    if(input instanceof String) {
+                        lowerLeftTV.setText((String)input);
+                        leftText = (String)input;
+                    }else
+                        throw new RuntimeException("Left " + leftInput + " Input MUST be type String");
+                    break;
                 case EditText:
                     if(input instanceof String) {
                         leftET.setText((String)input);
@@ -852,6 +899,13 @@ public class SideBySideView extends LinearLayout implements DatePickerDialog.OnD
     public void setRightInput(Object input){
         if(input != null){
             switch (rightInput) {
+                case TextView:
+                    if(input instanceof String) {
+                        lowerRightTV.setText((String)input);
+                        rightText = (String)input;
+                    }else
+                        throw new RuntimeException("Left " + rightInput + " Input MUST be type String");
+                    break;
                 case EditText:
                     if(input instanceof String) {
                         rightET.setText((String)input);
@@ -897,49 +951,41 @@ public class SideBySideView extends LinearLayout implements DatePickerDialog.OnD
             this.leftInputListener = listener;
             boolean shouldThrow = false;
             String listenerName = "";
-            switch (leftInput){
-                case EditText:
-                    if(listener instanceof TextWatcher)
-                        leftET.addTextChangedListener((TextWatcher)listener);
-                    else {
-                        shouldThrow = true;
-                        listenerName = TextWatcher.class.getSimpleName();
-                    }
-                    break;
-                case CheckBox:
-                    if(listener instanceof CompoundButton.OnCheckedChangeListener)
-                        leftCB.setOnCheckedChangeListener((CompoundButton.OnCheckedChangeListener)listener);
-                    else {
-                        shouldThrow = true;
-                        listenerName = CompoundButton.OnCheckedChangeListener.class.getSimpleName();
-                    }
-                    break;
-                case Spinner:
-                    if(listener instanceof AdapterView.OnItemSelectedListener)
-                        leftSP.setOnItemSelectedListener((AdapterView.OnItemSelectedListener)listener);
-                    else {
-                        shouldThrow = true;
-                        listenerName = AdapterView.OnItemSelectedListener.class.getSimpleName();
-                    }
-                    break;
-                case Time:
-                    if(listener instanceof TextWatcher)
-                        lowerLeftTV.addTextChangedListener((TextWatcher)listener);
-                    else {
-                        shouldThrow = true;
-                        listenerName = TextWatcher.class.getSimpleName();
-                    }
-                    break;
-                case DateTime:
-                    if(listener instanceof TextWatcher)
-                        lowerLeftTV.addTextChangedListener((TextWatcher)listener);
-                    else {
-                        shouldThrow = true;
-                        listenerName = TextWatcher.class.getSimpleName();
-                    }
-                    break;
+            if (leftInput.equals(Time) || leftInput.equals(DateTime)){
+                if(listener instanceof TextWatcher)
+                    lowerLeftTV.addTextChangedListener((TextWatcher)listener);
+                else {
+                    shouldThrow = true;
+                    listenerName = TextWatcher.class.getSimpleName();
+                }
+            }else{
+                switch (leftInput){
+                    case EditText:
+                        if(listener instanceof TextWatcher)
+                            leftET.addTextChangedListener((TextWatcher)listener);
+                        else {
+                            shouldThrow = true;
+                            listenerName = TextWatcher.class.getSimpleName();
+                        }
+                        break;
+                    case CheckBox:
+                        if(listener instanceof CompoundButton.OnCheckedChangeListener)
+                            leftCB.setOnCheckedChangeListener((CompoundButton.OnCheckedChangeListener)listener);
+                        else {
+                            shouldThrow = true;
+                            listenerName = CompoundButton.OnCheckedChangeListener.class.getSimpleName();
+                        }
+                        break;
+                    case Spinner:
+                        if(listener instanceof AdapterView.OnItemSelectedListener)
+                            leftSP.setOnItemSelectedListener((AdapterView.OnItemSelectedListener)listener);
+                        else {
+                            shouldThrow = true;
+                            listenerName = AdapterView.OnItemSelectedListener.class.getSimpleName();
+                        }
+                        break;
+                }
             }
-
             if(shouldThrow)
                 throw new RuntimeException(leftInput + " must use " + listenerName);
         }
@@ -951,49 +997,41 @@ public class SideBySideView extends LinearLayout implements DatePickerDialog.OnD
             this.rightInputListener = listener;
             boolean shouldThrow = false;
             String listenerName = "";
-            switch (rightInput){
-                case EditText:
-                    if(listener instanceof TextWatcher)
-                        rightET.addTextChangedListener((TextWatcher)listener);
-                    else {
-                        shouldThrow = true;
-                        listenerName = TextWatcher.class.getSimpleName();
-                    }
-                    break;
-                case CheckBox:
-                    if(listener instanceof CompoundButton.OnCheckedChangeListener)
-                        rightCB.setOnCheckedChangeListener((CompoundButton.OnCheckedChangeListener)listener);
-                    else {
-                        shouldThrow = true;
-                        listenerName = CompoundButton.OnCheckedChangeListener.class.getSimpleName();
-                    }
-                    break;
-                case Spinner:
-                    if(listener instanceof AdapterView.OnItemSelectedListener)
-                        rightSP.setOnItemSelectedListener((AdapterView.OnItemSelectedListener)listener);
-                    else {
-                        shouldThrow = true;
-                        listenerName = AdapterView.OnItemSelectedListener.class.getSimpleName();
-                    }
-                    break;
-                case Time:
-                    if(listener instanceof TextWatcher)
-                        lowerRightTV.addTextChangedListener((TextWatcher)listener);
-                    else {
-                        shouldThrow = true;
-                        listenerName = TextWatcher.class.getSimpleName();
-                    }
-                    break;
-                case DateTime:
-                    if(listener instanceof TextWatcher)
-                        lowerRightTV.addTextChangedListener((TextWatcher)listener);
-                    else {
-                        shouldThrow = true;
-                        listenerName = TextWatcher.class.getSimpleName();
-                    }
-                    break;
+            if (rightInput.equals(Time) || rightInput.equals(DateTime)){
+                if(listener instanceof TextWatcher)
+                    lowerRightTV.addTextChangedListener((TextWatcher)listener);
+                else {
+                    shouldThrow = true;
+                    listenerName = TextWatcher.class.getSimpleName();
+                }
+            }else{
+                switch (rightInput){
+                    case EditText:
+                        if(listener instanceof TextWatcher)
+                            rightET.addTextChangedListener((TextWatcher)listener);
+                        else {
+                            shouldThrow = true;
+                            listenerName = TextWatcher.class.getSimpleName();
+                        }
+                        break;
+                    case CheckBox:
+                        if(listener instanceof CompoundButton.OnCheckedChangeListener)
+                            rightCB.setOnCheckedChangeListener((CompoundButton.OnCheckedChangeListener)listener);
+                        else {
+                            shouldThrow = true;
+                            listenerName = CompoundButton.OnCheckedChangeListener.class.getSimpleName();
+                        }
+                        break;
+                    case Spinner:
+                        if(listener instanceof AdapterView.OnItemSelectedListener)
+                            rightSP.setOnItemSelectedListener((AdapterView.OnItemSelectedListener)listener);
+                        else {
+                            shouldThrow = true;
+                            listenerName = AdapterView.OnItemSelectedListener.class.getSimpleName();
+                        }
+                        break;
+                }
             }
-
             if(shouldThrow)
                 throw new RuntimeException(rightInput + " must use " + listenerName);
         }

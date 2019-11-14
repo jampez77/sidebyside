@@ -38,7 +38,8 @@
             <CheckBox
                 android:id="@+id/left_cb"
                 android:layout_width="match_parent"
-                android:layout_height="48dp"
+                android:layout_height="wrap_content"
+                android:minHeight="48dp"
                 android:layout_gravity="center_vertical"
                 android:padding="5dp"
                 android:visibility="gone"
@@ -51,7 +52,8 @@
                 android:id="@+id/left_sp"
                 android:visibility="gone"
                 android:layout_width="match_parent"
-                android:layout_height="48dp"
+                android:layout_height="wrap_content"
+                android:minHeight="48dp"
                 android:padding="0dp"
                 android:spinnerMode="dropdown"
                 android:focusable="true"
@@ -62,7 +64,8 @@
 
             <TextView
                 android:layout_width="match_parent"
-                android:layout_height="48dp"
+                android:layout_height="wrap_content"
+                android:minHeight="48dp"
                 android:visibility="gone"
                 android:minWidth="200dp"
                 android:background="@drawable/edit_text_selector"
@@ -104,7 +107,8 @@
             <CheckBox
                 android:id="@+id/right_cb"
                 android:layout_width="wrap_content"
-                android:layout_height="48dp"
+                android:layout_height="wrap_content"
+                android:minHeight="48dp"
                 android:layout_gravity="center_vertical"
                 android:padding="5dp"
                 android:visibility="gone"
@@ -117,7 +121,8 @@
                 android:id="@+id/right_sp"
                 android:visibility="gone"
                 android:layout_width="match_parent"
-                android:layout_height="48dp"
+                android:layout_height="wrap_content"
+                android:minHeight="48dp"
                 android:padding="0dp"
                 android:spinnerMode="dropdown"
                 android:focusable="true"
@@ -128,7 +133,8 @@
 
             <TextView
                 android:layout_width="match_parent"
-                android:layout_height="48dp"
+                android:layout_height="wrap_content"
+                android:minHeight="48dp"
                 android:visibility="gone"
                 android:minWidth="200dp"
                 android:background="@drawable/edit_text_selector"

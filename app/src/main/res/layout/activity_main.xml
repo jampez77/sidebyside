@@ -21,7 +21,7 @@
             app:textAppearance="?android:attr/textAppearanceMedium"
             app:textViewTextStyle="bold"
             app:leftInput="EditText"
-            app:rightInput="EditText"
+            app:rightInput="TextView"
             app:leftRequired="true"
             app:rightRequired="true"
             app:leftEditInputType="textPersonName"
