@@ -4,55 +4,79 @@
     </style><style name="DateTimePickerTheme" parent="Theme.AppCompat.Light.Dialog">
         <item name="colorAccent">@color/colorAccent</item>
     </style></file><file path="/Users/ontrac/Documents/GitHub/sidebyside/sidebyside/src/main/res/values/strings.xml" qualifiers=""><string name="app_name">Side By Side</string><string name="validate">Validate</string><string name="first_name">First Name is the name that comes before your last name, I would hope this is obvious but you are a bit of a tool so thought it was best to clarify</string><string name="last_name">Last Name</string><string name="phone">Phone</string><string name="email">Email</string><string name="password">Password</string><string name="confirm_password">Confirm Password</string><string name="authorisation_code">Authorisation Code</string></file><file path="/Users/ontrac/Documents/GitHub/sidebyside/sidebyside/src/main/res/values/attrs.xml" qualifiers=""><declare-styleable name="SideBySideView">
-        <attr format="string" localization="suggested" name="leftText"/>
-        <attr format="string" localization="suggested" name="rightText"/>
-        <attr format="reference" name="textAppearance"/>
-        <attr format="reference" name="editTextBackground"/>
-        <attr format="color" name="textViewTextColor"/>
-        <attr format="color" name="editTextTextColor"/>
+
         <attr format="string" name="textViewTextStyle"/>
+        <attr format="color" name="textViewTextColor"/>
+
+        <attr format="reference" name="editTextBackground"/>
+        <attr format="color" name="editTextTextColor"/>
         <attr format="string" name="editTextTextStyle"/>
-        <attr format="string" name="leftInput"/>
-        <attr format="string" name="rightInput"/>
-        <attr format="string" name="leftEditInputType"/>
-        <attr format="string" name="rightEditInputType"/>
-        <attr format="reference" name="leftSpinnerEntries"/>
-        <attr format="reference" name="rightSpinnerEntries"/>
-        <attr format="string" name="rightEditTextText"/>
-        <attr format="string" name="leftEditTextText"/>
-        <attr format="string" name="rightEditTextHint"/>
-        <attr format="string" name="leftEditTextHint"/>
-        <attr format="boolean" name="hideRightView"/>
-        <attr format="boolean" name="leftRequired"/>
-        <attr format="boolean" name="rightRequired"/>
+
+        <attr format="reference" name="textAppearance"/>
         <attr format="string" name="passwordValidationExpression"/>
         <attr format="string" name="passwordErrorMessage"/>
+
+        <attr format="string" localization="suggested" name="leftText"/>
+        <attr format="string" name="leftInput"/>
+        <attr format="string" name="leftEditInputType"/>
+        <attr format="reference" name="leftSpinnerEntries"/>
+        <attr format="string" name="leftEditTextText"/>
+        <attr format="string" name="leftEditTextHint"/>
+        <attr format="boolean" name="leftRequired"/>
         <attr format="boolean" name="leftInputEnabled"/>
+        <attr format="dimension" name="leftPadding"/>
+        <attr format="reference" name="leftBackground"/>
+        <attr format="boolean" name="leftHideTitle"/>
+
+        <attr format="string" localization="suggested" name="rightText"/>
+        <attr format="string" name="rightInput"/>
+        <attr format="string" name="rightEditInputType"/>
+        <attr format="reference" name="rightSpinnerEntries"/>
+        <attr format="string" name="rightEditTextText"/>
+        <attr format="string" name="rightEditTextHint"/>
+        <attr format="boolean" name="hideRightView"/>
+        <attr format="boolean" name="rightRequired"/>
         <attr format="boolean" name="rightInputEnabled"/>
+        <attr format="dimension" name="rightPadding"/>
+        <attr format="reference" name="rightBackground"/>
+        <attr format="boolean" name="rightHideTitle"/>
+
     </declare-styleable></file><file name="ic_check_box_black_24dp" path="/Users/ontrac/Documents/GitHub/sidebyside/sidebyside/src/main/res/mipmap-xhdpi/ic_check_box_black_24dp.png" qualifiers="xhdpi-v4" type="mipmap"/><file name="ic_arrow_drop_down_black_24dp" path="/Users/ontrac/Documents/GitHub/sidebyside/sidebyside/src/main/res/mipmap-xhdpi/ic_arrow_drop_down_black_24dp.png" qualifiers="xhdpi-v4" type="mipmap"/><file name="ic_check_box_outline_blank_black_24dp" path="/Users/ontrac/Documents/GitHub/sidebyside/sidebyside/src/main/res/mipmap-xhdpi/ic_check_box_outline_blank_black_24dp.png" qualifiers="xhdpi-v4" type="mipmap"/><file name="ic_access_time_black_24dp" path="/Users/ontrac/Documents/GitHub/sidebyside/sidebyside/src/main/res/mipmap-xhdpi/ic_access_time_black_24dp.png" qualifiers="xhdpi-v4" type="mipmap"/><file name="ic_date_range_black_24dp" path="/Users/ontrac/Documents/GitHub/sidebyside/sidebyside/src/main/res/mipmap-xhdpi/ic_date_range_black_24dp.png" qualifiers="xhdpi-v4" type="mipmap"/><file name="side_by_side" path="/Users/ontrac/Documents/GitHub/sidebyside/sidebyside/src/main/res/layout-small/side_by_side.xml" qualifiers="small-v4" type="layout"/></source><source path="/Users/ontrac/Documents/GitHub/sidebyside/sidebyside/build/generated/res/rs/debug"/><source path="/Users/ontrac/Documents/GitHub/sidebyside/sidebyside/build/generated/res/resValues/debug"/></dataSet><dataSet aapt-namespace="http://schemas.android.com/apk/res-auto" config="debug$Generated" generated="true" ignore_pattern="!.svn:!.git:!.ds_store:!*.scc:.*:&lt;dir>_*:!CVS:!thumbs.db:!picasa.ini:!*~"><source path="/Users/ontrac/Documents/GitHub/sidebyside/sidebyside/src/debug/res"/></dataSet><dataSet aapt-namespace="http://schemas.android.com/apk/res-auto" config="debug" generated-set="debug$Generated" ignore_pattern="!.svn:!.git:!.ds_store:!*.scc:.*:&lt;dir>_*:!CVS:!thumbs.db:!picasa.ini:!*~"><source path="/Users/ontrac/Documents/GitHub/sidebyside/sidebyside/src/debug/res"/></dataSet><mergedItems><configuration qualifiers=""><declare-styleable name="SideBySideView">
-        <attr format="string" localization="suggested" name="leftText"/>
-        <attr format="string" localization="suggested" name="rightText"/>
-        <attr format="reference" name="textAppearance"/>
-        <attr format="reference" name="editTextBackground"/>
-        <attr format="color" name="textViewTextColor"/>
-        <attr format="color" name="editTextTextColor"/>
+
         <attr format="string" name="textViewTextStyle"/>
+        <attr format="color" name="textViewTextColor"/>
+
+        <attr format="reference" name="editTextBackground"/>
+        <attr format="color" name="editTextTextColor"/>
         <attr format="string" name="editTextTextStyle"/>
-        <attr format="string" name="leftInput"/>
-        <attr format="string" name="rightInput"/>
-        <attr format="string" name="leftEditInputType"/>
-        <attr format="string" name="rightEditInputType"/>
-        <attr format="reference" name="leftSpinnerEntries"/>
-        <attr format="reference" name="rightSpinnerEntries"/>
-        <attr format="string" name="rightEditTextText"/>
-        <attr format="string" name="leftEditTextText"/>
-        <attr format="string" name="rightEditTextHint"/>
-        <attr format="string" name="leftEditTextHint"/>
-        <attr format="boolean" name="hideRightView"/>
-        <attr format="boolean" name="leftRequired"/>
-        <attr format="boolean" name="rightRequired"/>
+
+        <attr format="reference" name="textAppearance"/>
         <attr format="string" name="passwordValidationExpression"/>
         <attr format="string" name="passwordErrorMessage"/>
+
+        <attr format="string" localization="suggested" name="leftText"/>
+        <attr format="string" name="leftInput"/>
+        <attr format="string" name="leftEditInputType"/>
+        <attr format="reference" name="leftSpinnerEntries"/>
+        <attr format="string" name="leftEditTextText"/>
+        <attr format="string" name="leftEditTextHint"/>
+        <attr format="boolean" name="leftRequired"/>
         <attr format="boolean" name="leftInputEnabled"/>
+        <attr format="dimension" name="leftPadding"/>
+        <attr format="reference" name="leftBackground"/>
+        <attr format="boolean" name="leftHideTitle"/>
+
+        <attr format="string" localization="suggested" name="rightText"/>
+        <attr format="string" name="rightInput"/>
+        <attr format="string" name="rightEditInputType"/>
+        <attr format="reference" name="rightSpinnerEntries"/>
+        <attr format="string" name="rightEditTextText"/>
+        <attr format="string" name="rightEditTextHint"/>
+        <attr format="boolean" name="hideRightView"/>
+        <attr format="boolean" name="rightRequired"/>
         <attr format="boolean" name="rightInputEnabled"/>
+        <attr format="dimension" name="rightPadding"/>
+        <attr format="reference" name="rightBackground"/>
+        <attr format="boolean" name="rightHideTitle"/>
+
     </declare-styleable></configuration></mergedItems></merger>
