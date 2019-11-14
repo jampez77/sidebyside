@@ -24,6 +24,7 @@
             app:rightInput="TextView"
             app:leftRequired="true"
             app:rightRequired="true"
+            app:rightPadding="10dp"
             app:leftEditInputType="textPersonName"
             app:rightEditInputType="textPersonName"/>
 
