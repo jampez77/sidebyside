@@ -70,7 +70,7 @@ class Statics {
             return context.getResources().getDrawable(id);
     }
 
-    public static String transformString(String input, int inputType){
+    static String transformString(String input, int inputType){
         switch (inputType){
             case 1:
                 return uppercaseString(input);

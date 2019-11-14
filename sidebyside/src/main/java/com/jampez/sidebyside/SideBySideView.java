@@ -130,8 +130,8 @@ public class SideBySideView extends LinearLayout implements DatePickerDialog.OnD
         leftTextViewInputType = a.getInt(R.styleable.SideBySideView_leftTextViewInputType, 0);
 
 
-        textViewTextColor = a.getInt(R.styleable.SideBySideView_textViewTextColor, R.color.black);
-        editTextTextColor = a.getInt(R.styleable.SideBySideView_editTextTextColor, R.color.black);
+        textViewTextColor = a.getColor(R.styleable.SideBySideView_textViewTextColor, getResources().getColor(R.color.black));
+        editTextTextColor = a.getColor(R.styleable.SideBySideView_editTextTextColor, getResources().getColor(R.color.black));
 
         a.recycle();
         init();
