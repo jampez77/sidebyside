@@ -13,7 +13,7 @@ This is a simple merged view to easily display two inputs with labels side  by s
 
 ```
 dependencies {
-    api 'com.github.jampez77:sidebyside:1.0.42'
+    api 'com.github.jampez77:sidebyside:1.0.43'
 }
 ```
 
@@ -70,4 +70,4 @@ Each input used has a corresponding listener this would be either `OnItemSelecte
 * leftBackground/rightBackground - use custom background for inputs
 * leftHideTitle/rightHideTitle - hide title in favour of displaying just the input
 * leftTextViewInputType/rightTextViewInputType - force lower TextView to `uppercase`, `lowercase`, `cap_words` or `cap_sentences`
-* textViewTextColor/editTextTextColor - customise text colors
+* titleTextColor/inputTextColor - customise text colors
