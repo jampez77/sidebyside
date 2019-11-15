@@ -1,4 +1,4 @@
-#Thu Nov 14 16:23:02 GMT 2019
+#Fri Nov 15 09:55:54 GMT 2019
 base.0=/Users/ontrac/Documents/GitHub/sidebyside/app/build/intermediates/dex/debug/mergeDexDebug/out/classes.dex
 path.0=classes.dex
 renamed.0=classes.dex
