@@ -1,9 +1,9 @@
 R_DEF: Internal format may change without notice
 local
 attr? editTextBackground
-attr? editTextTextColor
 attr? editTextTextStyle
 attr? hideRightView
+attr? inputTextColor
 attr? leftBackground
 attr? leftEditInputType
 attr? leftEditTextHint
@@ -31,8 +31,8 @@ attr? rightSpinnerEntries
 attr? rightText
 attr? rightTextViewInputType
 attr? textAppearance
-attr? textViewTextColor
 attr? textViewTextStyle
+attr? titleTextColor
 color black
 color colorAccent
 color edit_text_border
@@ -87,4 +87,4 @@ string phone
 string validate
 style AppBaseTheme
 style DateTimePickerTheme
-styleable SideBySideView textViewTextStyle textViewTextColor editTextBackground editTextTextColor editTextTextStyle textAppearance passwordValidationExpression passwordErrorMessage leftText leftInput leftEditInputType leftSpinnerEntries leftEditTextText leftEditTextHint leftRequired leftInputEnabled leftPadding leftBackground leftHideTitle leftTextViewInputType rightText rightInput rightEditInputType rightSpinnerEntries rightEditTextText rightEditTextHint hideRightView rightRequired rightInputEnabled rightPadding rightBackground rightHideTitle rightTextViewInputType
+styleable SideBySideView textViewTextStyle titleTextColor editTextBackground inputTextColor editTextTextStyle textAppearance passwordValidationExpression passwordErrorMessage leftText leftInput leftEditInputType leftSpinnerEntries leftEditTextText leftEditTextHint leftRequired leftInputEnabled leftPadding leftBackground leftHideTitle leftTextViewInputType rightText rightInput rightEditInputType rightSpinnerEntries rightEditTextText rightEditTextHint hideRightView rightRequired rightInputEnabled rightPadding rightBackground rightHideTitle rightTextViewInputType

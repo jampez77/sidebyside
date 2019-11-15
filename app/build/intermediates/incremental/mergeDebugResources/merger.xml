@@ -2816,10 +2816,10 @@
     </style><declare-styleable name="SideBySideView">
 
         <attr format="string" name="textViewTextStyle"/>
-        <attr format="color" name="textViewTextColor"/>
+        <attr format="color" name="titleTextColor"/>
 
         <attr format="reference" name="editTextBackground"/>
-        <attr format="color" name="editTextTextColor"/>
+        <attr format="color" name="inputTextColor"/>
         <attr format="string" name="editTextTextStyle"/>
 
         <attr format="reference" name="textAppearance"/>
@@ -3585,10 +3585,10 @@
     </declare-styleable><declare-styleable name="Variant"><attr format="dimension" name="region_widthLessThan"/><attr format="dimension" name="region_widthMoreThan"/><attr format="dimension" name="region_heightLessThan"/><attr format="dimension" name="region_heightMoreThan"/><attr name="constraints"/></declare-styleable><declare-styleable name="SideBySideView">
 
         <attr format="string" name="textViewTextStyle"/>
-        <attr format="color" name="textViewTextColor"/>
+        <attr format="color" name="titleTextColor"/>
 
         <attr format="reference" name="editTextBackground"/>
-        <attr format="color" name="editTextTextColor"/>
+        <attr format="color" name="inputTextColor"/>
         <attr format="string" name="editTextTextStyle"/>
 
         <attr format="reference" name="textAppearance"/>
