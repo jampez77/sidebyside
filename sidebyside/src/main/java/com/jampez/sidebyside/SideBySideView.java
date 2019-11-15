@@ -172,7 +172,7 @@ public class SideBySideView extends LinearLayout implements DatePickerDialog.OnD
                 leftCB.setVisibility(GONE);
                 leftSP.setVisibility(GONE);
                 lowerLeftTV.setVisibility(VISIBLE);
-                lowerLeftTV.setTextColor(getResources().getColor(textViewTextColor));
+                lowerLeftTV.setTextColor(textViewTextColor);
 
                 //Set TextAppearance
                 TextViewCompat.setTextAppearance(lowerLeftTV, textAppearance);
@@ -182,7 +182,7 @@ public class SideBySideView extends LinearLayout implements DatePickerDialog.OnD
 
                 //Set typeface style
                 lowerLeftTV.setTypeface(lowerLeftTV.getTypeface(), getTypeFace(editTextTextStyle));
-                leftET.setTextColor(getResources().getColor(editTextTextColor));
+                leftET.setTextColor(editTextTextColor);
 
                 lowerLeftTV.setText(transformString(leftText, leftTextViewInputType));
                 if(leftPadding > 0)
@@ -354,7 +354,7 @@ public class SideBySideView extends LinearLayout implements DatePickerDialog.OnD
                     rightCB.setVisibility(GONE);
                     rightCB.setVisibility(GONE);
                     lowerRightTV.setVisibility(VISIBLE);
-                    lowerRightTV.setTextColor(getResources().getColor(textViewTextColor));
+                    lowerRightTV.setTextColor(textViewTextColor);
 
                     //Set TextAppearance
                     TextViewCompat.setTextAppearance(lowerRightTV, textAppearance);
@@ -387,7 +387,7 @@ public class SideBySideView extends LinearLayout implements DatePickerDialog.OnD
 
                     //Set typeface style
                     rightET.setTypeface(rightET.getTypeface(), getTypeFace(editTextTextStyle));
-                    rightET.setTextColor(getResources().getColor(editTextTextColor));
+                    rightET.setTextColor(editTextTextColor);
 
                     //Set text
                     rightET.setText(rightEditTextText);
@@ -523,7 +523,7 @@ public class SideBySideView extends LinearLayout implements DatePickerDialog.OnD
                 TextViewCompat.setTextAppearance(upperRightTV, textAppearance);
                 upperRightTV.setText(rightText);
                 upperRightTV.setTypeface(upperRightTV.getTypeface(), getTypeFace(textViewTextStyle));
-                upperRightTV.setTextColor(getResources().getColor(textViewTextColor));
+                upperRightTV.setTextColor(textViewTextColor);
             }
 
             if (rightET.getVisibility() == View.GONE || rightLayout.getVisibility() == View.GONE)
@@ -546,7 +546,7 @@ public class SideBySideView extends LinearLayout implements DatePickerDialog.OnD
 
             //Setting Labels
             upperLeftTV.setText(leftText);
-            upperLeftTV.setTextColor(getResources().getColor(textViewTextColor));
+            upperLeftTV.setTextColor(textViewTextColor);
 
             //Setting TextView Style
             upperLeftTV.setTypeface(upperLeftTV.getTypeface(), getTypeFace(textViewTextStyle));
