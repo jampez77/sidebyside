@@ -37,6 +37,7 @@ color black
 color colorAccent
 color edit_text_border
 color edit_text_selected_border
+color grey
 color white
 dimen button_min_height
 dimen button_text_padding
