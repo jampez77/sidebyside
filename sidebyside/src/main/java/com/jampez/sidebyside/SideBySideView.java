@@ -8,6 +8,7 @@ import android.content.res.TypedArray;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.util.AttributeSet;
+import android.util.Log;
 import android.view.View;
 import android.view.inputmethod.EditorInfo;
 import android.widget.AdapterView;
@@ -26,6 +27,7 @@ import java.util.regex.Pattern;
 import androidx.core.widget.TextViewCompat;
 import static com.jampez.sidebyside.Statics.getDrawableFromInt;
 import static com.jampez.sidebyside.Statics.getInputType;
+import static com.jampez.sidebyside.Statics.getScreenSizeName;
 import static com.jampez.sidebyside.Statics.getTypeFace;
 import static com.jampez.sidebyside.Statics.isValidEmail;
 import static com.jampez.sidebyside.Statics.preventDoubleClick;
@@ -160,6 +162,8 @@ public class SideBySideView extends LinearLayout implements DatePickerDialog.OnD
 
         calendar = getInstance();
 
+        Log.d("screen size", getScreenSizeName(getContext()));
+
         switch (leftInput) {
             case TextView:
                 //Set EditText to be visible element for leftInput
@@ -168,20 +172,15 @@ public class SideBySideView extends LinearLayout implements DatePickerDialog.OnD
                 leftSP.setVisibility(GONE);
                 lowerLeftTV.setVisibility(VISIBLE);
 
+
                 //Set TextAppearance
                 TextViewCompat.setTextAppearance(lowerLeftTV, textAppearance);
-
-                //Set input type
-                lowerLeftTV.setInputType(getInputType(leftEditInputType));
 
                 //Set typeface style
                 lowerLeftTV.setTypeface(lowerLeftTV.getTypeface(), getTypeFace(editTextTextStyle));
                 lowerLeftTV.setTextColor(inputTextColor);
-
                 lowerLeftTV.setText(transformString(leftText, leftTextViewInputType));
-                if(leftPadding > 0)
-                    lowerLeftTV.setPadding((int)leftPadding, (int)leftPadding, (int)leftPadding, (int)leftPadding);
-
+                if (leftPadding > 0) lowerLeftTV.setPadding((int)leftPadding, (int)leftPadding, (int)leftPadding, (int)leftPadding);
                 if(leftBackground > 0) lowerLeftTV.setBackgroundResource(leftBackground);
                 break;
             case EditText:
@@ -743,31 +742,6 @@ public class SideBySideView extends LinearLayout implements DatePickerDialog.OnD
         }
     }
 
-
-    /**
-     * Updated method name.
-     *
-     * @deprecated use {@link #getLeftInputView()} )} instead.
-     */
-    @SuppressWarnings("unused") @Deprecated
-    public View getLeftView(){
-        if(leftInput.equals(Time) || leftInput.equals(DateTime))
-            return lowerLeftTV;
-        else{
-            switch (leftInput) {
-                case TextView:
-                    return lowerLeftTV;
-                case EditText:
-                    return leftET;
-                case CheckBox:
-                    return leftCB;
-                case Spinner:
-                    return leftSP;
-            }
-        }
-        return null;
-    }
-
     @SuppressWarnings("unused")
     public View getLeftInputView(){
         if (leftInput.equals(Time) || leftInput.equals(DateTime))
@@ -782,30 +756,6 @@ public class SideBySideView extends LinearLayout implements DatePickerDialog.OnD
                     return leftCB;
                 case Spinner:
                     return leftSP;
-            }
-        }
-        return null;
-    }
-
-    /**
-     * Updated method name.
-     *
-     * @deprecated use {@link #getRightInputView()} )} instead.
-     */
-    @Deprecated @SuppressWarnings("unused")
-    public View getRightView(){
-        if(rightInput.equals(Time) || rightInput.equals(DateTime))
-            return lowerRightTV;
-        else{
-            switch (rightInput) {
-                case TextView:
-                    return lowerRightTV;
-                case EditText:
-                    return rightET;
-                case CheckBox:
-                    return rightCB;
-                case Spinner:
-                    return rightSP;
             }
         }
         return null;
@@ -918,6 +868,7 @@ public class SideBySideView extends LinearLayout implements DatePickerDialog.OnD
         }
     }
 
+    @SuppressWarnings("unused")
     public void setLeftInput(Object input){
         if(input != null){
             switch (leftInput) {

@@ -20,6 +20,11 @@ import java.util.regex.Pattern;
 
 import androidx.core.content.ContextCompat;
 
+import static android.content.res.Configuration.SCREENLAYOUT_SIZE_LARGE;
+import static android.content.res.Configuration.SCREENLAYOUT_SIZE_MASK;
+import static android.content.res.Configuration.SCREENLAYOUT_SIZE_NORMAL;
+import static android.content.res.Configuration.SCREENLAYOUT_SIZE_SMALL;
+import static android.content.res.Configuration.SCREENLAYOUT_SIZE_XLARGE;
 import static java.lang.Character.toUpperCase;
 import static java.util.Locale.getDefault;
 import static java.util.regex.Pattern.CASE_INSENSITIVE;
@@ -68,6 +73,27 @@ class Statics {
             return ContextCompat.getDrawable(context, id);
         else
             return context.getResources().getDrawable(id);
+    }
+
+    public static String getScreenSizeName(Context context) {
+        int screenLayout = context.getResources().getConfiguration().screenLayout;
+        screenLayout &= SCREENLAYOUT_SIZE_MASK;
+        String toReturn = "undefined";
+        switch (screenLayout) {
+            case SCREENLAYOUT_SIZE_SMALL:
+                toReturn = "small";
+                break;
+            case SCREENLAYOUT_SIZE_NORMAL:
+                toReturn = "normal";
+                break;
+            case SCREENLAYOUT_SIZE_LARGE:
+                toReturn = "large";
+                break;
+            case SCREENLAYOUT_SIZE_XLARGE:
+                toReturn = "xlarge";
+                break;
+        }
+        return toReturn;
     }
 
     static String transformString(String input, int inputType){

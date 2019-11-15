@@ -11,16 +11,16 @@
         android:layout_height="wrap_content">
 
         <LinearLayout
-            android:orientation="vertical"
             android:id="@+id/left_layout"
+            android:orientation="vertical"
             android:layout_width="0dp"
             android:layout_weight=".50"
             android:layout_height="match_parent">
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:id="@+id/coordinatorLayout2"
-                android:layout_marginEnd="5dp"
-                android:layout_marginRight="5dp"
+                android:layout_marginStart="5dp"
+                android:layout_marginLeft="5dp"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent">
 
@@ -29,7 +29,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:gravity="top"
-                    android:text="@string/first_name"
+                    android:text="@string/last_name"
                     android:textStyle="bold"
                     app:layout_constraintBottom_toTopOf="@+id/lower_left_layout"
                     app:layout_constraintEnd_toEndOf="parent"
@@ -40,12 +40,12 @@
 
                 <LinearLayout
                     android:id="@+id/lower_left_layout"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
                     android:orientation="vertical"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent">
+                    app:layout_constraintStart_toStartOf="parent"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
 
                     <EditText
                         android:id="@+id/left_et"
@@ -53,9 +53,8 @@
                         android:layout_height="wrap_content"
                         android:minHeight="48dp"
                         android:background="@drawable/edit_text_selector"
-                        android:hint="@string/first_name"
+                        android:hint="@string/last_name"
                         android:inputType="text"
-                        android:nextFocusDown="@id/right_et"
                         android:padding="5dp" />
 
                     <CheckBox
@@ -69,10 +68,10 @@
                         android:gravity="start"
                         android:padding="5dp"
                         android:visibility="gone"
-                        app:layout_constraintBottom_toTopOf="@+id/left_et"
-                        app:layout_constraintEnd_toStartOf="parent"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toTopOf="@+id/left_et" />
+                        app:layout_constraintBottom_toTopOf="@+id/right_et"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="@+id/right_et" />
 
                     <Spinner
                         android:id="@+id/left_sp"
@@ -87,10 +86,10 @@
                         android:spinnerMode="dropdown"
                         android:textColor="@color/edit_text_border"
                         android:visibility="gone"
-                        app:layout_constraintBottom_toTopOf="@+id/left_et"
-                        app:layout_constraintEnd_toStartOf="parent"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toTopOf="@+id/left_et" />
+                        app:layout_constraintBottom_toTopOf="@+id/right_et"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="@+id/right_et" />
 
                     <TextView
                         android:id="@+id/lower_left_tv"
@@ -105,10 +104,10 @@
                         android:padding="5dp"
                         android:textColor="@color/edit_text_border"
                         android:visibility="gone"
-                        app:layout_constraintBottom_toTopOf="@+id/left_et"
-                        app:layout_constraintEnd_toStartOf="parent"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toTopOf="@+id/left_et" />
+                        app:layout_constraintBottom_toTopOf="@+id/right_et"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="@+id/right_et" />
 
                 </LinearLayout>
 

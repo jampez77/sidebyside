@@ -17,16 +17,15 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             app:leftText="@string/first_name"
-            app:rightText="@string/last_name"
+            app:rightText="@string/first_name"
             app:textAppearance="?android:attr/textAppearanceMedium"
             app:textViewTextStyle="bold"
-            app:leftInput="EditText"
+            app:leftInput="TextView"
+            app:leftBackground="@color/black"
             app:rightInput="TextView"
             app:leftRequired="true"
             app:rightRequired="true"
-            app:rightPadding="10dp"
-            app:leftEditInputType="textCapWords"
-            app:rightTextViewInputType="uppercase"/>
+            app:rightPadding="10dp"/>
 
         <com.jampez.sidebyside.SideBySideView
             android:id="@+id/contact_info"

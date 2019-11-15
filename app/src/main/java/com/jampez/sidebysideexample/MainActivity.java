@@ -22,7 +22,6 @@ public class MainActivity extends AppCompatActivity {
 
         final TextView text = findViewById(R.id.text);
         names = findViewById(R.id.names);
-        names.setLeftInput("testing");
         contactInfo = findViewById(R.id.contact_info);
         passwords = findViewById(R.id.password);
         authCode = findViewById(R.id.authorisation_code);
