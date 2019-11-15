@@ -26,10 +26,10 @@
     <declare-styleable name="SideBySideView">
 
         <attr format="string" name="textViewTextStyle"/>
-        <attr format="color" name="textViewTextColor"/>
+        <attr format="color" name="titleTextColor"/>
 
         <attr format="reference" name="editTextBackground"/>
-        <attr format="color" name="editTextTextColor"/>
+        <attr format="color" name="inputTextColor"/>
         <attr format="string" name="editTextTextStyle"/>
 
         <attr format="reference" name="textAppearance"/>

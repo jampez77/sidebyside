@@ -10,7 +10,7 @@ import android.text.TextWatcher;
 import android.util.AttributeSet;
 import android.util.Log;
 import android.view.View;
-import android.view.inputmethod.EditorInfo;
+import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.CheckBox;
@@ -25,6 +25,9 @@ import java.util.Calendar;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import androidx.core.widget.TextViewCompat;
+import static android.view.ViewGroup.LayoutParams.MATCH_PARENT;
+import static android.view.inputmethod.EditorInfo.IME_ACTION_DONE;
+import static android.view.inputmethod.EditorInfo.IME_FLAG_NAVIGATE_NEXT;
 import static com.jampez.sidebyside.Statics.getDrawableFromInt;
 import static com.jampez.sidebyside.Statics.getInputType;
 import static com.jampez.sidebyside.Statics.getScreenSizeName;
@@ -522,13 +525,19 @@ public class SideBySideView extends LinearLayout implements DatePickerDialog.OnD
                 upperRightTV.setText(rightText);
                 upperRightTV.setTypeface(upperRightTV.getTypeface(), getTypeFace(textViewTextStyle));
                 upperRightTV.setTextColor(titleTextColor);
+            }else{
+                //if title is hidden then force input to MATCH_PARENT with full left layout
+                ViewGroup.LayoutParams params = getRightInputView().getLayoutParams();
+                params.height = MATCH_PARENT;
+                getRightInputView().setLayoutParams(params);
+                getRightInputView().requestLayout();
             }
 
-            if (rightET.getVisibility() == View.GONE || rightLayout.getVisibility() == View.GONE)
-                leftET.setImeOptions(EditorInfo.IME_ACTION_DONE);
+            if (rightET.getVisibility() == GONE || rightLayout.getVisibility() == GONE)
+                leftET.setImeOptions(IME_ACTION_DONE);
 
             if (!rightET.isEnabled())
-                leftET.setImeOptions(EditorInfo.IME_FLAG_NAVIGATE_NEXT);
+                leftET.setImeOptions(IME_FLAG_NAVIGATE_NEXT);
 
             setRightInputEnabled(rightEnabled);
             setRightInputListener(rightInputListener);
@@ -548,11 +557,17 @@ public class SideBySideView extends LinearLayout implements DatePickerDialog.OnD
 
             //Setting TextView Style
             upperLeftTV.setTypeface(upperLeftTV.getTypeface(), getTypeFace(textViewTextStyle));
+        }else{
+            //if title is hidden then force input to MATCH_PARENT with full left layout
+            ViewGroup.LayoutParams params = getLeftInputView().getLayoutParams();
+            params.height = MATCH_PARENT;
+            getLeftInputView().setLayoutParams(params);
+            getLeftInputView().requestLayout();
         }
 
         //Override EditText focusing based on visibility of neighbouring view.
-        if(leftET.getVisibility() == View.GONE || leftLayout.getVisibility() == View.GONE)
-            rightET.setImeOptions(EditorInfo.IME_ACTION_DONE);
+        if(leftET.getVisibility() == GONE || leftLayout.getVisibility() == GONE)
+            rightET.setImeOptions(IME_ACTION_DONE);
     }
 
     public boolean haveInputsBeenEdited(){
