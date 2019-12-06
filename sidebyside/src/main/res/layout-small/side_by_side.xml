@@ -20,7 +20,6 @@
                 android:id="@+id/left_tv"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textStyle="bold"
                 tools:text="@string/first_name" />
 
             <EditText
@@ -89,7 +88,6 @@
                 android:id="@+id/right_tv"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textStyle="bold"
                 tools:text="@string/last_name" />
 
             <EditText

@@ -10,25 +10,17 @@ import android.text.InputType;
 import android.text.TextUtils;
 import android.util.Patterns;
 import android.view.View;
-
 import java.util.Calendar;
 import java.util.Date;
-import java.util.Locale;
-import java.util.StringTokenizer;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
-
 import androidx.core.content.ContextCompat;
-
 import static android.content.res.Configuration.SCREENLAYOUT_SIZE_LARGE;
 import static android.content.res.Configuration.SCREENLAYOUT_SIZE_MASK;
 import static android.content.res.Configuration.SCREENLAYOUT_SIZE_NORMAL;
 import static android.content.res.Configuration.SCREENLAYOUT_SIZE_SMALL;
 import static android.content.res.Configuration.SCREENLAYOUT_SIZE_XLARGE;
+import static android.content.res.Resources.getSystem;
 import static java.lang.Character.toUpperCase;
 import static java.util.Locale.getDefault;
-import static java.util.regex.Pattern.CASE_INSENSITIVE;
-import static java.util.regex.Pattern.compile;
 
 class Statics {
     static void showTimePickerDialog(Context context, TimePickerDialog.OnTimeSetListener callback){
@@ -75,7 +67,7 @@ class Statics {
             return context.getResources().getDrawable(id);
     }
 
-    public static String getScreenSizeName(Context context) {
+    static String getScreenSizeName(Context context) {
         int screenLayout = context.getResources().getConfiguration().screenLayout;
         screenLayout &= SCREENLAYOUT_SIZE_MASK;
         String toReturn = "undefined";
@@ -111,7 +103,6 @@ class Statics {
         }
     }
 
-
     private static String uppercaseString(final String input) {
         return input.toUpperCase(getDefault());
     }
@@ -124,7 +115,7 @@ class Statics {
         return toUpperCase(input.charAt(0)) + input.substring(1);
     }
 
-    public static String capitalizeWords(String str) {
+    private static String capitalizeWords(String str) {
         String[] words = str.trim().split(" ");
         StringBuilder ret = new StringBuilder();
         for(int i = 0; i < words.length; i++)
@@ -175,8 +166,6 @@ class Statics {
         return (!TextUtils.isEmpty(target) && Patterns.EMAIL_ADDRESS.matcher(target).matches());
     }
 
-
-
     private static int translateInputType(String value){
         switch (value){
             case "date":
@@ -195,8 +184,6 @@ class Statics {
                 return InputType.TYPE_CLASS_NUMBER | InputType.TYPE_NUMBER_FLAG_SIGNED;
             case "phone":
                 return InputType.TYPE_CLASS_PHONE;
-            case "text":
-                return InputType.TYPE_CLASS_TEXT | InputType.TYPE_TEXT_VARIATION_NORMAL;
             case "textAutoComplete":
                 return InputType.TYPE_CLASS_TEXT | InputType.TYPE_TEXT_FLAG_AUTO_COMPLETE;
             case "textAutoCorrect":

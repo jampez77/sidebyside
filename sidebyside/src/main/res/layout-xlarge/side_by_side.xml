@@ -18,10 +18,13 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toStartOf="@id/right_layout"
             app:layout_constraintTop_toTopOf="parent"
-            android:layout_margin="5dp"
+            android:layout_marginStart="0dp"
+            android:layout_marginLeft="0dp"
+            android:layout_marginRight="5dp"
+            android:layout_marginEnd="5dp"
             android:layout_width="0dp"
             android:layout_weight=".50"
-            android:layout_height="match_parent">
+            android:layout_height="wrap_content">
 
             <TextView
                 android:id="@+id/left_tv"
@@ -30,7 +33,6 @@
                 android:layout_weight=".50"
                 android:gravity="top"
                 tools:text="@string/last_name"
-                android:textStyle="bold"
                 app:layout_constraintBottom_toTopOf="@+id/lower_left_layout"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.0"
@@ -120,10 +122,13 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@id/left_layout"
             app:layout_constraintTop_toTopOf="parent"
-            android:layout_margin="5dp"
+            android:layout_marginStart="5dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="0dp"
+            android:layout_marginEnd="0dp"
             android:layout_width="0dp"
             android:layout_weight=".50"
-            android:layout_height="match_parent">
+            android:layout_height="wrap_content">
 
             <TextView
                 android:id="@+id/right_tv"
@@ -132,7 +137,6 @@
                 android:layout_weight=".50"
                 android:gravity="top"
                 tools:text="@string/last_name"
-                android:textStyle="bold"
                 app:layout_constraintBottom_toTopOf="@+id/lower_right_layout"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.0"
