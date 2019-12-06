@@ -781,8 +781,6 @@ id checked
 id chronometer
 id content
 id contentPanel
-id coordinatorLayout
-id coordinatorLayout2
 id custom
 id customPanel
 id decor_content_parent

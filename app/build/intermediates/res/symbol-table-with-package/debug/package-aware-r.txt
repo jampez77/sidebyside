@@ -944,8 +944,6 @@ id collapseActionView
 id contact_info
 id content
 id contentPanel
-id coordinatorLayout
-id coordinatorLayout2
 id cos
 id custom
 id customPanel
@@ -1638,3 +1636,4 @@ styleable Variant constraints region_heightLessThan region_heightMoreThan region
 styleable View android_theme android_focusable paddingEnd paddingStart theme
 styleable ViewBackgroundHelper android_background backgroundTint backgroundTintMode
 styleable ViewStubCompat android_id android_layout android_inflatedId
+xml backup

@@ -50,8 +50,6 @@ drawable ic_launcher_background
 drawable shape_drop_down_normal
 id cap_sentences
 id cap_words
-id coordinatorLayout
-id coordinatorLayout2
 id left_cb
 id left_et
 id left_layout

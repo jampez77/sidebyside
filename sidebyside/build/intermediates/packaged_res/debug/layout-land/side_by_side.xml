@@ -1,225 +1,224 @@
 <merge xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:orientation="horizontal"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content">
 
-    <LinearLayout android:id="@+id/main_layout"
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/main_layout"
         android:orientation="horizontal"
         android:baselineAligned="true"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="match_parent">
 
         <LinearLayout
-            android:orientation="vertical"
             android:id="@+id/left_layout"
+            android:orientation="vertical"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/right_layout"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginStart="0dp"
+            android:layout_marginLeft="0dp"
+            android:layout_marginRight="5dp"
+            android:layout_marginEnd="5dp"
             android:layout_width="0dp"
             android:layout_weight=".50"
-            android:layout_height="match_parent">
+            android:layout_height="wrap_content">
 
-            <androidx.constraintlayout.widget.ConstraintLayout
-                android:id="@+id/coordinatorLayout2"
-                android:layout_marginEnd="5dp"
-                android:layout_marginRight="5dp"
+            <TextView
+                android:id="@+id/left_tv"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent">
+                android:layout_height="0dp"
+                android:layout_weight=".50"
+                android:gravity="top"
+                tools:text="@string/last_name"
+                app:layout_constraintBottom_toTopOf="@+id/lower_left_layout"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.0" />
+
+            <LinearLayout
+                android:id="@+id/lower_left_layout"
+                android:orientation="vertical"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight=".50">
+
+                <EditText
+                    android:id="@+id/left_et"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:minHeight="48dp"
+                    android:background="@drawable/edit_text_selector"
+                    tools:hint="@string/last_name"
+                    android:inputType="text"
+                    android:padding="5dp" />
+
+                <CheckBox
+                    android:id="@+id/left_cb"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:minHeight="48dp"
+                    android:button="@drawable/checkbox_selector_black"
+                    android:clickable="false"
+                    android:focusable="false"
+                    android:gravity="start"
+                    android:padding="5dp"
+                    android:visibility="gone"
+                    app:layout_constraintBottom_toTopOf="@+id/right_et"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/right_et" />
+
+                <Spinner
+                    android:id="@+id/left_sp"
+                    style="@android:style/Widget.Spinner.DropDown"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:minHeight="48dp"
+                    android:background="@drawable/shape_drop_down_normal"
+                    android:focusable="true"
+                    android:focusableInTouchMode="true"
+                    android:padding="0dp"
+                    android:spinnerMode="dropdown"
+                    android:textColor="@color/edit_text_border"
+                    android:visibility="gone"
+                    app:layout_constraintBottom_toTopOf="@+id/right_et"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/right_et" />
 
                 <TextView
-                    android:id="@+id/left_tv"
+                    android:id="@+id/lower_left_tv"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:gravity="top"
-                    android:text="@string/first_name"
-                    android:textStyle="bold"
-                    app:layout_constraintBottom_toTopOf="@+id/lower_left_layout"
+                    android:minHeight="48dp"
+                    android:background="@drawable/edit_text_selector"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:gravity="start|center_vertical"
+                    android:minWidth="200dp"
+                    android:padding="5dp"
+                    android:textColor="@color/edit_text_border"
+                    android:visibility="gone"
+                    app:layout_constraintBottom_toTopOf="@+id/right_et"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="0.0"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintVertical_bias="0.0" />
+                    app:layout_constraintStart_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/right_et" />
 
-                <LinearLayout
-                    android:id="@+id/lower_left_layout"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent">
-
-                    <EditText
-                        android:id="@+id/left_et"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:minHeight="48dp"
-                        android:background="@drawable/edit_text_selector"
-                        android:hint="@string/first_name"
-                        android:inputType="text"
-                        android:nextFocusDown="@id/right_et"
-                        android:padding="5dp" />
-
-                    <CheckBox
-                        android:id="@+id/left_cb"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:minHeight="48dp"
-                        android:button="@drawable/checkbox_selector_black"
-                        android:clickable="false"
-                        android:focusable="false"
-                        android:gravity="start"
-                        android:padding="5dp"
-                        android:visibility="gone"
-                        app:layout_constraintBottom_toTopOf="@+id/left_et"
-                        app:layout_constraintEnd_toStartOf="parent"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toTopOf="@+id/left_et" />
-
-                    <Spinner
-                        android:id="@+id/left_sp"
-                        style="@android:style/Widget.Spinner.DropDown"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:minHeight="48dp"
-                        android:background="@drawable/shape_drop_down_normal"
-                        android:focusable="true"
-                        android:focusableInTouchMode="true"
-                        android:padding="0dp"
-                        android:spinnerMode="dropdown"
-                        android:textColor="@color/edit_text_border"
-                        android:visibility="gone"
-                        app:layout_constraintBottom_toTopOf="@+id/left_et"
-                        app:layout_constraintEnd_toStartOf="parent"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toTopOf="@+id/left_et" />
-
-                    <TextView
-                        android:id="@+id/lower_left_tv"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:minHeight="48dp"
-                        android:background="@drawable/edit_text_selector"
-                        android:clickable="true"
-                        android:focusable="true"
-                        android:gravity="start|center_vertical"
-                        android:minWidth="200dp"
-                        android:padding="5dp"
-                        android:textColor="@color/edit_text_border"
-                        android:visibility="gone"
-                        app:layout_constraintBottom_toTopOf="@+id/left_et"
-                        app:layout_constraintEnd_toStartOf="parent"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toTopOf="@+id/left_et" />
-
-                </LinearLayout>
-
-            </androidx.constraintlayout.widget.ConstraintLayout>
+            </LinearLayout>
 
         </LinearLayout>
 
         <LinearLayout
             android:id="@+id/right_layout"
             android:orientation="vertical"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/left_layout"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginStart="5dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="0dp"
+            android:layout_marginEnd="0dp"
             android:layout_width="0dp"
             android:layout_weight=".50"
-            android:layout_height="match_parent">
+            android:layout_height="wrap_content">
 
-            <androidx.constraintlayout.widget.ConstraintLayout
-                android:id="@+id/coordinatorLayout"
-                android:layout_marginStart="5dp"
-                android:layout_marginLeft="5dp"
+            <TextView
+                android:id="@+id/right_tv"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent">
+                android:layout_height="0dp"
+                android:layout_weight=".50"
+                android:gravity="top"
+                tools:text="@string/last_name"
+                app:layout_constraintBottom_toTopOf="@+id/lower_right_layout"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.0" />
 
-                <TextView
-                    android:id="@+id/right_tv"
+            <LinearLayout
+                android:id="@+id/lower_right_layout"
+                android:orientation="vertical"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight=".50">
+
+                <EditText
+                    android:id="@+id/right_et"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:gravity="top"
-                    android:text="@string/last_name"
-                    android:textStyle="bold"
-                    app:layout_constraintBottom_toTopOf="@+id/lower_right_layout"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="0.0"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintVertical_bias="0.0" />
+                    android:minHeight="48dp"
+                    android:background="@drawable/edit_text_selector"
+                    tools:hint="@string/last_name"
+                    android:inputType="text"
+                    android:padding="5dp" />
 
-                <LinearLayout
-                    android:id="@+id/lower_right_layout"
-                    android:orientation="vertical"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
+                <CheckBox
+                    android:id="@+id/right_cb"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
+                    android:layout_height="wrap_content"
+                    android:minHeight="48dp"
+                    android:button="@drawable/checkbox_selector_black"
+                    android:clickable="false"
+                    android:focusable="false"
+                    android:gravity="start"
+                    android:padding="5dp"
+                    android:visibility="gone"
+                    app:layout_constraintBottom_toTopOf="@+id/right_et"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/right_et" />
 
-                    <EditText
-                        android:id="@+id/right_et"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:minHeight="48dp"
-                        android:background="@drawable/edit_text_selector"
-                        android:hint="@string/last_name"
-                        android:inputType="text"
-                        android:padding="5dp" />
+                <Spinner
+                    android:id="@+id/right_sp"
+                    style="@android:style/Widget.Spinner.DropDown"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:minHeight="48dp"
+                    android:background="@drawable/shape_drop_down_normal"
+                    android:focusable="true"
+                    android:focusableInTouchMode="true"
+                    android:padding="0dp"
+                    android:spinnerMode="dropdown"
+                    android:textColor="@color/edit_text_border"
+                    android:visibility="gone"
+                    app:layout_constraintBottom_toTopOf="@+id/right_et"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/right_et" />
 
-                    <CheckBox
-                        android:id="@+id/right_cb"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:minHeight="48dp"
-                        android:button="@drawable/checkbox_selector_black"
-                        android:clickable="false"
-                        android:focusable="false"
-                        android:gravity="start"
-                        android:padding="5dp"
-                        android:visibility="gone"
-                        app:layout_constraintBottom_toTopOf="@+id/right_et"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintStart_toEndOf="parent"
-                        app:layout_constraintTop_toTopOf="@+id/right_et" />
+                <TextView
+                    android:id="@+id/lower_right_tv"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:minHeight="48dp"
+                    android:background="@drawable/edit_text_selector"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:gravity="start|center_vertical"
+                    android:minWidth="200dp"
+                    android:padding="5dp"
+                    android:textColor="@color/edit_text_border"
+                    android:visibility="gone"
+                    app:layout_constraintBottom_toTopOf="@+id/right_et"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/right_et" />
 
-                    <Spinner
-                        android:id="@+id/right_sp"
-                        style="@android:style/Widget.Spinner.DropDown"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:minHeight="48dp"
-                        android:background="@drawable/shape_drop_down_normal"
-                        android:focusable="true"
-                        android:focusableInTouchMode="true"
-                        android:padding="0dp"
-                        android:spinnerMode="dropdown"
-                        android:textColor="@color/edit_text_border"
-                        android:visibility="gone"
-                        app:layout_constraintBottom_toTopOf="@+id/right_et"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintStart_toEndOf="parent"
-                        app:layout_constraintTop_toTopOf="@+id/right_et" />
-
-                    <TextView
-                        android:id="@+id/lower_right_tv"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:minHeight="48dp"
-                        android:background="@drawable/edit_text_selector"
-                        android:clickable="true"
-                        android:focusable="true"
-                        android:gravity="start|center_vertical"
-                        android:minWidth="200dp"
-                        android:padding="5dp"
-                        android:textColor="@color/edit_text_border"
-                        android:visibility="gone"
-                        app:layout_constraintBottom_toTopOf="@+id/right_et"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintStart_toEndOf="parent"
-                        app:layout_constraintTop_toTopOf="@+id/right_et" />
-
-                </LinearLayout>
-
-            </androidx.constraintlayout.widget.ConstraintLayout>
+            </LinearLayout>
 
         </LinearLayout>
 
-    </LinearLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
 </merge>
