@@ -31,6 +31,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:layout_weight=".50"
+                android:minHeight="48dp"
                 android:gravity="top"
                 tools:text="@string/last_name"
                 app:layout_constraintBottom_toTopOf="@+id/lower_left_layout"
@@ -48,7 +49,8 @@
                 app:layout_constraintStart_toStartOf="parent"
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
-                android:layout_weight=".50">
+                android:layout_weight=".50"
+                android:minHeight="48dp">
 
                 <EditText
                     android:id="@+id/left_et"
@@ -135,6 +137,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:layout_weight=".50"
+                android:minHeight="48dp"
                 android:gravity="top"
                 tools:text="@string/last_name"
                 app:layout_constraintBottom_toTopOf="@+id/lower_right_layout"
@@ -152,7 +155,8 @@
                 app:layout_constraintStart_toStartOf="parent"
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
-                android:layout_weight=".50">
+                android:layout_weight=".50"
+                android:minHeight="48dp">
 
                 <EditText
                     android:id="@+id/right_et"
