@@ -24,13 +24,14 @@
             android:layout_marginEnd="5dp"
             android:layout_width="0dp"
             android:layout_weight=".50"
-            android:layout_height="wrap_content">
+            android:layout_height="match_parent">
 
             <TextView
                 android:id="@+id/left_tv"
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:layout_weight=".50"
+                android:minHeight="48dp"
                 android:gravity="top"
                 tools:text="@string/last_name"
                 app:layout_constraintBottom_toTopOf="@+id/lower_left_layout"
@@ -48,7 +49,8 @@
                 app:layout_constraintStart_toStartOf="parent"
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
-                android:layout_weight=".50">
+                android:layout_weight=".50"
+                android:minHeight="48dp">
 
                 <EditText
                     android:id="@+id/left_et"
@@ -128,13 +130,14 @@
             android:layout_marginEnd="0dp"
             android:layout_width="0dp"
             android:layout_weight=".50"
-            android:layout_height="wrap_content">
+            android:layout_height="match_parent">
 
             <TextView
                 android:id="@+id/right_tv"
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:layout_weight=".50"
+                android:minHeight="48dp"
                 android:gravity="top"
                 tools:text="@string/last_name"
                 app:layout_constraintBottom_toTopOf="@+id/lower_right_layout"
@@ -152,7 +155,8 @@
                 app:layout_constraintStart_toStartOf="parent"
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
-                android:layout_weight=".50">
+                android:layout_weight=".50"
+                android:minHeight="48dp">
 
                 <EditText
                     android:id="@+id/right_et"
