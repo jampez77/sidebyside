@@ -3,6 +3,8 @@
 Side By Side View
 =========================
 
+![Demo Here](https://play.google.com/store/apps/details?id=com.jampez.sidebysideexample)
+
 This is a simple merged view to easily display two inputs with labels side  by side. When screen size is too small the view will move to a vertical alignment.
 
 ![Landscape](Screenshot_20190416-162113.png)

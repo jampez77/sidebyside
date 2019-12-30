@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merger version="3"><dataSet aapt-namespace="http://schemas.android.com/apk/res-auto" config="main$Generated" generated="true" ignore_pattern="!.svn:!.git:!.ds_store:!*.scc:.*:&lt;dir>_*:!CVS:!thumbs.db:!picasa.ini:!*~"><source path="/Users/jampez77/Documents/Development/sidebyside/sidebyside/src/main/res"><file path="/Users/jampez77/Documents/Development/sidebyside/sidebyside/src/main/res/drawable/ic_launcher_background.xml" preprocessing="true" qualifiers=""><generated-file path="/Users/jampez77/Documents/Development/sidebyside/sidebyside/build/generated/res/pngs/release/drawable-xxxhdpi/ic_launcher_background.png" qualifiers="xxxhdpi-v4" type="drawable"/><generated-file path="/Users/jampez77/Documents/Development/sidebyside/sidebyside/build/generated/res/pngs/release/drawable-mdpi/ic_launcher_background.png" qualifiers="mdpi-v4" type="drawable"/><generated-file path="/Users/jampez77/Documents/Development/sidebyside/sidebyside/build/generated/res/pngs/release/drawable-ldpi/ic_launcher_background.png" qualifiers="ldpi-v4" type="drawable"/><generated-file path="/Users/jampez77/Documents/Development/sidebyside/sidebyside/build/generated/res/pngs/release/drawable-xxhdpi/ic_launcher_background.png" qualifiers="xxhdpi-v4" type="drawable"/><generated-file path="/Users/jampez77/Documents/Development/sidebyside/sidebyside/build/generated/res/pngs/release/drawable-hdpi/ic_launcher_background.png" qualifiers="hdpi-v4" type="drawable"/><generated-file path="/Users/jampez77/Documents/Development/sidebyside/sidebyside/build/generated/res/pngs/release/drawable-xhdpi/ic_launcher_background.png" qualifiers="xhdpi-v4" type="drawable"/><generated-file path="/Users/jampez77/Documents/Development/sidebyside/sidebyside/build/generated/res/pngs/release/drawable-anydpi-v21/ic_launcher_background.xml" qualifiers="anydpi-v21" type="drawable"/></file></source><source path="/Users/jampez77/Documents/Development/sidebyside/sidebyside/build/generated/res/rs/release"/><source path="/Users/jampez77/Documents/Development/sidebyside/sidebyside/build/generated/res/resValues/release"/></dataSet><dataSet aapt-namespace="http://schemas.android.com/apk/res-auto" config="main" generated-set="main$Generated" ignore_pattern="!.svn:!.git:!.ds_store:!*.scc:.*:&lt;dir>_*:!CVS:!thumbs.db:!picasa.ini:!*~"><source path="/Users/jampez77/Documents/Development/sidebyside/sidebyside/src/main/res"><file name="ic_check_box_black_24dp" path="/Users/jampez77/Documents/Development/sidebyside/sidebyside/src/main/res/mipmap-mdpi/ic_check_box_black_24dp.png" qualifiers="mdpi-v4" type="mipmap"/><file name="ic_arrow_drop_down_black_24dp" path="/Users/jampez77/Documents/Development/sidebyside/sidebyside/src/main/res/mipmap-mdpi/ic_arrow_drop_down_black_24dp.png" qualifiers="mdpi-v4" type="mipmap"/><file name="ic_check_box_outline_blank_black_24dp" path="/Users/jampez77/Documents/Development/sidebyside/sidebyside/src/main/res/mipmap-mdpi/ic_check_box_outline_blank_black_24dp.png" qualifiers="mdpi-v4" type="mipmap"/><file name="ic_access_time_black_24dp" path="/Users/jampez77/Documents/Development/sidebyside/sidebyside/src/main/res/mipmap-mdpi/ic_access_time_black_24dp.png" qualifiers="mdpi-v4" type="mipmap"/><file name="ic_date_range_black_24dp" path="/Users/jampez77/Documents/Development/sidebyside/sidebyside/src/main/res/mipmap-mdpi/ic_date_range_black_24dp.png" qualifiers="mdpi-v4" type="mipmap"/><file name="ic_check_box_black_24dp" path="/Users/jampez77/Documents/Development/sidebyside/sidebyside/src/main/res/mipmap-hdpi/ic_check_box_black_24dp.png" qualifiers="hdpi-v4" type="mipmap"/><file name="ic_arrow_drop_down_black_24dp" path="/Users/jampez77/Documents/Development/sidebyside/sidebyside/src/main/res/mipmap-hdpi/ic_arrow_drop_down_black_24dp.png" qualifiers="hdpi-v4" type="mipmap"/><file name="ic_check_box_outline_blank_black_24dp" path="/Users/jampez77/Documents/Development/sidebyside/sidebyside/src/main/res/mipmap-hdpi/ic_check_box_outline_blank_black_24dp.png" qualifiers="hdpi-v4" type="mipmap"/><file name="ic_access_time_black_24dp" path="/Users/jampez77/Documents/Development/sidebyside/sidebyside/src/main/res/mipmap-hdpi/ic_access_time_black_24dp.png" qualifiers="hdpi-v4" type="mipmap"/><file name="ic_date_range_black_24dp" path="/Users/jampez77/Documents/Development/sidebyside/sidebyside/src/main/res/mipmap-hdpi/ic_date_range_black_24dp.png" qualifiers="hdpi-v4" type="mipmap"/><file name="side_by_side" path="/Users/jampez77/Documents/Development/sidebyside/sidebyside/src/main/res/layout-xlarge/side_by_side.xml" qualifiers="xlarge-v4" type="layout"/><file name="side_by_side" path="/Users/jampez77/Documents/Development/sidebyside/sidebyside/src/main/res/layout-land/side_by_side.xml" qualifiers="land" type="layout"/><file name="edit_text_style" path="/Users/jampez77/Documents/Development/sidebyside/sidebyside/src/main/res/drawable/edit_text_style.xml" qualifiers="" type="drawable"/><file name="blank" path="/Users/jampez77/Documents/Development/sidebyside/sidebyside/src/main/res/drawable/blank.xml" qualifiers="" type="drawable"/><file name="shape_drop_down_normal" path="/Users/jampez77/Documents/Development/sidebyside/sidebyside/src/main/res/drawable/shape_drop_down_normal.xml" qualifiers="" type="drawable"/><file name="checkbox_selector_black" path="/Users/jampez77/Documents/Development/sidebyside/sidebyside/src/main/res/drawable/checkbox_selector_black.xml" qualifiers="" type="drawable"/><file name="edit_text_selected" path="/Users/jampez77/Documents/Development/sidebyside/sidebyside/src/main/res/drawable/edit_text_selected.xml" qualifiers="" type="drawable"/><file name="edit_text_selector" path="/Users/jampez77/Documents/Development/sidebyside/sidebyside/src/main/res/drawable/edit_text_selector.xml" qualifiers="" type="drawable"/><file name="ic_check_box_black_24dp" path="/Users/jampez77/Documents/Development/sidebyside/sidebyside/src/main/res/mipmap-xxxhdpi/ic_check_box_black_24dp.png" qualifiers="xxxhdpi-v4" type="mipmap"/><file name="ic_arrow_drop_down_black_24dp" path="/Users/jampez77/Documents/Development/sidebyside/sidebyside/src/main/res/mipmap-xxxhdpi/ic_arrow_drop_down_black_24dp.png" qualifiers="xxxhdpi-v4" type="mipmap"/><file name="ic_check_box_outline_blank_black_24dp" path="/Users/jampez77/Documents/Development/sidebyside/sidebyside/src/main/res/mipmap-xxxhdpi/ic_check_box_outline_blank_black_24dp.png" qualifiers="xxxhdpi-v4" type="mipmap"/><file name="ic_access_time_black_24dp" path="/Users/jampez77/Documents/Development/sidebyside/sidebyside/src/main/res/mipmap-xxxhdpi/ic_access_time_black_24dp.png" qualifiers="xxxhdpi-v4" type="mipmap"/><file name="ic_date_range_black_24dp" path="/Users/jampez77/Documents/Development/sidebyside/sidebyside/src/main/res/mipmap-xxxhdpi/ic_date_range_black_24dp.png" qualifiers="xxxhdpi-v4" type="mipmap"/><file name="side_by_side" path="/Users/jampez77/Documents/Development/sidebyside/sidebyside/src/main/res/layout/side_by_side.xml" qualifiers="" type="layout"/><file name="ic_check_box_black_24dp" path="/Users/jampez77/Documents/Development/sidebyside/sidebyside/src/main/res/mipmap-xxhdpi/ic_check_box_black_24dp.png" qualifiers="xxhdpi-v4" type="mipmap"/><file name="ic_arrow_drop_down_black_24dp" path="/Users/jampez77/Documents/Development/sidebyside/sidebyside/src/main/res/mipmap-xxhdpi/ic_arrow_drop_down_black_24dp.png" qualifiers="xxhdpi-v4" type="mipmap"/><file name="ic_check_box_outline_blank_black_24dp" path="/Users/jampez77/Documents/Development/sidebyside/sidebyside/src/main/res/mipmap-xxhdpi/ic_check_box_outline_blank_black_24dp.png" qualifiers="xxhdpi-v4" type="mipmap"/><file name="ic_access_time_black_24dp" path="/Users/jampez77/Documents/Development/sidebyside/sidebyside/src/main/res/mipmap-xxhdpi/ic_access_time_black_24dp.png" qualifiers="xxhdpi-v4" type="mipmap"/><file name="ic_date_range_black_24dp" path="/Users/jampez77/Documents/Development/sidebyside/sidebyside/src/main/res/mipmap-xxhdpi/ic_date_range_black_24dp.png" qualifiers="xxhdpi-v4" type="mipmap"/><file path="/Users/jampez77/Documents/Development/sidebyside/sidebyside/src/main/res/values/colors.xml" qualifiers=""><color name="black">#000000</color><color name="grey">#999999</color><color name="white">#FFFFFF</color><color name="colorAccent">#D81B60</color><color name="edit_text_selected_border">#e17501</color><color name="edit_text_border">#646668</color></file><file path="/Users/jampez77/Documents/Development/sidebyside/sidebyside/src/main/res/values/dimens.xml" qualifiers=""><dimen name="button_min_height">7dp</dimen><dimen name="button_text_padding">2dp</dimen></file><file path="/Users/jampez77/Documents/Development/sidebyside/sidebyside/src/main/res/values/styles.xml" qualifiers=""><style name="AppBaseTheme" parent="Theme.AppCompat.Light">
+        
+    </style><style name="DateTimePickerTheme" parent="Theme.AppCompat.Light.Dialog">
+        <item name="colorAccent">@color/colorAccent</item>
+    </style></file><file path="/Users/jampez77/Documents/Development/sidebyside/sidebyside/src/main/res/values/strings.xml" qualifiers=""><string name="app_name">Side By Side</string><string name="validate">Validate</string><string name="first_name">First Name</string><string name="last_name">Last Name</string><string name="phone">Phone</string><string name="email">Email</string><string name="password">Password</string><string name="confirm_password">Confirm Password</string><string name="authorisation_code">Authorisation Code</string></file><file path="/Users/jampez77/Documents/Development/sidebyside/sidebyside/src/main/res/values/attrs.xml" qualifiers=""><declare-styleable name="SideBySideView">
+
+        <attr format="string" name="textViewTextStyle"/>
+        <attr format="color" name="titleTextColor"/>
+
+        <attr format="reference" name="editTextBackground"/>
+        <attr format="color" name="inputTextColor"/>
+        <attr format="string" name="editTextTextStyle"/>
+
+        <attr format="reference" name="textAppearance"/>
+        <attr format="string" name="passwordValidationExpression"/>
+        <attr format="string" name="passwordErrorMessage"/>
+
+        <attr format="string" localization="suggested" name="leftText"/>
+        <attr format="string" name="leftInput"/>
+        <attr format="string" name="leftEditInputType"/>
+        <attr format="reference" name="leftSpinnerEntries"/>
+        <attr format="string" name="leftEditTextText"/>
+        <attr format="string" name="leftEditTextHint"/>
+        <attr format="boolean" name="leftRequired"/>
+        <attr format="boolean" name="leftInputEnabled"/>
+        <attr format="dimension" name="leftPadding"/>
+        <attr format="reference" name="leftBackground"/>
+        <attr format="boolean" name="leftHideTitle"/>
+        <attr format="enum" name="leftTextViewInputType">
+            <enum name="none" value="0"/>
+            <enum name="uppercase" value="1"/>
+            <enum name="lowercase" value="2"/>
+            <enum name="cap_words" value="3"/>
+            <enum name="cap_sentences" value="4"/>
+        </attr>
+
+        <attr format="string" localization="suggested" name="rightText"/>
+        <attr format="string" name="rightInput"/>
+        <attr format="string" name="rightEditInputType"/>
+        <attr format="reference" name="rightSpinnerEntries"/>
+        <attr format="string" name="rightEditTextText"/>
+        <attr format="string" name="rightEditTextHint"/>
+        <attr format="boolean" name="hideRightView"/>
+        <attr format="boolean" name="rightRequired"/>
+        <attr format="boolean" name="rightInputEnabled"/>
+        <attr format="dimension" name="rightPadding"/>
+        <attr format="reference" name="rightBackground"/>
+        <attr format="boolean" name="rightHideTitle"/>
+        <attr format="enum" name="rightTextViewInputType">
+            <enum name="none" value="0"/>
+            <enum name="uppercase" value="1"/>
+            <enum name="lowercase" value="2"/>
+            <enum name="cap_words" value="3"/>
+            <enum name="cap_sentences" value="4"/>
+        </attr>
+
+    </declare-styleable></file><file name="ic_check_box_black_24dp" path="/Users/jampez77/Documents/Development/sidebyside/sidebyside/src/main/res/mipmap-xhdpi/ic_check_box_black_24dp.png" qualifiers="xhdpi-v4" type="mipmap"/><file name="ic_arrow_drop_down_black_24dp" path="/Users/jampez77/Documents/Development/sidebyside/sidebyside/src/main/res/mipmap-xhdpi/ic_arrow_drop_down_black_24dp.png" qualifiers="xhdpi-v4" type="mipmap"/><file name="ic_check_box_outline_blank_black_24dp" path="/Users/jampez77/Documents/Development/sidebyside/sidebyside/src/main/res/mipmap-xhdpi/ic_check_box_outline_blank_black_24dp.png" qualifiers="xhdpi-v4" type="mipmap"/><file name="ic_access_time_black_24dp" path="/Users/jampez77/Documents/Development/sidebyside/sidebyside/src/main/res/mipmap-xhdpi/ic_access_time_black_24dp.png" qualifiers="xhdpi-v4" type="mipmap"/><file name="ic_date_range_black_24dp" path="/Users/jampez77/Documents/Development/sidebyside/sidebyside/src/main/res/mipmap-xhdpi/ic_date_range_black_24dp.png" qualifiers="xhdpi-v4" type="mipmap"/><file name="side_by_side" path="/Users/jampez77/Documents/Development/sidebyside/sidebyside/src/main/res/layout-small/side_by_side.xml" qualifiers="small-v4" type="layout"/></source><source path="/Users/jampez77/Documents/Development/sidebyside/sidebyside/build/generated/res/rs/release"/><source path="/Users/jampez77/Documents/Development/sidebyside/sidebyside/build/generated/res/resValues/release"/></dataSet><dataSet aapt-namespace="http://schemas.android.com/apk/res-auto" config="release$Generated" generated="true" ignore_pattern="!.svn:!.git:!.ds_store:!*.scc:.*:&lt;dir>_*:!CVS:!thumbs.db:!picasa.ini:!*~"><source path="/Users/jampez77/Documents/Development/sidebyside/sidebyside/src/release/res"/></dataSet><dataSet aapt-namespace="http://schemas.android.com/apk/res-auto" config="release" generated-set="release$Generated" ignore_pattern="!.svn:!.git:!.ds_store:!*.scc:.*:&lt;dir>_*:!CVS:!thumbs.db:!picasa.ini:!*~"><source path="/Users/jampez77/Documents/Development/sidebyside/sidebyside/src/release/res"/></dataSet><mergedItems><configuration qualifiers=""><declare-styleable name="SideBySideView">
+
+        <attr format="string" name="textViewTextStyle"/>
+        <attr format="color" name="titleTextColor"/>
+
+        <attr format="reference" name="editTextBackground"/>
+        <attr format="color" name="inputTextColor"/>
+        <attr format="string" name="editTextTextStyle"/>
+
+        <attr format="reference" name="textAppearance"/>
+        <attr format="string" name="passwordValidationExpression"/>
+        <attr format="string" name="passwordErrorMessage"/>
+
+        <attr format="string" localization="suggested" name="leftText"/>
+        <attr format="string" name="leftInput"/>
+        <attr format="string" name="leftEditInputType"/>
+        <attr format="reference" name="leftSpinnerEntries"/>
+        <attr format="string" name="leftEditTextText"/>
+        <attr format="string" name="leftEditTextHint"/>
+        <attr format="boolean" name="leftRequired"/>
+        <attr format="boolean" name="leftInputEnabled"/>
+        <attr format="dimension" name="leftPadding"/>
+        <attr format="reference" name="leftBackground"/>
+        <attr format="boolean" name="leftHideTitle"/>
+        <attr format="enum" name="leftTextViewInputType">
+            <enum name="none" value="0"/>
+            <enum name="uppercase" value="1"/>
+            <enum name="lowercase" value="2"/>
+            <enum name="cap_words" value="3"/>
+            <enum name="cap_sentences" value="4"/>
+        </attr>
+
+        <attr format="string" localization="suggested" name="rightText"/>
+        <attr format="string" name="rightInput"/>
+        <attr format="string" name="rightEditInputType"/>
+        <attr format="reference" name="rightSpinnerEntries"/>
+        <attr format="string" name="rightEditTextText"/>
+        <attr format="string" name="rightEditTextHint"/>
+        <attr format="boolean" name="hideRightView"/>
+        <attr format="boolean" name="rightRequired"/>
+        <attr format="boolean" name="rightInputEnabled"/>
+        <attr format="dimension" name="rightPadding"/>
+        <attr format="reference" name="rightBackground"/>
+        <attr format="boolean" name="rightHideTitle"/>
+        <attr format="enum" name="rightTextViewInputType">
+            <enum name="none" value="0"/>
+            <enum name="uppercase" value="1"/>
+            <enum name="lowercase" value="2"/>
+            <enum name="cap_words" value="3"/>
+            <enum name="cap_sentences" value="4"/>
+        </attr>
+
+    </declare-styleable></configuration></mergedItems></merger>

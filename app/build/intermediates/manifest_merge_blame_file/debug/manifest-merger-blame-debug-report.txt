@@ -6,65 +6,65 @@
 6
 7    <uses-sdk
 8        android:minSdkVersion="15"
-8-->/Users/ontrac/Documents/GitHub/sidebyside/app/src/main/AndroidManifest.xml
+8-->/Users/jampez77/Documents/Development/sidebyside/app/src/main/AndroidManifest.xml
 9        android:targetSdkVersion="29" />
-9-->/Users/ontrac/Documents/GitHub/sidebyside/app/src/main/AndroidManifest.xml
+9-->/Users/jampez77/Documents/Development/sidebyside/app/src/main/AndroidManifest.xml
 10
 11    <application
-11-->/Users/ontrac/Documents/GitHub/sidebyside/app/src/main/AndroidManifest.xml:5:5-32:19
+11-->/Users/jampez77/Documents/Development/sidebyside/app/src/main/AndroidManifest.xml:5:5-32:19
 12        android:allowBackup="true"
-12-->/Users/ontrac/Documents/GitHub/sidebyside/app/src/main/AndroidManifest.xml:6:9-35
+12-->/Users/jampez77/Documents/Development/sidebyside/app/src/main/AndroidManifest.xml:6:9-35
 13        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
-13-->[androidx.core:core:1.1.0] /Users/ontrac/.gradle/caches/transforms-2/files-2.1/b61fcb10d7070c66ea9d87bcdc5f3ca8/core-1.1.0/AndroidManifest.xml:24:18-86
+13-->[androidx.core:core:1.1.0] /Users/jampez77/.gradle/caches/transforms-2/files-2.1/b61fcb10d7070c66ea9d87bcdc5f3ca8/core-1.1.0/AndroidManifest.xml:24:18-86
 14        android:debuggable="true"
 15        android:fullBackupContent="@xml/backup"
-15-->/Users/ontrac/Documents/GitHub/sidebyside/app/src/main/AndroidManifest.xml:7:9-48
+15-->/Users/jampez77/Documents/Development/sidebyside/app/src/main/AndroidManifest.xml:7:9-48
 16        android:icon="@mipmap/ic_launcher"
-16-->/Users/ontrac/Documents/GitHub/sidebyside/app/src/main/AndroidManifest.xml:8:9-43
+16-->/Users/jampez77/Documents/Development/sidebyside/app/src/main/AndroidManifest.xml:8:9-43
 17        android:label="@string/app_name"
-17-->/Users/ontrac/Documents/GitHub/sidebyside/app/src/main/AndroidManifest.xml:9:9-41
+17-->/Users/jampez77/Documents/Development/sidebyside/app/src/main/AndroidManifest.xml:9:9-41
 18        android:roundIcon="@mipmap/ic_launcher_round"
-18-->/Users/ontrac/Documents/GitHub/sidebyside/app/src/main/AndroidManifest.xml:10:9-54
+18-->/Users/jampez77/Documents/Development/sidebyside/app/src/main/AndroidManifest.xml:10:9-54
 19        android:supportsRtl="true"
-19-->/Users/ontrac/Documents/GitHub/sidebyside/app/src/main/AndroidManifest.xml:11:9-35
+19-->/Users/jampez77/Documents/Development/sidebyside/app/src/main/AndroidManifest.xml:11:9-35
 20        android:testOnly="true"
 21        android:theme="@style/AppTheme" >
-21-->/Users/ontrac/Documents/GitHub/sidebyside/app/src/main/AndroidManifest.xml:12:9-40
+21-->/Users/jampez77/Documents/Development/sidebyside/app/src/main/AndroidManifest.xml:12:9-40
 22        <activity
-22-->/Users/ontrac/Documents/GitHub/sidebyside/app/src/main/AndroidManifest.xml:13:9-31:20
+22-->/Users/jampez77/Documents/Development/sidebyside/app/src/main/AndroidManifest.xml:13:9-31:20
 23            android:name="com.jampez.sidebysideexample.MainActivity"
-23-->/Users/ontrac/Documents/GitHub/sidebyside/app/src/main/AndroidManifest.xml:13:19-75
+23-->/Users/jampez77/Documents/Development/sidebyside/app/src/main/AndroidManifest.xml:13:19-75
 24            android:configChanges="orientation|keyboardHidden|screenLayout|screenSize" >
-24-->/Users/ontrac/Documents/GitHub/sidebyside/app/src/main/AndroidManifest.xml:14:13-87
+24-->/Users/jampez77/Documents/Development/sidebyside/app/src/main/AndroidManifest.xml:14:13-87
 25            <intent-filter>
-25-->/Users/ontrac/Documents/GitHub/sidebyside/app/src/main/AndroidManifest.xml:15:13-19:29
+25-->/Users/jampez77/Documents/Development/sidebyside/app/src/main/AndroidManifest.xml:15:13-19:29
 26                <action android:name="android.intent.action.MAIN" />
-26-->/Users/ontrac/Documents/GitHub/sidebyside/app/src/main/AndroidManifest.xml:16:17-69
-26-->/Users/ontrac/Documents/GitHub/sidebyside/app/src/main/AndroidManifest.xml:16:25-66
+26-->/Users/jampez77/Documents/Development/sidebyside/app/src/main/AndroidManifest.xml:16:17-69
+26-->/Users/jampez77/Documents/Development/sidebyside/app/src/main/AndroidManifest.xml:16:25-66
 27
 28                <category android:name="android.intent.category.LAUNCHER" />
-28-->/Users/ontrac/Documents/GitHub/sidebyside/app/src/main/AndroidManifest.xml:18:17-77
-28-->/Users/ontrac/Documents/GitHub/sidebyside/app/src/main/AndroidManifest.xml:18:27-74
+28-->/Users/jampez77/Documents/Development/sidebyside/app/src/main/AndroidManifest.xml:18:17-77
+28-->/Users/jampez77/Documents/Development/sidebyside/app/src/main/AndroidManifest.xml:18:27-74
 29            </intent-filter>
 30            <intent-filter>
-30-->/Users/ontrac/Documents/GitHub/sidebyside/app/src/main/AndroidManifest.xml:20:13-30:29
+30-->/Users/jampez77/Documents/Development/sidebyside/app/src/main/AndroidManifest.xml:20:13-30:29
 31                <action android:name="android.intent.action.VIEW" />
-31-->/Users/ontrac/Documents/GitHub/sidebyside/app/src/main/AndroidManifest.xml:21:17-69
-31-->/Users/ontrac/Documents/GitHub/sidebyside/app/src/main/AndroidManifest.xml:21:25-66
+31-->/Users/jampez77/Documents/Development/sidebyside/app/src/main/AndroidManifest.xml:21:17-69
+31-->/Users/jampez77/Documents/Development/sidebyside/app/src/main/AndroidManifest.xml:21:25-66
 32
 33                <category android:name="android.intent.category.DEFAULT" />
-33-->/Users/ontrac/Documents/GitHub/sidebyside/app/src/main/AndroidManifest.xml:23:17-76
-33-->/Users/ontrac/Documents/GitHub/sidebyside/app/src/main/AndroidManifest.xml:23:27-73
+33-->/Users/jampez77/Documents/Development/sidebyside/app/src/main/AndroidManifest.xml:23:17-76
+33-->/Users/jampez77/Documents/Development/sidebyside/app/src/main/AndroidManifest.xml:23:27-73
 34                <category android:name="android.intent.category.BROWSABLE" />
-34-->/Users/ontrac/Documents/GitHub/sidebyside/app/src/main/AndroidManifest.xml:24:17-78
-34-->/Users/ontrac/Documents/GitHub/sidebyside/app/src/main/AndroidManifest.xml:24:27-75
+34-->/Users/jampez77/Documents/Development/sidebyside/app/src/main/AndroidManifest.xml:24:17-78
+34-->/Users/jampez77/Documents/Development/sidebyside/app/src/main/AndroidManifest.xml:24:27-75
 35
 36                <data
-36-->/Users/ontrac/Documents/GitHub/sidebyside/app/src/main/AndroidManifest.xml:26:17-28:45
+36-->/Users/jampez77/Documents/Development/sidebyside/app/src/main/AndroidManifest.xml:26:17-28:45
 37                    android:host="www.jampez.uk"
-37-->/Users/ontrac/Documents/GitHub/sidebyside/app/src/main/AndroidManifest.xml:27:21-49
+37-->/Users/jampez77/Documents/Development/sidebyside/app/src/main/AndroidManifest.xml:27:21-49
 38                    android:scheme="http" />
-38-->/Users/ontrac/Documents/GitHub/sidebyside/app/src/main/AndroidManifest.xml:28:21-42
+38-->/Users/jampez77/Documents/Development/sidebyside/app/src/main/AndroidManifest.xml:28:21-42
 39                <!-- feedback that the leading "/" is required for pathPrefix -->
 40            </intent-filter>
 41        </activity>
