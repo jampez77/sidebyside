@@ -2,9 +2,9 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/Development-sidebyside.iml" filepath="$PROJECT_DIR$/Development-sidebyside.iml" />
-      <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
-      <module fileurl="file://$PROJECT_DIR$/sidebyside/sidebyside-sidebyside.iml" filepath="$PROJECT_DIR$/sidebyside/sidebyside-sidebyside.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Development-sidebyside.iml" filepath="$PROJECT_DIR$/Development-sidebyside.iml" group="sidebyside" />
+      <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" group="sidebyside/app" />
+      <module fileurl="file://$PROJECT_DIR$/sidebyside/sidebyside-sidebyside.iml" filepath="$PROJECT_DIR$/sidebyside/sidebyside-sidebyside.iml" group="sidebyside/sidebyside" />
     </modules>
   </component>
 </project>

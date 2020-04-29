@@ -15,7 +15,7 @@ This is a simple merged view to easily display two inputs with labels side  by s
 
 ```
 dependencies {
-    api 'com.github.jampez77:sidebyside:1.0.50'
+    api 'com.github.jampez77:sidebyside:1.0.51'
 }
 ```
 
@@ -58,7 +58,7 @@ Each input used has a corresponding listener this would be either `OnItemSelecte
 * textAppearance - set left and right text appearance 
 * textViewTextStyle - set Typeface for left/right labels
 * editTextTextStyle - set TypeFace for left/right EditTexts
-* leftInput/rightInput - set input method
+* leftInput/rightInput - set input method to `TextView`, `EditText`, `CheckBox`, `Spinner`, `Time` or `DateTime`
 * leftEditInputType/rightEditInputType - set InputType for left/right EditTexts
 * leftSpinnerEntries/rightSpinnerEntries - set left/right spinner items
 * leftEditTextText/rightEditTextText - set left/right EditText Text

@@ -15,7 +15,7 @@
 12        android:allowBackup="true"
 12-->/Users/jampez77/Documents/Development/sidebyside/app/src/main/AndroidManifest.xml:6:9-35
 13        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
-13-->[androidx.core:core:1.1.0] /Users/jampez77/.gradle/caches/transforms-2/files-2.1/b61fcb10d7070c66ea9d87bcdc5f3ca8/core-1.1.0/AndroidManifest.xml:24:18-86
+13-->[androidx.core:core:1.2.0] /Users/jampez77/.gradle/caches/transforms-2/files-2.1/45571e6cb01a056e4ff409e00427810a/core-1.2.0/AndroidManifest.xml:24:18-86
 14        android:debuggable="true"
 15        android:fullBackupContent="@xml/backup"
 15-->/Users/jampez77/Documents/Development/sidebyside/app/src/main/AndroidManifest.xml:7:9-48

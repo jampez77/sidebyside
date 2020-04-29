@@ -4,7 +4,7 @@
             "outputFile": "/Users/jampez77/Documents/Development/sidebyside/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-v24/values-v24.xml",
             "map": [
                 {
-                    "source": "/Users/jampez77/.gradle/caches/transforms-2/files-2.1/5742b373beb6de2c5c0efab6b3b6dbf4/appcompat-1.1.0/res/values-v24/values-v24.xml",
+                    "source": "/Users/jampez77/.gradle/caches/transforms-2/files-2.1/6b10ffee29d090a546d47e4656a8b5a1/appcompat-1.1.0/res/values-v24/values-v24.xml",
                     "from": {
                         "startLines": "2,3",
                         "startColumns": "4,4",

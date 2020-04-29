@@ -2,6 +2,24 @@
 <resources>
     <declare-styleable name="SideBySideView">
 
+        <attr name="leftInput" format="enum">
+            <enum name="TextView" value="0"/>
+            <enum name="EditText" value="1"/>
+            <enum name="CheckBox" value="2"/>
+            <enum name="Spinner" value="3"/>
+            <enum name="Time" value="4"/>
+            <enum name="DateTime" value="5"/>
+        </attr>
+
+        <attr name="rightInput" format="enum">
+            <enum name="TextView" value="0"/>
+            <enum name="EditText" value="1"/>
+            <enum name="CheckBox" value="2"/>
+            <enum name="Spinner" value="3"/>
+            <enum name="Time" value="4"/>
+            <enum name="DateTime" value="5"/>
+        </attr>
+
         <attr name="textViewTextStyle" format="string" />
         <attr name="titleTextColor" format="color" />
 
@@ -14,7 +32,6 @@
         <attr name="passwordErrorMessage" format="string"/>
 
         <attr name="leftText" format="string" localization="suggested" />
-        <attr name="leftInput" format="string"/>
         <attr name="leftEditInputType" format="string"/>
         <attr name="leftSpinnerEntries" format="reference"/>
         <attr name="leftEditTextText" format="string"/>
@@ -33,7 +50,6 @@
         </attr>
 
         <attr name="rightText" format="string" localization="suggested" />
-        <attr name="rightInput" format="string"/>
         <attr name="rightEditInputType" format="string"/>
         <attr name="rightSpinnerEntries" format="reference"/>
         <attr name="rightEditTextText" format="string"/>
